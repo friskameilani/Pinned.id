@@ -14,10 +14,19 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('home');
+    return view('welcome');
 });
 
 Auth::routes();
 
+Route::get('/', 'HomeController@index')->name('home');
+Route::get('/order/{id}', 'OrderController@index');
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::post('order/{id}', 'OrderController@ordering');
+
+Route::get('/product/{id}', 'ProductController@index');
+Route::get('/catalog', 'ProductController@catalog');
+
+Route::get('profile', 'ProfileController@index');
+Route::get('profile/edit', 'ProfileController@edit');
+Route::post('profile/edit', 'ProfileController@update');
