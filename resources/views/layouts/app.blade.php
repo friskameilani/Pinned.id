@@ -48,6 +48,11 @@
                 <li class="nav-item">
                     <a class="nav-link" href="{{ url('/faq') }}">FAQ</a>
                 </li>
+
+                <!-- NUMPANG BENTAR TAMBAH MENU ADMIN SOALNYA BELOM ADA USER ADMIN -->
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ url('/admindashboard') }}">Admin</a>
+                </li>
                     </ul>
 
                     <!-- Right Side Of Navbar -->
