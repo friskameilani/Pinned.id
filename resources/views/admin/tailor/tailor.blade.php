@@ -37,9 +37,11 @@
 
             <div class="col-md-6 clearfix" style="padding-right: 60px;">
                 <!-- BUTTON ADD -->
-                <button type="button" class="btn btn-success float-right">
-                    +Add New Tailor
-                </button>
+                <a href="{{ url('adminaddtailor') }}">
+                    <button type="button" class="btn btn-success float-right">
+                        +Add New Tailor
+                    </button>
+                </a>
             </div>
         </div>
     </section>

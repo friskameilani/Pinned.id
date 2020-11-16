@@ -1,4 +1,4 @@
-<?php $thisPage="Edit Catalog"; ?>
+<?php $thisPage="Edit Tailor"; ?>
 @extends ('layouts.adminapp')
 
 @section('content')   
@@ -14,8 +14,7 @@
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb">
                         <li class="breadcrumb-item"><a href="{{ url('admincatalog') }}">Catalog</a></li>
-                        <li class="breadcrumb-item "><a href="{{ url('adminviewcatalog') }}">Catalog Name</a></li>
-                        <li class="breadcrumb-item active" aria-current="admineditcatalog">Edit Catalog</li>
+                        <li class="breadcrumb-item active" aria-current="adminaddcatalog">New Catalog</li>
                     </ol>
                 </nav>
             </div>
@@ -30,11 +29,13 @@
                     <!-- FOTO -->
                     <div class="row">
                         <div class="container" style="position: relative; width: 100%; max-width: 400px;">
-                            <img src="/images/contoh.png" alt="Avatar" class="image rounded" style="width: 400px; height: 400px;">
-                            <div class="overlay" style=" position: absolute; transform: translate(3.7%, 700%); top: 0; bottom: 0; left: 0; right: 0; height: 50px; width: 400px; opacity: 0.5; background-color: #111;">
-                                <a href="#" class="icon" title="User Profile">
-                                <i class="fa fa-camera" style="color: white; opacity: 1; padding-top: 10px; padding-left: 185px; font-size: 30px;"></i>
-                                </a>
+                            <div class="card" style="width: 400px; height: 400px; background-color: #eee">
+                                <i class="fa fa-user text-center" style="font-size: 80px; color: #222; padding-top: 130px;"></i>
+                                <div class="overlay" style=" position: absolute; transform: translate(0%, 700%); top: 0; bottom: 0; left: 0; right: 0; height: 50px; width: 400px; opacity: 0.5; background-color: #111;">
+                                    <a href="#" class="icon" title="User Profile">
+                                    <i class="fa fa-camera" style="color: white; opacity: 1; padding-top: 10px; padding-left: 185px; font-size: 30px;"></i>
+                                    </a>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -56,7 +57,7 @@
 
                 <!-- SISI KANAN FORM -->
                 <div class="col-md-6">
-                    <h2>Edit Katalog</h2>
+                    <h2>Buat Katalog Baru</h2>
 
                     <form method="POST" action="{{ url('admineditcatalog') }}">
                         @csrf
