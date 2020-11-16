@@ -15,13 +15,13 @@
 
     <main>
       <!-- Main content -->
-      <section class="content" style:"height: 200px;">
+      <section class="content" style="height: 200px;">
         <!-- Small boxes (Stat box) -->
         <div class="row">
-          <div class="card offset-lg-3" style="min-width: 200px; max-height: 100px;">
+          <div class="card offset-lg-3" style="min-width: 250px; max-height: 100px;">
             <div class="row no-gutters">
-              <div class="col-md-4 bg-secondary" style="padding-top:10px; max-height: 100px;">
-                <img src="icons/person-fill.svg" width="80px">
+              <div class="col-md-4 bg-secondary" style="padding-left: 23px; padding-top:20px; max-height: 100px; font-size: 40px;">
+                <i class="text-center fa fa-user"></i>
               </div>
               <div class="col-md-8">
                 <div class="card-body">
@@ -36,8 +36,8 @@
         <div class="row">
           <div class="card offset-lg-9" style="min-width: 250px; max-height: 100px;">
             <div class="row no-gutters">
-              <div class="col-md-4 bg-primary" style="padding-top: 22px; padding-left: 15px; max-height: 100px;">
-                <img src="icons/tag-fill.svg" width="60px">
+              <div class="col-md-4 bg-primary" style="padding-left: 23px; padding-top: 22px; max-height: 100px; font-size: 40px;">
+                <i class="text-center fa fa-tag"></i>
               </div>
               <div class="col-md-8">
                 <div class="card-body">
@@ -60,47 +60,12 @@
   </figure>
 <!-- ./wrapper -->
 
-
-<!-- jQuery 3 -->
-<script src="bower_components/jquery/dist/jquery.min.js"></script>
-<!-- jQuery UI 1.11.4 -->
-<script src="bower_components/jquery-ui/jquery-ui.min.js"></script>
 <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
 <script>
   $.widget.bridge('uibutton', $.ui.button);
 </script>
-<!-- Scripts -->
-<script src="{{ asset('js/app.js') }}" defer></script>
-<!-- Bootstrap 3.3.7 -->
-<script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-<!-- Morris.js charts -->
-<script src="bower_components/raphael/raphael.min.js"></script>
-<script src="bower_components/morris.js/morris.min.js"></script>
-<!-- Sparkline -->
-<script src="bower_components/jquery-sparkline/dist/jquery.sparkline.min.js"></script>
-<!-- jvectormap -->
-<script src="plugins/jvectormap/jquery-jvectormap-1.2.2.min.js"></script>
-<script src="plugins/jvectormap/jquery-jvectormap-world-mill-en.js"></script>
-<!-- jQuery Knob Chart -->
-<script src="bower_components/jquery-knob/dist/jquery.knob.min.js"></script>
-<!-- daterangepicker -->
-<script src="bower_components/moment/min/moment.min.js"></script>
-<script src="bower_components/bootstrap-daterangepicker/daterangepicker.js"></script>
-<!-- datepicker -->
-<script src="bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
-<!-- Bootstrap WYSIHTML5 -->
-<script src="plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js"></script>
-<!-- Slimscroll -->
-<script src="bower_components/jquery-slimscroll/jquery.slimscroll.min.js"></script>
-<!-- FastClick -->
-<script src="bower_components/fastclick/lib/fastclick.js"></script>
-<!-- AdminLTE App -->
-<script src="dist/js/adminlte.min.js"></script>
-<!-- AdminLTE dashboard demo (This is only for demo purposes) -->
-<script src="dist/js/pages/dashboard.js"></script>
-<!-- AdminLTE for demo purposes -->
-<script src="dist/js/demo.js"></script>
 
+<!-- CHART SCRIPT -->
 <script src="https://code.highcharts.com/highcharts.js"></script>
 <script src="https://code.highcharts.com/modules/series-label.js"></script>
 <script src="https://code.highcharts.com/modules/exporting.js"></script>

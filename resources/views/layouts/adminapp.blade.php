@@ -15,6 +15,7 @@
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
@@ -47,19 +48,26 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
                 <li class="nav-item active">
-                    <a class="nav-link" href="{{ url('/') }}">Home</a>
+                    <a class="nav-link" href="{{ url('/admindashboard') }}">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ url('/catalog') }}">Catalog</a>
+                    <a class="nav-link" href="{{ url('/admincatalog') }}">Catalog</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ url('/order') }}">Tailor</a>
+                    <a class="nav-link" href="{{ url('/admintailor') }}">Tailor</a>
+                </li>
+
+                <!-- JANGAN LUPA APUS -->
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ url('/admineditcatalog') }}">Edit Catalog</a>
+                </li>
+                <!-- sampe sini -->
+
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ url('/adminorder') }}">Order</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ url('/confirm_payment') }}">Order</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{{ url('/faq') }}">Payment</a>
+                    <a class="nav-link" href="{{ url('/adminpayment') }}">Payment</a>
                 </li>
                 </ul>
             </div>
