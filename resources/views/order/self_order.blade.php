@@ -4,13 +4,13 @@
 <div class="container">
     <div class="row">
         <div class="col-md-12">
-            <a href="{{ url('home') }}" class="btn btn-primary"><i class="fa fa-arrow-left"></i> Kembali</a>
+            <a href="{{ url('/') }}" class="btn btn-primary"><i class="fa fa-arrow-left"></i> Kembali</a>
         </div>
         <div class="col-md-12 mt-2">
             <nav aria-label="breadcrumb">
               <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="{{ url('home') }}">Home</a></li>
-                <li class="breadcrumb-item active" aria-current="page">{{ $product->product_name }}</li>
+                <li class="breadcrumb-item"><a href="{{ url('/') }}">Home</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Self Order</li>
               </ol>
             </nav>
         </div>
@@ -18,13 +18,9 @@
             <div class="card">
                 <div class="card-body">
                     <div class="row">
-                        <div class="col-md-6">
-                            <img src="{{ url('uploads') }}/{{ $product->product_image }}" class="rounded mx-auto d-block" width="100%" alt=""> 
-                        </div>
                         <div class="col-md-6 mt-5">
-                            <h2>{{ $product->product_name }}</h2>
                             <table class="table">
-                                <form method="POST" action="{{ url('order') }}/{{ $product->id }}" >
+                                <form method="POST" action="{{ url('order') }}" >
                                             @csrf
                                     <tbody>
                                         <tr>
@@ -78,12 +74,29 @@
                                             
                                         </tr>
 
+                                        <tr>
+                                            <td>ID Penjahit</td>
+                                            <td>:</td>
+                                            <td>
+                                                <input id="tailor_id" type="text" name="tailor_id" class="form-control">
+                                            </td>
+                                            
+                                        </tr>
+
+                                        <tr>
+                                            <td>Design</td>
+                                            <td>:</td>
+                                            <td>
+                                                <input id="design" type="text" name="design" class="form-control">
+                                            </td>
+                                            
+                                        </tr>
+
                                         
                                         <button type="submit" class="btn btn-primary mt-2"><i class="fa fa-shopping-cart"></i> Masukkan Keranjang</button>
                                     </tbody>
                                 </form>   
                             </table>
-                        </div>
                     </div>
                 </div>
             </div>

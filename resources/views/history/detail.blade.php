@@ -8,73 +8,87 @@
         <div class="col-md-12 mt-2">
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="{{ url('home') }}">Home</a></li>
-                    <li class="breadcrumb-item"><a href="{{ url('history') }}">Riwayat Pemesanan</a></li>
-                    <li class="breadcrumb-item active" aria-current="page">Detail Pemesanan</li>
+                    <li class="breadcrumb-item"><a href="{{ url('/') }}">Home</a></li>
+                    <li class="breadcrumb-item"><a href="{{ url('/history') }}">Riwayat Pemesanan</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Pesanan ke {{$order->id}}</li>
                 </ol>
             </nav>
         </div>
-        <div class="col-md-12">
+        
+        <div class="col-md-12 mt-1">
             <div class="card">
                 <div class="card-body">
-                    <h3>Sukses Check Out</h3>
-                    <h5>Pesanan anda sudah sukses dicheck out selanjutnya untuk pembayaran silahkan transfer di rekening <strong>Bank BRI Nomer Rekening : 32113-821312-123</strong> dengan nominal : <strong>Rp. {{ number_format($pesanan->code+$pesanan->jumlah_harga) }}</strong></h5>
+                    <div class="row">
+                        <div class="col-md-6 mt-5">
+                            <table class="table">
+                                <tbody>
+                                    <tr>
+                                        <td>Nama Pemesan</td>
+                                        <td>:</td>
+                                        <td>
+                                            {{$order->ordered_name}}
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>No.HP</td>
+                                        <td>:</td>
+                                        <td>
+                                        {{$order->ordered_phone}}
+                                        </td>
+                                    </tr>
+                                
+                                    <tr>
+                                        <td>Alamat</td>
+                                        <td>:</td>
+                                        <td>
+                                        {{$order->ordered_address}}
+                                        </td>
+                                        
+                                    </tr>
+
+                                    <tr>
+                                        <td>Ukuran</td>
+                                        <td>:</td>
+                                        <td>
+                                        {{$order->size}}
+                                        </td>
+                                        
+                                    </tr>
+
+                                    <tr>
+                                        <td>Jumlah Pesan</td>
+                                        <td>:</td>
+                                        <td>
+                                        {{$order->qty}}
+                                        </td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>Keterangan</td>
+                                        <td>:</td>
+                                        <td>
+                                        {{$order->notes}}
+                                        </td>
+                                        
+                                    </tr>
+                                    @if($order->product_id != NULL)
+                                    <tr>
+                                        <td>Total Harga</td>
+                                        <td>:</td>
+                                        <td>
+                                        Rp. {{ number_format($order->total_price) }}
+                                        </td> 
+                                    </tr>
+                                    @endif
+                                </tbody>  
+                            </table>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="card mt-2">
-                <div class="card-body">
-                    <h3><i class="fa fa-shopping-cart"></i> Detail Pemesanan</h3>
-                    @if(!empty($order))
-                    <p align="right">Tanggal Pesan : {{ $order->date }}</p>
-                    <table class="table table-striped">
-                        <thead>
-                            <tr>
-                                <th>No</th>
-                                <th>Gambar</th>
-                                <th>Nama Barang</th>
-                                <th>Jumlah</th>
-                                <th>Harga</th>
-                                <th>Total Harga</th>
-                                
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <?php $no = 1; ?>
-                            @foreach($pesanan_details as $pesanan_detail)
-                            <tr>
-                                <td>{{ $no++ }}</td>
-                                <td>
-                                    <img src="{{ url('uploads') }}/{{ $pesanan_detail->barang->gambar }}" width="100" alt="...">
-                                </td>
-                                <td>{{ $order_detail->product->product_name }}</td>
-                                <td align="right">Rp. {{ number_format($order_detail->product->product_price) }}</td>
-                                <td align="right">Rp. {{ number_format($order_detail->total_price) }}</td>
-                                
-                            </tr>
-                            @endforeach
 
-                            <tr>
-                                <td colspan="5" align="right"><strong>Total Harga :</strong></td>
-                                <td align="right"><strong>Rp. {{ number_format($order->total_price) }}</strong></td>
-                                
-                            </tr>
-                            <tr>
-                                <td colspan="5" align="right"><strong>Kode Unik :</strong></td>
-                                <td align="right"><strong>Rp. {{ number_format($order->code) }}</strong></td>
-                                
-                            </tr>
-                             <tr>
-                                <td colspan="5" align="right"><strong>Total yang harus ditransfer :</strong></td>
-                                <td align="right"><strong>Rp. {{ number_format($orderr->code+$order->total_price) }}</strong></td>
-                                
-                            </tr>
-                        </tbody>
-                    </table>
-                    @endif
 
-                </div>
-            </div>
-        </div>
         
     </div>
 </div>

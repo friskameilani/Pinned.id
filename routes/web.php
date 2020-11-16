@@ -20,13 +20,20 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/', 'HomeController@index')->name('home');
-Route::get('/order/{id}', 'OrderController@index');
 
+Route::get('order', 'OrderController@self_order');
+Route::post('order', 'OrderController@self_ordering');
+
+Route::get('order/{id}', 'OrderController@index');
 Route::post('order/{id}', 'OrderController@ordering');
 
-Route::get('/product/{id}', 'ProductController@index');
-Route::get('/catalog', 'ProductController@catalog');
+Route::get('product/{id}', 'ProductController@index');
+Route::get('catalog', 'ProductController@catalog');
 
 Route::get('profile', 'ProfileController@index');
 Route::get('profile/edit', 'ProfileController@edit');
 Route::post('profile/edit', 'ProfileController@update');
+
+Route::get('history', 'HistoryController@index');
+Route::get('history/{id} ', 'HistoryController@detail');
+Route::post('history/{id} ', 'HistoryController@destroy')->name('history.destroy');
