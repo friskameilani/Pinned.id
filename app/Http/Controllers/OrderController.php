@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 use App\Product;
 use App\Order;
+use App\OrderDetail;
+use App\Tailor;
 use Auth;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
@@ -19,59 +21,71 @@ class OrderController extends Controller
         $product = Product::where('id', $id)->first();
 
         return view('order.index', compact('product'));
+	}
+
+	public function self_order()
+    {
+        return view('order.self_order');
     }
 
     public function ordering(Request $request, $id)
     {	
-    	$product = Product::where('id', $id)->first();
+		$product = Product::where('id', $id)->first();
+		$tailor = Tailor::where('id', $id)->first();
     	$date = Carbon::now();
 
     	//cek validasi
     	$cek_order = Order::where('user_id', Auth::user()->id)->where('status',0)->first();
-    	//simpan ke database pesanan
-    	if(empty($cek_order))
-    	{
+    	//simpan ke database order
+    	// if(empty($cek_order))
+    	
     		$order = new Order;
-	    	$order->user_id = Auth::user()->id;
+			$order->user_id = Auth::user()->id;
+			$order->product_id = $product->id;
+			$order->tailor_id = $tailor->id;
+			$order->ordered_name = $request->ordered_name;
+			$order->ordered_address = $request->ordered_address;
+			$order->ordered_phone = $request->ordered_phone;
+			$order->qty = $request->qty;
+			$order->size = $request->size;
+			$order->notes = $request->notes;
 	    	$order->date = $date;
 	    	$order->status = 0;
-	    	$order->total_price = 0;
-          //  $pesanan->kode = mt_rand(100, 999);
-	    	$order->save();
-    	}
+			$order->total_price = $product->product_price * $order->qty;
+			$order->save();
+			
+			
+          //  $order->kode = mt_rand(100, 999);
+    	return redirect('/');
+	}
+	
+	public function self_ordering(Request $request)
+    {	
+    	$date = Carbon::now();
 
-    	//simpan ke database pesanan detail
-    	$new_order = Order::where('user_id', Auth::user()->id)->where('status',0)->first();
-
-    	//cek pesanan detail
-    	$cek_pesanan_detail = OrderDetail::where('product_id', $product->id)->where('order_id', $new_order->id)->first();
-    	if(empty($cek_pesanan_detail))
-    	{
-    		$order_detail = new OrderDetail;
-	    	$order_detail->product_id = $product->id;
-	    	$order_detail->order_id = $new_order->id;
-	    	$order_detail->total = $request->total_order;
-	    	$order_detail->total_price = $product->price*$request->total_order;
-	    	$order_detail->save();
-    	}else 
-    	{
-    		$oder_detail = OrderDetail::where('product_id', $product->id)->where('order_id', $new_order->id)->first();
-    		$order_detail->total = $order_detail->total+$request->total_order;
-
-    		//harga sekarang
-    		$harga_pesanan_detail_baru = $product->price*$request->total_order;
-	    	$order_detaik->total_price = $order_detail->total_price+$harga_pesanan_detail_baru;
-	    	$order_detail->update();
-    	}
-
-    	//jumlah total
-    	$order = Order::where('user_id', Auth::user()->id)->where('status',0)->first();
-    	$order->total_price = $order->total_price+$product->price*$request->total_order;
-    	$order->update();
+    	//cek validasi
+    	// $cek_order = Order::where('user_id', Auth::user()->id)->where('status',0)->first();
+    	//simpan ke database order
+    	// if(empty($cek_order))
     	
-        Alert::success('Pesanan Sukses Masuk Keranjang', 'Success');
-    	return redirect('home');
+    		$order = new Order;
+			$order->user_id = Auth::user()->id;
+			$order->tailor_id = $request->tailor_id;
+			$order->ordered_name = $request->ordered_name;
+			$order->ordered_address = $request->ordered_address;
+			$order->ordered_phone = $request->ordered_phone;
+			$order->qty = $request->qty;
+			$order->size = $request->size;
+			$order->notes = $request->notes;
+	    	$order->date = $date;
+	    	$order->status = 0;
+			$order->design = $request->design;
+			$order->total_price = 0;
 
-    }
+			$order->save();
+
+		return redirect('/');
+
+	}
 
 }

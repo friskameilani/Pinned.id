@@ -3,12 +3,12 @@
 <div class="container">
     <div class="row">
         <div class="col-md-12">
-            <a href="{{ url('home') }}" class="btn btn-primary"><i class="fa fa-arrow-left"></i> Kembali</a>
+            <a href="{{ url('/') }}" class="btn btn-primary"><i class="fa fa-arrow-left"></i> Kembali</a>
         </div>
         <div class="col-md-12 mt-2">
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="{{ url('home') }}">Home</a></li>
+                    <li class="breadcrumb-item"><a href="{{ url('/') }}">Home</a></li>
                     <li class="breadcrumb-item active" aria-current="page">Riwayat Pemesanan</li>
                 </ol>
             </nav>
@@ -21,6 +21,7 @@
                         <thead>
                             <tr>
                                 <th>No</th>
+                                <th>Nama Barang</th>
                                 <th>Tanggal</th>
                                 <th>Status</th>
                                 <th>Jumlah Harga</th>
@@ -32,17 +33,34 @@
                             @foreach($orders as $order)
                             <tr>
                                 <td>{{ $no++ }}</td>
+                                @if($order->product_id == NULL)
+                                <td> Barang pesanan sendiri </td>
+                                @else
+                                <td>{{ $order->product->product_name }}</td>
+                                @endif
                                 <td>{{ $order->date }}</td>
                                 <td>
-                                    @if($order->status == 1)
+                                    @if($order->status == 0)
                                     Sudah Pesan & Belum dibayar
                                     @else
                                     Sudah dibayar 
                                     @endif
                                 </td>
-                                <td>Rp. {{ number_format($order->total_price+$order->code) }}</td>
+                                @if($order->product_id == 0)
+                                <td>Mohon Tunggu Perhitungan dari Penjahit kami</td>
+                                @else
+                                <td>Rp. {{ number_format($order->total_price) }}</td>
+                                @endif
                                 <td>
+                                @if($order->status == 0)
                                     <a href="{{ url('history') }}/{{ $order->id }}" class="btn btn-primary"><i class="fa fa-info"></i> Detail</a>
+                                    <form method="POST" action="{{ route('history.destroy', [$order->id]) }}">
+                                        {{ csrf_field() }}
+                                        <button type="submit" class="btn btn-danger">Delete</button>
+                                    </form>
+                                @else
+                                    <a href="{{ url('history') }}/{{ $order->id }}" class="btn btn-primary"><i class="fa fa-info"></i> Detail</a>
+                                @endif
                                 </td>
                             </tr>
                             @endforeach

@@ -6,9 +6,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class Product extends Model
 {
-    public function order_detail()
+    public function order()
     {
-    return $this->hasMany('App\OrderDetail', 'product_id', 'id');
+    return $this->hasMany('App\Order', 'product_id', 'id');
     }
 
     public function tailor()

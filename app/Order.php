@@ -15,5 +15,15 @@ class Order extends Model
     {
         return $this->hasMany('App\OrderDetail', 'order_id', 'id');
     }
+
+    public function product()
+    {
+    return $this->belongsTo('App\Product', 'product_id', 'id');
+    }
+
+    public function tailor()
+    {
+    return $this->belongsTo('App\Tailor', 'tailor_id', 'id');
+    }
     
 }
