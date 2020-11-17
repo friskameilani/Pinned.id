@@ -64,6 +64,9 @@
                 <li class="nav-item">
                     <a class="nav-link" href="{{ url('/adminaddcatalog') }}">Add Catalog</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ url('/adminedittailor') }}">Edit Tailor</a>
+                </li>
                 <!-- sampe sini -->
 
                 <li class="nav-item">

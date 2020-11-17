@@ -30,7 +30,7 @@
                     <!-- FOTO -->
                     <div class="row">
                         <div class="container" style="position: relative; width: 100%; max-width: 400px;">
-                            <img src="/images/contoh.png" alt="Avatar" class="image rounded" style="width: 400px; height: 400px;">
+                            <img src="/images/contohbaju.png" alt="Avatar" class="image rounded" style="width: 400px; height: 400px;">
                             <div class="overlay" style=" position: absolute; transform: translate(3.7%, 700%); top: 0; bottom: 0; left: 0; right: 0; height: 50px; width: 400px; opacity: 0.5; background-color: #111;">
                                 <a href="#" class="icon" title="User Profile">
                                 <i class="fa fa-camera" style="color: white; opacity: 1; padding-top: 10px; padding-left: 185px; font-size: 30px;"></i>

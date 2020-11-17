@@ -45,53 +45,103 @@
             </div>
         </div>
     </section>
+    <br></br>
 
     <!-- CARD PENJAHIT --> 
-    <section class="tailor" id="tailor">
-        <div class="container">
+    <section class="tailor" id="tailor" style="padding-bottom: 50px;">
+        
             <div class="row">
                 <!-- CARD KIRI -->
-                <div class="col-md-6">
+                <div class="col-md-4 offset-md-2">
                     <a href=#integratebackenddisini>
-                    <div class="card rounded" style="width: 300px; height: 140px; background-color: #A06357">
+                    <div class="card rounded" style="width: 350px; height: 140px; background-color: #A06357">
                         <div class="row">
                             <div class="col-md-4" style="padding-left: 40px; padding-top: 10px; max-height: 100px; font-size: 80px; color: white;">
                                 <i class="text-center fa fa-user-circle"></i>
                             </div>
                             <div class="col-md-8">
-                                <div class="card-body" style="color: white;">
+                                <div class="card-body" style="color: white; padding-top: 28px;">
                                 <h4 class="card-title">Suprapto</h4>
-                                <p class="card-text">Tangerang, Banten</p>
-                                <p class="card-text">23 produk</p>
+                                <p class="card-text text-height-half">Tangerang, Banten</p>
+                                <p class="card-text font-weight-bold" style="font-size: 20px;">23 produk</p>
                             </div>
                         </div>
                     </div>
                     </a>
                 </div>
-            <!-- </div>
+            </div>
         
-            <div class="row"> -->
-                <!-- CARD TENGAH -->
-                <div class="col-md-6">
-                <a href=#integratebackenddisini>
-                    <div class="card rounded" style="width: 300px; height: 140px; background-color: #A06357">
+            <div class="row"> 
+                <!-- CARD KIRI -->
+                <div class="col-md-4 offset-md-3">
+                    <a href=#integratebackenddisini>
+                    <div class="card rounded" style="width: 350px; height: 140px; background-color: #A06357">
                         <div class="row">
                             <div class="col-md-4" style="padding-left: 40px; padding-top: 10px; max-height: 100px; font-size: 80px; color: white;">
                                 <i class="text-center fa fa-user-circle"></i>
                             </div>
                             <div class="col-md-8">
-                                <div class="card-body" style="color: white;">
-                                    <h4 class="card-title">Suprapto</h4>
-                                    <p class="card-text">Tangerang, Banten</p>
-                                    <p class="card-text">23 produk</p>
-                                </div>
+                                <div class="card-body" style="color: white; padding-top: 28px;">
+                                <h4 class="card-title">Suprapto</h4>
+                                <p class="card-text text-height-half">Tangerang, Banten</p>
+                                <p class="card-text font-weight-bold" style="font-size: 20px;">23 produk</p>
                             </div>
                         </div>
                     </div>
-                </div>  
-                </a>  
+                    </a>
+                </div>
             </div>
-        </div>
+
+            
+        
+    </section>
+
+    <section class="tailor" id="tailor">
+        
+            <div class="row">
+                <!-- CARD KIRI -->
+                <div class="col-md-4 offset-md-2">
+                    <a href=#integratebackenddisini>
+                    <div class="card rounded" style="width: 350px; height: 140px; background-color: #A06357">
+                        <div class="row">
+                            <div class="col-md-4" style="padding-left: 40px; padding-top: 10px; max-height: 100px; font-size: 80px; color: white;">
+                                <i class="text-center fa fa-user-circle"></i>
+                            </div>
+                            <div class="col-md-8">
+                                <div class="card-body" style="color: white; padding-top: 28px;">
+                                <h4 class="card-title">Suprapto</h4>
+                                <p class="card-text text-height-half">Tangerang, Banten</p>
+                                <p class="card-text font-weight-bold" style="font-size: 20px;">23 produk</p>
+                            </div>
+                        </div>
+                    </div>
+                    </a>
+                </div>
+            </div>
+        
+            <div class="row"> 
+                <!-- CARD KIRI -->
+                <div class="col-md-4 offset-md-3">
+                    <a href=#integratebackenddisini>
+                    <div class="card rounded" style="width: 350px; height: 140px; background-color: #A06357">
+                        <div class="row">
+                            <div class="col-md-4" style="padding-left: 40px; padding-top: 10px; max-height: 100px; font-size: 80px; color: white;">
+                                <i class="text-center fa fa-user-circle"></i>
+                            </div>
+                            <div class="col-md-8">
+                                <div class="card-body" style="color: white; padding-top: 28px;">
+                                <h4 class="card-title">Suprapto</h4>
+                                <p class="card-text text-height-half">Tangerang, Banten</p>
+                                <p class="card-text font-weight-bold" style="font-size: 20px;">23 produk</p>
+                            </div>
+                        </div>
+                    </div>
+                    </a>
+                </div>
+            </div>
+
+            
+        
     </section>
 
     
