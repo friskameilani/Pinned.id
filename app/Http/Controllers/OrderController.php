@@ -31,7 +31,7 @@ class OrderController extends Controller
     public function ordering(Request $request, $id)
     {	
 		$product = Product::where('id', $id)->first();
-		$tailor = Tailor::where('id', $id)->first();
+		$tailor = Tailor::where('id', $product->tailor_id)->first();
     	$date = Carbon::now();
 
     	//cek validasi
@@ -53,7 +53,6 @@ class OrderController extends Controller
 	    	$order->status = 0;
 			$order->total_price = $product->product_price * $order->qty;
 			$order->save();
-			
 			
           //  $order->kode = mt_rand(100, 999);
     	return redirect('/');

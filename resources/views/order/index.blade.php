@@ -73,11 +73,8 @@
                                             <td>:</td>
                                             <td>
                                                 <textarea id="notes" type="text" name="notes" class="form-control" rows="4"> </textarea>
-                                            </td>
-                                            
+                                            </td>   
                                         </tr>
-
-                                        
                                         <button type="submit" class="btn btn-primary mt-2"><i class="fa fa-shopping-cart"></i> Masukkan Keranjang</button>
                                     </tbody>
                                 </form>   
