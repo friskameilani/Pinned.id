@@ -13,12 +13,12 @@
         <div class="col-md-12">
             <div class="card">
                 <div class="card-body">
-                    <div class="row">
+                    <div class="row" style="margin-bottom:10px;">
                         <div class="col-6">
                             <h4><i class="fa fa-user"></i> My Profile</h4>
                         </div>
-                        <div class="col-6" style="text-align:right; margin-bottom:10px; padding-right:30px;">
-                            <a href="{{ url('profile/edit') }}" class="btn btn-primary">Edit Profile</a>
+                        <div class="col-6" style="padding-right: 30px;">
+                            <a href="{{ url('profile/edit') }}" class="btn btn-primary float-right">Edit Profile</a>
                         </div>
                     </div>
                     <table class="table">

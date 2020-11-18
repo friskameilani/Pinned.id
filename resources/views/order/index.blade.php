@@ -17,7 +17,6 @@
         <div class="col-md-12 mt-1">
             <div class="card">
                 <div class="card-body">
-                    <div class="row">
                         <div class="col-md-6">
                             <img src="{{ url('uploads') }}/{{ $product->product_image }}" class="rounded mx-auto d-block" width="100%" alt=""> 
                         </div>
@@ -83,7 +82,7 @@
                                     </tbody>
                                 </form>   
                             </table>
-                        </div>
+                       
                     </div>
                 </div>
             </div>

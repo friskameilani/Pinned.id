@@ -3284,12 +3284,12 @@ fieldset:disabled a.btn {
 
 .btn-link {
   font-weight: 400;
-  color: #3490dc;
+  color: #A06357;
   text-decoration: none;
 }
 
 .btn-link:hover {
-  color: #1d68a7;
+  color: #3E3434;
   text-decoration: underline;
 }
 
@@ -11051,7 +11051,7 @@ a.text-dark:focus {
 }
 
 .slide-bg{
-  background-image: url("../images/home-image.jpg");
+  background-image: url("../images/old-sewing.jpg");
   position:relative;
   background-size:cover;
   background-repeat:no-repeat;
@@ -11067,7 +11067,7 @@ a.text-dark:focus {
   text-transform:normal
 }
 
-h1{
+.title h1{
   font-family:"Josefin Sans",sans-serif;
   color:#fff;
   margin-top:0px;
@@ -11082,4 +11082,9 @@ p{
 
 .search-button{
   height: 500px;
+}
+
+h5 .btn-link{
+  font-weight: bold;
+  font-size: 18px;
 }

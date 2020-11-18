@@ -34,9 +34,7 @@ Route::get('profile', 'ProfileController@index');
 Route::get('profile/edit', 'ProfileController@edit');
 Route::post('profile/edit', 'ProfileController@update');
 
-<<<<<<< HEAD
 Route::get('/faq', 'FAQController@index')->name('faq');
-=======
 
 Route::get('history', 'HistoryController@index');
 Route::get('history/{id} ', 'HistoryController@detail');
@@ -98,4 +96,3 @@ Route::post('history/{id} ', 'HistoryController@destroy')->name('history.destroy
         return view('admin/order/view');
     });
 
->>>>>>> refs/remotes/origin/master
