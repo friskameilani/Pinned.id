@@ -10,4 +10,9 @@ class Tailor extends Model
     {
         return $this->hasMany('App\Product', 'tailor_id', 'id');
     }
+
+    public function order()
+    {
+        return $this->hasMany('App\Order', 'tailor_id', 'id');
+    }
 }

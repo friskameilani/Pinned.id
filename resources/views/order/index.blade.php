@@ -24,42 +24,64 @@
                         <div class="col-md-6 mt-5">
                             <h2>{{ $product->product_name }}</h2>
                             <table class="table">
-                                <tbody>
-                                    <tr>
-                                        <td>Nama Pemesan</td>
-                                        <td>:</td>
-                                        <td>{{ ($product->product_price) }}</td>
-                                    </tr>
-
-                                    <tr>
-                                        <td>Deskripsi</td>
-                                        <td>:</td>
-                                        <td>{{ $product->product_desc }}</td>
-                                    </tr>
-                                   
-                                    <tr>
-                                        <td>Nama Penjahit</td>
-                                        <td>:</td>
-                                        <td>{{ $product->tailor->tailor_name }}</td>
-                                        <td>{{ $product->tailor->tailor_address }}</td>
-                                        <td>{{ $product->tailor->tailor_contact }}</td>
-                                    </tr>
-
-                                    <tr>
-                                        <td>Jumlah Pesan</td>
-                                        <td>:</td>
-                                        <td>
-                                             <form method="post" action="{{ url('order') }}/{{ $product->id }}" >
+                                <form method="POST" action="{{ url('order') }}/{{ $product->id }}" >
                                             @csrf
-                                                <input type="text" name="qty" class="form-control" required="">
-                                                <button type="submit" class="btn btn-primary mt-2"><i class="fa fa-shopping-cart"></i> Masukkan Keranjang</button>
-                                            </form>
-                                        </td>
-                                    </tr>
+                                    <tbody>
+                                        <tr>
+                                            <td>Nama Pemesan</td>
+                                            <td>:</td>
+                                            <td>
+                                                <input id="ordered_name" type="text" name="ordered_name" class="form-control" required="">
+                                            </td>
+                                        </tr>
 
+                                        <tr>
+                                            <td>No.HP</td>
+                                            <td>:</td>
+                                            <td>
+                                                <input id="ordered_phone" type="text" name="ordered_phone" class="form-control" required="">
+                                            </td>
+                                        </tr>
                                     
-                                   
-                                </tbody>
+                                        <tr>
+                                            <td>Alamat</td>
+                                            <td>:</td>
+                                            <td>
+                                                <textarea id="ordered_address" type="text" name="ordered_address" class="form-control" rows="4" required=""> </textarea>
+                                            </td>
+                                            
+                                        </tr>
+
+                                        <tr>
+                                            <td>Ukuran</td>
+                                            <td>:</td>
+                                            <td>
+                                                <input id="size" type="text" name="size" class="form-control" required=""> </>
+                                            </td>
+                                            
+                                        </tr>
+
+                                        <tr>
+                                            <td>Jumlah Pesan</td>
+                                            <td>:</td>
+                                            <td>
+                                                <input id="qty" type="number" name="qty" class="form-control" required="">
+                                            </td>
+                                        </tr>
+
+                                        <tr>
+                                            <td>Keterangan</td>
+                                            <td>:</td>
+                                            <td>
+                                                <textarea id="notes" type="text" name="notes" class="form-control" rows="4"> </textarea>
+                                            </td>
+                                            
+                                        </tr>
+
+                                        
+                                        <button type="submit" class="btn btn-primary mt-2"><i class="fa fa-shopping-cart"></i> Masukkan Keranjang</button>
+                                    </tbody>
+                                </form>   
                             </table>
                         </div>
                     </div>

@@ -3,12 +3,12 @@
 <div class="container">
     <div class="row">
         <div class="col-md-12">
-            <a href="{{ url('home') }}" class="btn btn-primary"><i class="fa fa-arrow-left"></i> Kembali</a>
+            <a href="{{ url('/') }}" class="btn btn-primary"><i class="fa fa-arrow-left"></i> Kembali</a>
         </div>
         <div class="col-md-12 mt-2">
             <nav aria-label="breadcrumb">
               <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="{{ url('home') }}">Home</a></li>
+                <li class="breadcrumb-item"><a href="{{ url('/') }}">Home</a></li>
                 <li class="breadcrumb-item active" aria-current="page">{{ $product->product_name }}</li>
               </ol>
             </nav>
@@ -25,9 +25,9 @@
                             <table class="table">
                                 <tbody>
                                     <tr>
-                                        <td>Kategori</td>
+                                        <td>Harga</td>
                                         <td>:</td>
-                                        <td>Rp. {{ $product->product_category }}</td>
+                                        <td>Rp. {{ $product->product_price }}</td>
                                     </tr>
 
                                     <tr>
