@@ -2,9 +2,6 @@
 @section('content')
 <div class="container">
     <div class="row">
-        <div class="col-md-12">
-            <a href="{{ url('home') }}" class="btn btn-primary"><i class="fa fa-arrow-left"></i> Kembali</a>
-        </div>
         <div class="col-md-12 mt-2">
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb">
@@ -16,8 +13,14 @@
         <div class="col-md-12">
             <div class="card">
                 <div class="card-body">
-                    <h4><i class="fa fa-user"></i> My Profile</h4>
-                    <h4><a href="{{ url('profile/edit') }}"> Edit Profil </a></h4>
+                    <div class="row">
+                        <div class="col-6">
+                            <h4><i class="fa fa-user"></i> My Profile</h4>
+                        </div>
+                        <div class="col-6" style="text-align:right; margin-bottom:10px; padding-right:30px;">
+                            <a href="{{ url('profile/edit') }}" class="btn btn-primary">Edit Profile</a>
+                        </div>
+                    </div>
                     <table class="table">
                         <tbody>
                             <tr>

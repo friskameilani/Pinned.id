@@ -170,13 +170,13 @@ sup {
 }
 
 a {
-  color: #3490dc;
+  color: #3E3434;
   text-decoration: none;
   background-color: transparent;
 }
 
 a:hover {
-  color: #1d68a7;
+  color: #000;
   text-decoration: underline;
 }
 
@@ -3752,7 +3752,7 @@ input[type=button].btn-block {
   display: flex;
   flex-wrap: wrap;
   align-items: stretch;
-  width: 100%;
+  width: 500px;
 }
 
 .input-group > .form-control,
@@ -4413,6 +4413,7 @@ input[type=button].btn-block {
 .nav-link {
   display: block;
   padding: 0.5rem 1rem;
+  color: #fff;
 }
 
 .nav-link:hover,
@@ -4521,9 +4522,11 @@ input[type=button].btn-block {
   padding-top: 0.32rem;
   padding-bottom: 0.32rem;
   margin-right: 1rem;
+  font-family: 'Alegreya Sans SC', sans-serif;
   font-size: 1.125rem;
   line-height: inherit;
   white-space: nowrap;
+  
 }
 
 .navbar-brand:hover,
@@ -6304,14 +6307,35 @@ a.close.disabled {
 }
 
 .modal-footer {
-  display: flex;
+  display: d-flex;
   flex-wrap: wrap;
   align-items: center;
   justify-content: flex-end;
   padding: 0.75rem;
-  border-top: 1px solid #dee2e6;
   border-bottom-right-radius: calc(0.3rem - 1px);
   border-bottom-left-radius: calc(0.3rem - 1px);
+  background-color: #A06357;
+}
+
+.modal-footer-fixed {
+  display: d-flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 0.75rem;
+  border-bottom-right-radius: calc(0.3rem - 1px);
+  border-bottom-left-radius: calc(0.3rem - 1px);
+  background-color: #A06357;
+  position: fixed;
+  bottom: 0px;
+  width: 100%;
+}
+
+.modal-footer p, .modal-footer-fixed p{
+  color: #000;
+  font-variant: petite-caps;
+  font-size: 20px;
+  letter-spacing: 5px;
 }
 
 .modal-footer > * {
@@ -10903,3 +10927,159 @@ a.text-dark:focus {
   }
 }
 
+.quotes p{
+  font-family: "Bellefair", "Baskervville";
+  font-size: 20px;
+  text-align: center;
+  color: #fff;
+}
+
+.slider-area{
+  overflow:hidden;
+}
+.slider-area .hero__img{
+  position:relative
+}
+
+@media (min-width: 1200px) and (max-width: 1400px){
+  .slider-area .hero__img{
+    left:-104px;
+  }
+}
+@media only screen and (min-width: 992px) and (max-width: 1199px){
+  .slider-area .hero__img img{
+    height:500px
+  }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 991px){
+  .slider-area .hero__img img{
+    height:400px
+  }
+}
+@media only screen and (min-width: 576px) and (max-width: 767px){
+  .slider-area .hero__img img{
+    height:500px
+  }
+}
+
+.slider-area .hero__caption{
+  overflow:hidden
+}
+
+@media (max-width: 575px){
+  .slider-area .hero__caption{
+    padding-top:38px;
+    padding-left:22px
+  }
+}
+
+.slider-area .hero__caption h1{
+  text-transform:normal;
+  font-size:96px;
+  font-weight:700;
+  line-height:1.2;
+  margin-bottom:32px
+}
+
+@media only screen and (min-width: 992px) and (max-width: 1199px){
+  .slider-area .hero__caption h1{
+    font-size:60px;
+    line-height:1.2
+  }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 991px){
+  .slider-area .hero__caption h1{
+    font-size:50px;
+    line-height:1.2
+  }
+}
+
+@media only screen and (min-width: 576px) and (max-width: 767px){
+  .slider-area .hero__caption h1{
+    font-size:35px;
+    line-height:1.2;
+    margin-bottom:26px
+  }
+}
+
+@media (max-width: 575px){
+  .slider-area .hero__caption h1{
+    font-size:33px;
+    line-height:1.2;
+    margin-bottom:26px;
+    color:#fff;
+  }
+}
+
+.slider-area .hero__caption p{
+  font-size:17px;
+  line-height:1.6;
+  font-weight:400;
+  margin-bottom:39px;
+  color:#fff;
+  margin-bottom:60px;
+  padding-right:50px
+}
+
+@media only screen and (min-width: 576px) and (max-width: 767px){
+  .slider-area .hero__caption p{
+    padding-right:0px;
+    margin-bottom:30px
+  }
+}
+
+@media (max-width: 575px){
+  .slider-area .hero__caption p{
+    margin-bottom:30px;
+    padding-right:0px;
+    margin-bottom:30px
+  }
+}
+
+.slider-area .hero-cap h2{
+  font-size:70px;
+  font-weight:700;
+  text-transform:capitalize
+}
+
+@media (max-width: 575px){
+  .slider-area .hero-cap h2{
+    font-size:28px
+  }
+}
+
+.slide-bg{
+  background-image: url("../images/home-image.jpg");
+  position:relative;
+  background-size:cover;
+  background-repeat:no-repeat;
+  background-position:center;
+}
+
+.hero__caption h1{
+  font-family:"Josefin Sans",sans-serif;
+  color:#fff;
+  margin-top:30px;
+  font-style:normal;
+  font-weight:500;
+  text-transform:normal
+}
+
+h1{
+  font-family:"Josefin Sans",sans-serif;
+  color:#fff;
+  margin-top:0px;
+  font-style:normal;
+  font-weight:500;
+  text-transform:normal
+}
+
+p{
+  font-family:"Roboto",sans-serif;
+}
+
+.search-button{
+  height: 500px;
+}
