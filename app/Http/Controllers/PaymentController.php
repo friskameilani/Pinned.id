@@ -9,6 +9,11 @@ use Auth;
 
 class PaymentController extends Controller
 {   
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     public function index() //Ini view buat di admin
     {
         return view('payment.index');

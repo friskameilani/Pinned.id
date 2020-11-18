@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use Illuminate\Http\Request;
+use App\FAQ;
 
 class FAQController extends Controller
 {
@@ -21,6 +22,13 @@ class FAQController extends Controller
      * @return \Illuminate\Contracts\Support\Renderable
      */
     public function index()
+    {
+        // return view('faq');
+        $faqs = FAQ::all();
+        return view('faq', compact('faqs'));
+    }
+
+    public function create() //admin can create
     {
         return view('faq');
     }
