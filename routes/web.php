@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\TailorController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -70,21 +70,29 @@ Route::post('history/{id} ', 'HistoryController@destroy')->name('history.destroy
     });
 
     /* ---------- Tailor --------------  */
-    Route::get('/admintailor', function () {
-        return view('admin/tailor/tailor');
-    });
+    // Route::get('/admintailor', function () {
+    //     return view('admin/tailor/tailor');
+    // });
+    Route::get('/admintailor', 'TailorController@index');
+    
 
     Route::get('/adminviewtailor', function () {
         return view('admin/tailor/view');
     });
 
-    Route::get('/adminedittailor', function () {
-        return view('admin/tailor/edit');
-    });
+    // Route::get('/adminedittailor', function () {
+    //     return view('admin/tailor/edit');
+    // });
+    Route::get('/admintailor/{tailor}', 'TailorController@showtailor');
+    Route::get('/admintailor/{tailor}/edit', 'TailorController@edit');
+    Route::patch('/admintailor/{tailor}', 'TailorController@postedit');
+    Route::delete('/admintailor/{tailor}', 'TailorController@delete');
 
-    Route::get('/adminaddtailor', function () {
-        return view('admin/tailor/add');
-    });
+    // Route::get('/adminaddtailor', function () {
+    //     return view('admin/tailor/add');
+    // });
+    Route::get('/adminaddtailor', 'TailorController@createtailor');
+    Route::post('/adminaddtailor', 'TailorController@posttailor');
 
     Route::get('/adminaddtailorsuccess', function () {
         return view('admin/tailor/addsuccess');

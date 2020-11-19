@@ -16,6 +16,7 @@ class CreateTailorsTable extends Migration
         Schema::create('tailors', function (Blueprint $table) {
             $table->id();
             $table->string('tailor_name');
+            $table->integer('tailor_age');
             $table->string('tailor_address');
             $table->string('tailor_desc');
             $table->string('tailor_contact');
