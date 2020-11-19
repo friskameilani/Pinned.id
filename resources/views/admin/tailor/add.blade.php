@@ -20,7 +20,6 @@
             </div>
         </div>
 
-
         <br></br>
         <section class="fotoprofil" id="fotoprofil">
             <div class="row">

@@ -46,7 +46,6 @@
                     <form method="POST" action="/admintailor/{{ $tailor->id }}">
                         @method('patch')
                         @csrf
-
                         <!-- NAMA -->
                         <div class="form-group">
                             <label for="tailor_name" class="col-form-label text-md-left">{{ __('Name') }}</label>

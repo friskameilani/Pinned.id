@@ -6,7 +6,6 @@
 
     <!-- Content Wrapper. Contains page content -->
     
-
     <main>
     <!-- SEARCH BAR -->
     <section class="searchbarr" id="searchbarr">

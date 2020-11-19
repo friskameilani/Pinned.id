@@ -106,4 +106,3 @@ Route::post('history/{id} ', 'HistoryController@destroy')->name('history.destroy
     Route::get('/adminorder', function () {
         return view('admin/order/view');
     });
-
