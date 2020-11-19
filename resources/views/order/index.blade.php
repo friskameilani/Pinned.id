@@ -17,7 +17,6 @@
         <div class="col-md-12 mt-1">
             <div class="card">
                 <div class="card-body">
-                    <div class="row">
                         <div class="col-md-6">
                             <img src="{{ url('uploads') }}/{{ $product->product_image }}" class="rounded mx-auto d-block" width="100%" alt=""> 
                         </div>
@@ -74,16 +73,13 @@
                                             <td>:</td>
                                             <td>
                                                 <textarea id="notes" type="text" name="notes" class="form-control" rows="4"> </textarea>
-                                            </td>
-                                            
+                                            </td>   
                                         </tr>
-
-                                        
                                         <button type="submit" class="btn btn-primary mt-2"><i class="fa fa-shopping-cart"></i> Masukkan Keranjang</button>
                                     </tbody>
                                 </form>   
                             </table>
-                        </div>
+                       
                     </div>
                 </div>
             </div>

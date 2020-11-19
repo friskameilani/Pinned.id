@@ -34,6 +34,10 @@ Route::get('profile', 'ProfileController@index');
 Route::get('profile/edit', 'ProfileController@edit');
 Route::post('profile/edit', 'ProfileController@update');
 
+Route::get('/confirm_payment', 'PaymentController@index');
+Route::post('/confirm_payment', 'PaymentController@create');
+
+Route::get('/faq', 'FAQController@index')->name('faq');
 
 Route::get('history', 'HistoryController@index');
 Route::get('history/{id} ', 'HistoryController@detail');

@@ -27,7 +27,7 @@
                                     <tr>
                                         <td>Harga</td>
                                         <td>:</td>
-                                        <td>Rp. {{ $product->product_price }}</td>
+                                        <td>Rp. {{ number_format($product->product_price) }}</td>
                                     </tr>
 
                                     <tr>
@@ -37,21 +37,16 @@
                                     </tr>
                                    
                                     <tr>
-                                        <td>Nama Penjahit</td>
+                                        <td>Penjahit</td>
                                         <td>:</td>
                                         <td>{{ $product->tailor->tailor_name }}</td>
                                         <td>{{ $product->tailor->tailor_address }}</td>
                                         <td>{{ $product->tailor->tailor_contact }}</td>
                                     </tr>
                                     <br>
-                                    <a href ="{{ url('order') }}/{{ $product->id }}" > Pesan
-                                           </a>
-                                    
-
-                                    
-                                   
                                 </tbody>
                             </table>
+                            <a class ="btn btn-primary" href ="{{ url('order') }}/{{ $product->id }}" > Pesan</a>
                         </div>
                     </div>
                 </div>
