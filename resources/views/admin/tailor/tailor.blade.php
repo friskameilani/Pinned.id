@@ -6,7 +6,6 @@
 
     <!-- Content Wrapper. Contains page content -->
     
-
     <main>
     <!-- SEARCH BAR -->
     <section class="searchbarr" id="searchbarr">
@@ -49,11 +48,12 @@
 
     <!-- CARD PENJAHIT --> 
     <section class="tailor" id="tailor" style="padding-bottom: 50px;">
+    @foreach( $tailors as $tailors)
         
             <div class="row">
                 <!-- CARD KIRI -->
                 <div class="col-md-4 offset-md-2">
-                    <a href=#integratebackenddisini>
+                    <a href="/admintailor/{{ $tailors->id }}/edit">
                     <div class="card rounded" style="width: 350px; height: 140px; background-color: #A06357">
                         <div class="row">
                             <div class="col-md-4" style="padding-left: 40px; padding-top: 10px; max-height: 100px; font-size: 80px; color: white;">
@@ -61,87 +61,17 @@
                             </div>
                             <div class="col-md-8">
                                 <div class="card-body" style="color: white; padding-top: 28px;">
-                                <h4 class="card-title">Suprapto</h4>
-                                <p class="card-text text-height-half">Tangerang, Banten</p>
-                                <p class="card-text font-weight-bold" style="font-size: 20px;">23 produk</p>
+                                <h4 class="card-title">{{ $tailors->tailor_name }}</h4>
+                                <p class="card-text text-height-half">{{ $tailors->tailor_address }}</p>
+                                <p class="card-text font-weight-bold" style="font-size: 20px;">{{ $tailors->tailor_desc }}</p>
                             </div>
                         </div>
                     </div>
                     </a>
                 </div>
             </div>
-        
-            <div class="row"> 
-                <!-- CARD KIRI -->
-                <div class="col-md-4 offset-md-3">
-                    <a href=#integratebackenddisini>
-                    <div class="card rounded" style="width: 350px; height: 140px; background-color: #A06357">
-                        <div class="row">
-                            <div class="col-md-4" style="padding-left: 40px; padding-top: 10px; max-height: 100px; font-size: 80px; color: white;">
-                                <i class="text-center fa fa-user-circle"></i>
-                            </div>
-                            <div class="col-md-8">
-                                <div class="card-body" style="color: white; padding-top: 28px;">
-                                <h4 class="card-title">Suprapto</h4>
-                                <p class="card-text text-height-half">Tangerang, Banten</p>
-                                <p class="card-text font-weight-bold" style="font-size: 20px;">23 produk</p>
-                            </div>
-                        </div>
-                    </div>
-                    </a>
-                </div>
-            </div>
-
-            
-        
-    </section>
-
-    <section class="tailor" id="tailor">
-        
-            <div class="row">
-                <!-- CARD KIRI -->
-                <div class="col-md-4 offset-md-2">
-                    <a href=#integratebackenddisini>
-                    <div class="card rounded" style="width: 350px; height: 140px; background-color: #A06357">
-                        <div class="row">
-                            <div class="col-md-4" style="padding-left: 40px; padding-top: 10px; max-height: 100px; font-size: 80px; color: white;">
-                                <i class="text-center fa fa-user-circle"></i>
-                            </div>
-                            <div class="col-md-8">
-                                <div class="card-body" style="color: white; padding-top: 28px;">
-                                <h4 class="card-title">Suprapto</h4>
-                                <p class="card-text text-height-half">Tangerang, Banten</p>
-                                <p class="card-text font-weight-bold" style="font-size: 20px;">23 produk</p>
-                            </div>
-                        </div>
-                    </div>
-                    </a>
-                </div>
-            </div>
-        
-            <div class="row"> 
-                <!-- CARD KIRI -->
-                <div class="col-md-4 offset-md-3">
-                    <a href=#integratebackenddisini>
-                    <div class="card rounded" style="width: 350px; height: 140px; background-color: #A06357">
-                        <div class="row">
-                            <div class="col-md-4" style="padding-left: 40px; padding-top: 10px; max-height: 100px; font-size: 80px; color: white;">
-                                <i class="text-center fa fa-user-circle"></i>
-                            </div>
-                            <div class="col-md-8">
-                                <div class="card-body" style="color: white; padding-top: 28px;">
-                                <h4 class="card-title">Suprapto</h4>
-                                <p class="card-text text-height-half">Tangerang, Banten</p>
-                                <p class="card-text font-weight-bold" style="font-size: 20px;">23 produk</p>
-                            </div>
-                        </div>
-                    </div>
-                    </a>
-                </div>
-            </div>
-
-            
-        
+   
+    @endforeach
     </section>
 
     

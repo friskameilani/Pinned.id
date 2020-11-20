@@ -15,4 +15,8 @@ class Tailor extends Model
     {
         return $this->hasMany('App\Order', 'tailor_id', 'id');
     }
+
+    protected $fillable = [
+        'tailor_name', 'tailor_age', 'tailor_contact', 'tailor_desc', 'tailor_address'
+    ];
 }

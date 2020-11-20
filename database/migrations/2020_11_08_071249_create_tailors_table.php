@@ -17,13 +17,15 @@ class CreateTailorsTable extends Migration
             $table->id();
             $table->string('tailor_name');
             $table->string('tailor_address')->nullable();
+            $table->integer('tailor_age');
+            $table->string('tailor_address');
             $table->string('tailor_desc');
             $table->string('tailor_contact')->nullable();
             $table->timestamps();
         });
     }
 
-    /**
+    /*
      * Reverse the migrations.
      *
      * @return void
