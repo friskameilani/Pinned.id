@@ -15,6 +15,7 @@ class CreateOrdersTable extends Migration
     {
         Schema::create('orders', function (Blueprint $table) {
             $table->id();
+            $table->integer('random_code');
             $table->integer('user_id');
             $table->integer('product_id')->nullable();
             $table->integer('tailor_id')->nullable();
@@ -25,7 +26,7 @@ class CreateOrdersTable extends Migration
             $table->string('size');
             $table->integer('total_price');
             $table->string('design')->nullable();
-            $table->string('notes');
+            $table->string('notes')->nullable();
             $table->date('date');
             $table->string('status'); //buat terkirim, dlam proses atau ngganya
          //   $table->integer('code');

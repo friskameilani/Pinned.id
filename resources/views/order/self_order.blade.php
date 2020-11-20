@@ -17,7 +17,7 @@
                 <div class="card-body">
                     <div class="col-md-12">
                             <table class="table">
-                                <form method="POST" action="{{ url('order') }}" >
+                                <form method="POST" action="{{ url('order') }}" enctype="multipart/form-data">
                                             @csrf
                                     <tbody>
                                     
@@ -49,7 +49,7 @@
                                             <td>Design</td>
                                             <td>:</td>
                                             <td>
-                                                <input id="design" type="text" name="design" class="form-control">
+                                                <input id="design" type="file" name="design" class="form-control">
                                             </td>
                                         </tr>
 

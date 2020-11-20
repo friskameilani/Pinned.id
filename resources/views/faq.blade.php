@@ -16,7 +16,7 @@
                     <div class="card-header" id="heading{{$faq->id}}">
                         <h5 class="mb-0">
                             <button class="btn btn-link" data-toggle="collapse" data-target="#collapse{{$faq->id}}" aria-expanded="true" aria-controls="collapseOne">
-                            {{ $no++ }} {{$faq->ask}}
+                            {{ $no++ }}. {{$faq->ask}}
                             </button>
                         </h5>
                     </div>

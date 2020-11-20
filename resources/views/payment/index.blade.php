@@ -17,7 +17,7 @@
                 <div class="card-body">
                     <div class="col-md-12">
                             <table class="table">
-                                <form method="POST" action="{{ url('confirm_payment') }}" >
+                                <form method="POST" action="{{ url('confirm_payment') }}" enctype="multipart/form-data" >
                                             @csrf
                                     <tbody>
                                     
@@ -48,7 +48,7 @@
                                             <td>Tanggal transfer</td>
                                             <td>:</td>
                                             <td>
-                                                <input id="date" type="text" name="date" class="form-control">
+                                                <input id="date" type="date" name="date" class="form-control">
                                             </td>
                                         </tr>
 
@@ -56,7 +56,7 @@
                                             <td>Bukti Transfer</td>
                                             <td>:</td>
                                             <td>
-                                                <input id="transfer_evidence" type="text" name="transfer_evidence" class="form-control">
+                                                <input id="transfer_evidence" type="file" name="transfer_evidence" class="form-control">
                                             </td>
                                         </tr>
                                         

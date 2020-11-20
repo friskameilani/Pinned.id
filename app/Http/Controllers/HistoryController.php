@@ -26,15 +26,14 @@ class HistoryController extends Controller
     public function destroy($id)
     {
         $order = Order::where('id', $id)->delete();
-    // DB::table('orders')->where('order_id',$id)->delete();
-	return redirect('/history')-> with('success', 'Data berhasil dihapus');
+
+	    return redirect('/history')-> with('success', 'Data berhasil dihapus');
     }
 
     public function detail($id)
     {
-    	$order = Order::where('id', $id)->first();
-    	$order_detail = OrderDetail::where('order_id', $order->id)->get();
-
-     	return view('history.detail', compact('order','order_detail'));
+        $order = Order::where('id', $id)->first();
+        
+     	return view('history.detail', compact('order'));
     }
 }

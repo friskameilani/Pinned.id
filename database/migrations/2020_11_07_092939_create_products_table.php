@@ -18,12 +18,12 @@ class CreateProductsTable extends Migration
             $table->integer('tailor_id');
             $table->string('product_name');
             $table->string('product_price');
-            $table->string('product_size');
-            $table->string('product_desc');
+            $table->string('product_size')->nullable();
+            $table->string('product_desc')->nullable();
             $table->string('product_image');
-            $table->string('product_category');
-            $table->string('product_type');
-            $table->string('product_material');
+            $table->string('product_category')->nullable();
+            $table->string('product_type')->nullable();
+            $table->string('product_material')->nullable();
 
             $table->timestamps();
         });

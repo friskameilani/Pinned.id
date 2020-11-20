@@ -16,9 +16,9 @@ class CreateTailorsTable extends Migration
         Schema::create('tailors', function (Blueprint $table) {
             $table->id();
             $table->string('tailor_name');
-            $table->string('tailor_address');
+            $table->string('tailor_address')->nullable();
             $table->string('tailor_desc');
-            $table->string('tailor_contact');
+            $table->string('tailor_contact')->nullable();
             $table->timestamps();
         });
     }

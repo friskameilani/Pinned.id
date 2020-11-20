@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use App\Payment;
 use App\User;
 use Auth;
+use File;
+
 
 class PaymentController extends Controller
 {   
@@ -28,6 +30,17 @@ class PaymentController extends Controller
     public function create(Request $request) //Ini user create payments
     {
 
+        $this->validate($request, [
+			'date' => 'required|date_format:Y-m-d',
+		]);
+        
+        if($request->hasFile('transfer_evidence'))
+        {
+            $dest = "uploads/payments";
+            $filename = $request->file('transfer_evidence');
+            $filename-> move($dest, $filename->getClientOriginalName());
+        }
+
         $payment = new Payment;
         $payment->user_id = Auth::user()->id;
         $payment->order_id = $request->order_id;
@@ -39,4 +52,16 @@ class PaymentController extends Controller
 
         return redirect('/'); //ntar ganti pake notif berhasil
     }
+
+    public function destroy($id) //Ini delete buat di admin
+    {
+        $payments = Payment::where('id', $id);
+        $image = app_path("uploads/payments/{$payments->transfer_evidence}");
+        if (File::exists($image)) 
+        {
+            File::delete($image);
+        }
+        $payments->delete();
+    }
+
 }

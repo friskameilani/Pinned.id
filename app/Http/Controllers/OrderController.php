@@ -30,6 +30,10 @@ class OrderController extends Controller
 
     public function ordering(Request $request, $id)
     {	
+		$this->validate($request, [
+			'qty' => 'required|numeric',
+		]);
+
 		$product = Product::where('id', $id)->first();
 		$tailor = Tailor::where('id', $product->tailor_id)->first();
     	$date = Carbon::now();
@@ -41,6 +45,7 @@ class OrderController extends Controller
     	
     		$order = new Order;
 			$order->user_id = Auth::user()->id;
+			$order->random_code = mt_rand(10000000,99999999);
 			$order->product_id = $product->id;
 			$order->tailor_id = $tailor->id;
 			$order->ordered_name = $request->ordered_name;
@@ -60,15 +65,27 @@ class OrderController extends Controller
 	
 	public function self_ordering(Request $request)
     {	
-    	$date = Carbon::now();
-
+		$date = Carbon::now();
+		
     	//cek validasi
     	// $cek_order = Order::where('user_id', Auth::user()->id)->where('status',0)->first();
     	//simpan ke database order
-    	// if(empty($cek_order))
+		// if(empty($cek_order))
+		$this->validate($request, [
+			'design' => 'mimes:jpeg,png,bmp,tiff |max:4096',
+			'qty' => 'required|numeric',
+			// 'phone_number' => ['required', 'string', 'min:11', 'regex:/^(^\+62\s?|^0)(\d{3,4}-?){2}\d{3,4}$/']
+		]);
+		if($request->hasFile('design'))
+        {
+            $dest = "uploads/self_design";
+            $filename = $request->file('design');
+            $filename-> move($dest, $filename->getClientOriginalName());
+        }
     	
     		$order = new Order;
 			$order->user_id = Auth::user()->id;
+			$order->random_code = mt_rand(10000000,99999999);
 			$order->tailor_id = $request->tailor_id;
 			$order->ordered_name = $request->ordered_name;
 			$order->ordered_address = $request->ordered_address;

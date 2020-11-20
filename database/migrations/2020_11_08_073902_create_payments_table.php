@@ -18,9 +18,9 @@ class CreatePaymentsTable extends Migration
             $table->integer('user_id');
             $table->integer('order_id');
             $table->string('account_name');
-            $table->string('date'); //ganti string bentar buat test
+            $table->string('date');
             $table->string('bill_amount');
-            $table->string('transfer_evidence'); //harusnya image //ntar diubah smua yg image
+            $table->string('transfer_evidence'); 
             $table->timestamps();
         });
     }
