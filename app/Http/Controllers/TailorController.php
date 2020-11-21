@@ -6,6 +6,11 @@ use Illuminate\Http\Request;
 
 class TailorController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth:admin');
+    }
+
     public function index()
     {
         $tailors = Tailor::all();

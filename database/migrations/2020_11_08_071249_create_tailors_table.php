@@ -18,7 +18,6 @@ class CreateTailorsTable extends Migration
             $table->string('tailor_name');
             $table->string('tailor_address')->nullable();
             $table->integer('tailor_age');
-            $table->string('tailor_address');
             $table->string('tailor_desc');
             $table->string('tailor_contact')->nullable();
             $table->timestamps();

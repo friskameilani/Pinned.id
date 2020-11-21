@@ -75,8 +75,13 @@
                 <li class="nav-item">
                     <a class="nav-link" href="{{ url('/adminpayment') }}">Payment</a>
                 </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ url('admin/logout') }}">Logout</a>
+                </li>
                 </ul>
             </div>
+            
         </nav>
 
     <main class="py-4">

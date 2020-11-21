@@ -46,55 +46,30 @@ Route::post('history/{id} ', 'HistoryController@destroy')->name('history.destroy
 
 
 /* ---------- Admin --------------  */
+    /* ---------- Login/Logout --------------  */
+    Route::get('admin/login','Auth\AdminLoginController@showLoginForm')->name('admin.login');
+    Route::post('admin/login', 'Auth\AdminLoginController@login')->name('admin.login.submit');
+    Route::get('admin/logout/', 'Auth\AdminLoginController@logout')->name('admin.logout');
 
+    
     /* ---------- Dashboard --------------  */
-    Route::get('/admindashboard', function () {
-        return view('admin/dashboard');
-    });
+    Route::get('/admin', 'Auth\AdminController@index')->name('admin.dashboard');
 
-    /* ---------- Catalog --------------  */
-    Route::get('/admincatalog', function () {
-        return view('admin/catalog/catalog');
-    });
 
-    Route::get('/adminviewcatalog', function () {
-        return view('admin/catalog/view');
-    });
+    /* ---------- Catalog --------------  */ 
+    Route::get('/admincatalog', 'AdminController@catalog'); //Ini file catalognya belum ada
+    Route::get('/adminviewcatalog', 'AdminController@catalogview'); //Ini file catalognya juga belum ada
+    Route::get('/admineditcatalog', 'AdminController@catalogedit');
+    Route::get('/adminaddcatalog', 'AdminController@catalogadd');
+    Route::get('/adminaddcatalogsuccess', 'AdminController@catalogaddsuccess'); //Ini file catalognya juga belum ada
 
-    Route::get('/admineditcatalog', function () {
-        return view('admin/catalog/edit');
-    });
-
-    Route::get('/adminaddcatalog', function () {
-        return view('admin/catalog/add');
-    });
-
-    Route::get('/adminaddcatalogsuccess', function () {
-        return view('admin/catalog/addsuccess');
-    });
 
     /* ---------- Tailor --------------  */
-    // Route::get('/admintailor', function () {
-    //     return view('admin/tailor/tailor');
-    // });
     Route::get('/admintailor', 'TailorController@index');
-    
-
-    Route::get('/adminviewtailor', function () {
-        return view('admin/tailor/view');
-    });
-
-    // Route::get('/adminedittailor', function () {
-    //     return view('admin/tailor/edit');
-    // });
     Route::get('/admintailor/{tailor}', 'TailorController@showtailor');
     Route::get('/admintailor/{tailor}/edit', 'TailorController@edit');
     Route::patch('/admintailor/{tailor}', 'TailorController@postedit');
     Route::delete('/admintailor/{tailor}', 'TailorController@delete');
-
-    // Route::get('/adminaddtailor', function () {
-    //     return view('admin/tailor/add');
-    // });
     Route::get('/adminaddtailor', 'TailorController@createtailor');
     Route::post('/adminaddtailor', 'TailorController@posttailor');
 
@@ -103,6 +78,5 @@ Route::post('history/{id} ', 'HistoryController@destroy')->name('history.destroy
     });
 
     /* ---------- Order --------------  */
-    Route::get('/adminorder', function () {
-        return view('admin/order/view');
-    });
+    Route::get('//adminorder', 'AdminController@order');
+    
