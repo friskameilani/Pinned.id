@@ -43,7 +43,7 @@ Route::get('history', 'HistoryController@index');
 Route::get('history/{id} ', 'HistoryController@detail');
 Route::post('history/{id} ', 'HistoryController@destroy')->name('history.destroy');
 
-
+Route::get('/tailor/{tailor}', 'TailorController@showtailor')->name('tailor.show');
 
 /* ---------- Admin --------------  */
 

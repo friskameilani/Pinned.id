@@ -17,7 +17,6 @@
   </div>
 </section>
 
-
 <div class="row" style="margin: 20px">
   @foreach($products as $product)
   <div class="col-6 col-md-4 col-lg-3 col-xl-2">
@@ -26,7 +25,7 @@
       <div class="card-body">
         <h5 class="card-title">{{ $product->product_name }}</h5>
         <p class="card-text">
-            <strong> Rp. {{ number_format($product->product_price)}} </strong><br>
+            <strong> Rp {{ number_format($product->product_price)}} </strong><br>
         </p>
         <a href="{{ url('product') }}/{{ $product->id }}" class="btn btn-primary btn-block"> Lihat</a>
       </div>
@@ -34,10 +33,5 @@
   </div>
   @endforeach
 </div>
-
-
-
-  
-
 
 @endsection

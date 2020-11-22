@@ -25,7 +25,7 @@ class TailorController extends Controller
 
     public function showtailor(Tailor $tailor)
     {
-        return view('', compact('tailor'));
+        return view('tailor.index', compact('tailor'));
     }
     
     public function edit(Tailor $tailor)

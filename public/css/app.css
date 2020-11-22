@@ -11088,3 +11088,21 @@ h5 .btn-link{
   font-weight: bold;
   font-size: 18px;
 }
+
+body .body-inner{
+  padding: 0px;
+  margin: 0px;
+}
+
+.product-price {
+  width: 26%;
+  float: left;
+  margin-bottom: 20px;
+}
+
+.product-price ins {
+  color: #A06357;
+  font-size: 20px;
+  font-weight: 600;
+  text-decoration: none; 
+}
