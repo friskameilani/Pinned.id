@@ -96,3 +96,7 @@
     pointer-events: none;
     color: #eee;
 }
+/* Tambahan, menghilangkan browse buttons */
+.card>input { 
+    display: none;
+  }

@@ -57,26 +57,19 @@
                     <a class="nav-link" href="{{ url('/admintailor') }}">Tailor</a>
                 </li>
 
-                <!-- JANGAN LUPA APUS -->
-                <li class="nav-item">
-                    <a class="nav-link" href="{{ url('/admineditcatalog') }}">Edit Catalog</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{{ url('/adminaddcatalog') }}">Add Catalog</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{{ url('/adminedittailor') }}">Edit Tailor</a>
-                </li>
-                <!-- sampe sini -->
-
                 <li class="nav-item">
                     <a class="nav-link" href="{{ url('/adminorder') }}">Order</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="{{ url('/adminpayment') }}">Payment</a>
                 </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ url('admin/logout') }}">Logout</a>
+                </li>
                 </ul>
             </div>
+            
         </nav>
 
     <main class="py-4">

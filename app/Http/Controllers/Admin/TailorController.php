@@ -1,16 +1,13 @@
 <?php
 
-namespace App\Http\Controllers;
-use App\Tailor;
+namespace App\Http\Controllers\Admin;
+
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Tailor;
 
 class TailorController extends Controller
 {
-    public function showtailor(Tailor $tailor)
-    {
-        return view('tailor.index', compact('tailor'));
-    }
-    
     public function __construct()
     {
         $this->middleware('auth:admin');
@@ -29,12 +26,25 @@ class TailorController extends Controller
 
     public function posttailor(Request $request)
     {
+        if($request->hasFile('tailor_photo'))
+        {
+            $dest = "uploads/tailors";
+            $filename = $request->file('tailor_photo');
+            $filename-> move($dest, $filename->getClientOriginalName());
+        }
+
         Tailor::create($request->all());
         return redirect('/admintailor');
     }
 
-    public function edit(Tailor $tailor)
+    public function showtailor(Tailor $tailor)
     {
+        return view('admin.tailor.view', compact('tailor'));
+    }
+    
+    public function edit($id)
+    {
+        $tailor = Tailor::where('id', $id)->first();
         return view('admin.tailor.edit', compact('tailor'));
     }
 
@@ -52,8 +62,9 @@ class TailorController extends Controller
         return redirect('/admintailor');
     }
 
-    public function delete(Tailor $tailor)
+    public function delete($id)
     {
-        return redirect();
+        $tailor = Tailor::where('id', $id)->delete();
+	    return redirect('/admintailor');
     }
 }

@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 use App\Product;
 use App\Order;
-use App\OrderDetail;
 use App\Tailor;
 use Auth;
 use Carbon\Carbon;
@@ -16,19 +15,19 @@ class OrderController extends Controller
         $this->middleware('auth');
     }
 
-    public function index($id)
+    public function index($id) //User
     {
         $product = Product::where('id', $id)->first();
 
         return view('order.index', compact('product'));
 	}
 
-	public function self_order()
+	public function self_order() //User
     {
         return view('order.self_order');
     }
 
-    public function ordering(Request $request, $id)
+    public function ordering(Request $request, $id) //User
     {	
 		$this->validate($request, [
 			'qty' => 'required|numeric',
@@ -39,7 +38,7 @@ class OrderController extends Controller
     	$date = Carbon::now();
 
     	//cek validasi
-    	$cek_order = Order::where('user_id', Auth::user()->id)->where('status',0)->first();
+    	// $cek_order = Order::where('user_id', Auth::user()->id)->where('status',0)->first();
     	//simpan ke database order
     	// if(empty($cek_order))
     	
@@ -58,12 +57,11 @@ class OrderController extends Controller
 	    	$order->status = 0;
 			$order->total_price = $product->product_price * $order->qty;
 			$order->save();
-			
-          //  $order->kode = mt_rand(100, 999);
+
     	return redirect('/');
 	}
 	
-	public function self_ordering(Request $request)
+	public function self_ordering(Request $request) //User
     {	
 		$date = Carbon::now();
 		
@@ -101,7 +99,6 @@ class OrderController extends Controller
 			$order->save();
 
 		return redirect('/');
-
 	}
 
 }

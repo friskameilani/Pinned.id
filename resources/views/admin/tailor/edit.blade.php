@@ -55,25 +55,25 @@
                         <!-- AGE -->
                         <div class="form-group">
                             <label for="category" class="col-form-label text-md-left">{{ __('Age') }}</label>
-                            <input type="number" id="replyNumber" min="18" max="50" class="form-control @error('age') is-invalid @enderror border border-dark" name="tailor_age" value="{{ $tailor->tailor_age }}" required="" style="width: 492px;" ></textarea>
+                            <input type="number" id="replyNumber" min="18" max="50" class="form-control @error('tailor_age') is-invalid @enderror border border-dark" name="tailor_age" value="{{ $tailor->tailor_age }}" required="" style="width: 492px;" ></textarea>
                         </div>
 
                         <!-- LOCATION -->
                         <div class="form-group">
                             <label for="type" class="col-form-label text-md-left">{{ __('Location') }}</label>
-                            <input id="location" class="form-control @error('type') is-invalid @enderror border border-dark" name="tailor_address" value="{{ $tailor->tailor_address }}" required="" style="width: 492px;"></textarea>
+                            <input id="location" class="form-control @error('tailor_address') is-invalid @enderror border border-dark" name="tailor_address" value="{{ $tailor->tailor_address }}" required="" style="width: 492px;"></textarea>
                         </div>
 
                         <!-- PHONE NUMBER -->
                         <div class="form-group">
                             <label for="material" class="col-form-label text-md-left">{{ __('Phone Number') }}</label>
-                            <input type="number" id="replyNumber" class="form-control @error('material') is-invalid @enderror border border-dark" name="tailor_contact" value="{{ $tailor->tailor_contact }}" required="" style="width: 492px;" ></textarea>
+                            <input type="number" id="replyNumber" class="form-control @error('tailor_contact') is-invalid @enderror border border-dark" name="tailor_contact" value="{{ $tailor->tailor_contact }}" required="" style="width: 492px;" ></textarea>
                         </div>
 
                         <!-- DESCRIPTION -->
                         <div class="form-group">
                             <label for="description" class="col-form-label text-md-left">{{ __('Description') }}</label>
-                            <textarea class="form-control @error('address') is-invalid @enderror border border-dark" name="tailor_desc" required="" style="width: 492px;"></textarea>
+                            <textarea class="form-control @error('tailor_desc') is-invalid @enderror border border-dark" name="tailor_desc" style="width: 492px;">{{ $tailor->tailor_desc }}</textarea>
                         </div>
 
                         <!-- Save Button -->
