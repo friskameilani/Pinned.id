@@ -6,14 +6,14 @@ use Illuminate\Http\Request;
 
 class TailorController extends Controller
 {
+    // public function __construct()
+    // {
+    //     $this->middleware('auth:admin');
+    // }
+
     public function showtailor(Tailor $tailor)
     {
         return view('tailor.index', compact('tailor'));
-    }
-    
-    public function __construct()
-    {
-        $this->middleware('auth:admin');
     }
 
     public function index()
