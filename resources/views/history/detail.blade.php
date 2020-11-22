@@ -10,7 +10,7 @@
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item"><a href="{{ url('/') }}">Home</a></li>
                     <li class="breadcrumb-item"><a href="{{ url('/history') }}">Riwayat Pemesanan</a></li>
-                    <li class="breadcrumb-item active" aria-current="page">Pesanan ke {{$order->id}}</li>
+                    <li class="breadcrumb-item active" aria-current="page">Pesanan</li>
                 </ol>
             </nav>
         </div>

@@ -25,7 +25,7 @@
               </div>
               <div class="col-md-8">
                 <div class="card-body">
-                  <h3 class="card-title">200</h3>
+                  <h3 class="card-title">{{$total_tailor}}</h3>
                   <p class="card-text">Registered Tailors</p>
                 </div>
               </div>
@@ -41,7 +41,7 @@
               </div>
               <div class="col-md-8">
                 <div class="card-body">
-                  <h3 class="card-title">476</h3>
+                  <h3 class="card-title">{{$total_product}}</h3>
                   <p class="card-text">Registered Items</p>
                 </div>
               </div>

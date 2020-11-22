@@ -51,7 +51,7 @@
 
                     <!-- NUMPANG BENTAR TAMBAH MENU ADMIN SOALNYA BELOM ADA USER ADMIN -->
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ url('/admindashboard') }}">Admin</a>
+                        <a class="nav-link" href="{{ url('/admin') }}">Admin</a>
                     </li>
                  </ul>
 

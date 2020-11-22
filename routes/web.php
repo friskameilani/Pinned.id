@@ -57,26 +57,22 @@ Route::post('history/{id} ', 'HistoryController@destroy')->name('history.destroy
 
 
     /* ---------- Catalog --------------  */ 
-    Route::get('/admincatalog', 'AdminController@catalog'); //Ini file catalognya belum ada
-    Route::get('/adminviewcatalog', 'AdminController@catalogview'); //Ini file catalognya juga belum ada
-    Route::get('/admineditcatalog', 'AdminController@catalogedit');
-    Route::get('/adminaddcatalog', 'AdminController@catalogadd');
-    Route::get('/adminaddcatalogsuccess', 'AdminController@catalogaddsuccess'); //Ini file catalognya juga belum ada
+    Route::get('/admincatalog', 'Admin\ProductController@catalog'); //Ini file catalognya belum ada
+    Route::get('/adminviewcatalog', 'Admin\ProductController@catalogview'); //Ini file catalognya juga belum ada
+    Route::get('/admineditcatalog', 'Admin\ProductController@catalogedit');
+    Route::get('/adminaddcatalog', 'Admin\ProductController@catalogadd');
+    Route::get('/adminaddcatalogsuccess', 'Admin\ProductController@catalogaddsuccess'); //Ini file catalognya juga belum ada
 
 
     /* ---------- Tailor --------------  */
-    Route::get('/admintailor', 'TailorController@index');
-    Route::get('/admintailor/{tailor}', 'TailorController@showtailor');
-    Route::get('/admintailor/{tailor}/edit', 'TailorController@edit');
-    Route::patch('/admintailor/{tailor}', 'TailorController@postedit');
-    Route::delete('/admintailor/{tailor}', 'TailorController@delete');
-    Route::get('/adminaddtailor', 'TailorController@createtailor');
-    Route::post('/adminaddtailor', 'TailorController@posttailor');
-
-    Route::get('/adminaddtailorsuccess', function () {
-        return view('admin/tailor/addsuccess');
-    });
+    Route::get('/admintailor', 'Admin\TailorController@index');
+    Route::get('/admintailor/{tailor}', 'Admin\TailorController@showtailor');
+    Route::get('/admintailor/{tailor}/edit', 'Admin\TailorController@edit');
+    Route::patch('/admintailor/{tailor}', 'Admin\TailorController@postedit');
+    Route::delete('/admintailor/{tailor}', 'Admin\TailorController@delete');
+    Route::get('/adminaddtailor', 'Admin\TailorController@createtailor');
+    Route::post('/adminaddtailor', 'Admin\TailorController@posttailor');
 
     /* ---------- Order --------------  */
-    Route::get('//adminorder', 'AdminController@order');
+    Route::get('//adminorder', 'Admin\OrderController@allorder');
     

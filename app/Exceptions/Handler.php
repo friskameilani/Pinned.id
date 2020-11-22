@@ -52,10 +52,14 @@ class Handler extends ExceptionHandler
      * @throws \Throwable
      */
     public function render($request, Throwable $exception)
-    {
-        return parent::render($request, $exception);
+{
+    if ($exception instanceof CustomException) {
+        return response()->view('errors.custom', [], 500);
     }
 
+    return parent::render($request, $exception);
+}
+    
     protected function unauthenticated($request, AuthenticationException $exception)
     {
         if ($request->expectsJson()) {
