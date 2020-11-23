@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 use App\Product;
 use App\Order;
 use App\User;
-use App\OrderDetail;
 use Auth;
 use DB;
 use Illuminate\Http\Request;
