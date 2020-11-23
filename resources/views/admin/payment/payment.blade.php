@@ -33,7 +33,7 @@
                 <tr>
                   <th ><center>#</center></th>
                   <th ><center>Order ID</center></th>
-                  <th ><center>Tanggal Pemesanan</center></th>
+                  <!-- <th ><center>Tanggal Pemesanan</center></th> -->
                   <th ><center>Nama</center></th>
                   <th ><center>Jumlah Pembayaran</center></th>
                   <th ><center>Tanggal Pembayaran</center></th>
@@ -43,27 +43,28 @@
 
 
                 <tbody>
-
+                @foreach( $payments as $payments )
                 <tr>
-                  <td>1</td>
-                  <td>#12345</td>
+                  <td>{{ $loop->iteration }}</td>
+                  <td>{{ $payments->order_id }}</td>
 
                   <!-- DISINI FORMATNYA DD-MM-YYYY - jam:menit -->
-                  <td>18-07-2020 - 20:53</td>                  
+                  <!-- <td>{{ $payments->date }}</td>                   -->
                   <!-- -->
 
-                  <td>Rachel Vennya</td>
+                  <td>{{ $payments->account_name }}</td>
 
                   <!-- DISINI FORMATNYA Rp sekian -->
-                  <td>Rp 450.000</td>                  
+                  <td>Rp {{ $payments->bill_amount }}</td>                  
                   <!-- -->
 
                   <!-- DISINI FORMATNYA DD-MM-YYYY - jam:menit -->
-                  <td>19-07-2020 - 16:43</td>                  
+                  <td>{{ $payments->date }}</td>                  
                   <!-- -->
 
                   <td><a href="/adminpaymentdetail" type="button" class="btn btn-block btn-secondary btn-sm">Detail</a></td>
                 </tr>
+                @endforeach
 
                 </tbody>
                 <tfoot>

@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Payment;
 
 class PaymentController extends Controller
 {
@@ -15,7 +16,7 @@ class PaymentController extends Controller
     public function allpayments() //Menampilkan semua order yang ada di page
     {
         $payments = Payment::all();
-        return view('admin.payment', compact('payments')); //Nanti diganti menyesuaikan nama file bladeny
+        return view('admin.payment.payment', compact('payments')); //Nanti diganti menyesuaikan nama file bladeny
 	}
 	
 	public function payment_detail($id) //Menampilkan detail order persatuan

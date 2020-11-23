@@ -49,7 +49,15 @@
                   <td>{{ $orders->random_code }}</td>
                   
                   <!-- DISINI TAMBAHIN KONDISI COMPLETED, CANCELLED, PENDING -->
-                  <td>{{ $orders->status }}</td>
+                  <td>
+                    @if ( $orders->status == 0 )
+                      Processing
+                    @elseif ( $orders->status == 1)
+                      Completed
+                    @else
+                      Cancelled
+                    @endif
+                  </td>
                   <!-- -->
 
                   <td>{{ $orders->ordered_name }}</td>

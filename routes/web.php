@@ -78,6 +78,4 @@ Route::get('/tailor/{tailor}', 'TailorController@showtailor')->name('tailor.show
     
 
     /* ---------- Payment --------------  */
-    Route::get('/adminpayment', function () {
-        return view('/admin/payment/payment');
-    });
+    Route::get('/adminpayment', 'Admin\PaymentController@allpayments');
