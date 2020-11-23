@@ -66,7 +66,7 @@ Route::get('/tailor/{tailor}', 'TailorController@showtailor')->name('tailor.show
 
     /* ---------- Tailor --------------  */
     Route::get('/admintailor', 'Admin\TailorController@index');
-    Route::get('/admintailor/{tailor}', 'Admin\TailorController@showtailor');
+    Route::get('/admintailor/{tailor}', 'Admin\TailorController@showtailor'); //ini file blm ada
     Route::get('/admintailor/{tailor}/edit', 'Admin\TailorController@edit');
     Route::patch('/admintailor/{tailor}', 'Admin\TailorController@postedit');
     Route::delete('/admintailor/{tailor}', 'Admin\TailorController@delete');
