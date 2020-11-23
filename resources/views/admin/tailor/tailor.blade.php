@@ -46,35 +46,91 @@
     </section>
     <br></br>
 
-    <!-- CARD PENJAHIT --> 
-    <section class="tailor" id="tailor" style="padding-bottom: 50px;">
-    @foreach( $tailors as $tailors)
-        
-            <div class="row">
-                <!-- CARD KIRI -->
-                <div class="col-md-4 offset-md-2">
-                    <a href="/admintailor/{{ $tailors->id }}/edit">
-                    <div class="card rounded" style="width: 350px; height: 140px; background-color: #A06357">
-                        <div class="row">
-                            <div class="col-md-4" style="padding-left: 40px; padding-top: 10px; max-height: 100px; font-size: 80px; color: white;">
-                                <i class="text-center fa fa-user-circle"></i>
-                            </div>
-                            <div class="col-md-8">
-                                <div class="card-body" style="color: white; padding-top: 28px;">
-                                <h4 class="card-title">{{ $tailors->tailor_name }}</h4>
-                                <p class="card-text text-height-half">{{ $tailors->tailor_address }}</p>
-                                <p class="card-text font-weight-bold" style="font-size: 20px;">{{ $tailors->tailor_desc }}</p>
-                            </div>
-                        </div>
-                    </div>
-                    </a>
-                </div>
-            </div>
-   
-    @endforeach
-    </section>
+    <!-- Main content -->
+    <section class="content">
+      <div class="row offset-md-1">
+        <div class="col-md-11">
 
-    
-    </main>
+          <!-- /.box -->
+            <div class="box-body table-responsive">
+              <table id="example1" class="table table-bordered table-striped">
+                <thead>
+                <tr>
+                  <th ><center>Kode Penjahit</center></th>
+                  <th ><center>Nama</center></th>
+                  <th ><center>Umur</center></th>
+                  <th ><center>Asal Kota</center></th>
+                  <th ><center>Asal Provinsi</center></th>
+                  <th ><center>Jumlah Produk</center></th>
+                  <th ><center>Aksi</center></th>
+                </tr>
+                </thead>
+
+
+                <tbody>
+
+                <tr>
+                  <td>94JF93</td>
+                  <td><a href="/adminviewtailor">Muhammad Suprapto Hakim</a></td>
+                  <td>55</td>
+                  <td>Tangerang</td>
+                  <td>Banten</td>                  
+                  <td>23</td>
+                  <td><a href="/adminedittailor" type="button" class="btn btn-block btn-primary btn-sm">Edit</a>
+                  <a type="button" class="btn btn-block btn-danger btn-sm delete" data-id="#deletetailor" data-toggle="modal" data-target="#deletetailor" >Delete</a></td>
+                </tr>
+
+                </tbody>
+                <tfoot>
+                </tfoot>
+              </table>
+            </div>
+            <!-- /.box-body -->
+          </div>
+          <!-- /.box -->
+        </div>
+        <!-- /.col -->
+      </div>
+      <!-- /.row -->
+    </section>
+    <!-- /.content -->
+  </div>
+  <!-- /.content-wrapper -->
+
+
+  <!-- Pop Up for Delete Confirmation -->
+  <!-- Modal popup -->
+
+  <div class="modal fade" id="deletetailor">
+       <div class="modal-dialog">
+  <!-- Modal Content -->
+            <div class="modal-content">
+              <div class="modal-header">
+                <button  type="button" data-dismiss="modal" class="close">&times;</button>
+                <h3 class="modal-title">Konfirmasi Penghapusan</h3>
+              </div>
+              <form action="deletetailor" method="POST" id="deleteForm">
+                {{ csrf_field() }}
+                <!-- {{ method_field('DELETE') }} -->
+
+                <div class="modal-body">
+
+                    <h4> Setelah dihapus data akan benar-benar hilang. </h4>
+                    <h4> Apakah tetap ingin melanjutkan? </h4>
+
+                    <!-- <input type="hidden" name="_method" value="DELETE"> -->
+                    <input type="hidden" name="tailor_id" id="tailor_id" value="">
+
+                </div>
+
+                <div class="modal-footer">
+                  <button type="submit" class="btn btn-primary"> Hapus </button>
+                  <button type="button" class="btn btn-default"  data-dismiss="modal">Batal</button>
+                </div>
+
+              </form>
+            </div>
+        </div>
 
 @endsection
+
