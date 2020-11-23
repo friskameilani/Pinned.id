@@ -59,27 +59,27 @@
                   <th ><center>Kode Penjahit</center></th>
                   <th ><center>Nama</center></th>
                   <th ><center>Umur</center></th>
-                  <th ><center>Asal Kota</center></th>
-                  <th ><center>Asal Provinsi</center></th>
+                  <th ><center>Alamat</center></th>
                   <th ><center>Jumlah Produk</center></th>
+                  <th ><center>Deskripsi</center></th>
                   <th ><center>Aksi</center></th>
                 </tr>
                 </thead>
 
 
                 <tbody>
-
+                @foreach($tailors as $tailors)
                 <tr>
-                  <td>94JF93</td>
-                  <td><a href="/adminviewtailor">Muhammad Suprapto Hakim</a></td>
-                  <td>55</td>
-                  <td>Tangerang</td>
-                  <td>Banten</td>                  
-                  <td>23</td>
-                  <td><a href="/adminedittailor" type="button" class="btn btn-block btn-primary btn-sm">Edit</a>
+                  <td>{{ $tailors->id }}</td>
+                  <td><a href="#">{{ $tailors->tailor_name }}</a></td>
+                  <td>{{ $tailors->tailor_age }}</td>
+                  <td>{{ $tailors->tailor_address }}</td>                 
+                  <td>  </td>
+                  <td>{{ $tailors->tailor_desc }}</td>
+                  <td><a href="/admintailor/{{ $tailors->id }}/edit" type="button" class="btn btn-block btn-primary btn-sm">Edit</a>
                   <a type="button" class="btn btn-block btn-danger btn-sm delete" data-id="#deletetailor" data-toggle="modal" data-target="#deletetailor" >Delete</a></td>
                 </tr>
-
+                @endforeach
                 </tbody>
                 <tfoot>
                 </tfoot>
@@ -109,9 +109,9 @@
                 <button  type="button" data-dismiss="modal" class="close">&times;</button>
                 <h3 class="modal-title">Konfirmasi Penghapusan</h3>
               </div>
-              <form action="deletetailor" method="POST" id="deleteForm">
-                {{ csrf_field() }}
-                <!-- {{ method_field('DELETE') }} -->
+              <form action="/admintailor/{{ $tailors->id }}" method="POST" id="deleteForm">
+                @csrf
+                @method('delete')
 
                 <div class="modal-body">
 

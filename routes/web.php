@@ -74,7 +74,7 @@ Route::get('/tailor/{tailor}', 'TailorController@showtailor')->name('tailor.show
     Route::post('/adminaddtailor', 'Admin\TailorController@posttailor');
 
     /* ---------- Order --------------  */
-    Route::get('//adminorder', 'Admin\OrderController@allorder');
+    Route::get('/adminorder', 'Admin\OrderController@allorder');
     
 
     /* ---------- Payment --------------  */

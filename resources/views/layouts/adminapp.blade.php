@@ -48,7 +48,7 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
                 <li class="nav-item active">
-                    <a class="nav-link" href="{{ url('/admindashboard') }}">Home</a>
+                    <a class="nav-link" href="{{ url('/admin') }}">Home</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="{{ url('/admincatalog') }}">Catalog</a>

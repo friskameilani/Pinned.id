@@ -43,27 +43,28 @@
 
 
                 <tbody>
-
+                @foreach($orders as $orders)
                 <tr>
-                  <td>1</td>
-                  <td>#12345</td>
+                  <td>{{ $loop->iteration }}</td>
+                  <td>{{ $orders->random_code }}</td>
                   
                   <!-- DISINI TAMBAHIN KONDISI COMPLETED, CANCELLED, PENDING -->
-                  <td>Completed</td>
+                  <td>{{ $orders->status }}</td>
                   <!-- -->
 
-                  <td>Rachel Vennya</td>
+                  <td>{{ $orders->ordered_name }}</td>
 
                   <!-- DISINI FORMATNYA DD-MM-YYYY - jam:menit -->
-                  <td>18-07-2020 - 20:53</td>                  
+                  <td>{{ $orders->date }}</td>                  
                   <!-- -->
 
                   <!-- DISINI KONDISI PAID/UNPAID -->
-                  <td>Paid</td>
+                  <td> </td>
                   <!-- -->
 
                   <td><a href="/adminorderdetail" type="button" class="btn btn-block btn-secondary btn-sm">Detail</a></td>
                 </tr>
+                @endforeach
 
                 </tbody>
                 <tfoot>

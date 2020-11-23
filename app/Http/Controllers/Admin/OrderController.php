@@ -16,7 +16,7 @@ class OrderController extends Controller
     public function allorder() //Menampilkan semua order yang ada di page
     {
         $orders = Order::all();
-        return view('admin/orders', compact('orders')); //Nanti diganti menyesuaikan nama file bladeny
+        return view('admin/order/order', compact('orders')); //Nanti diganti menyesuaikan nama file bladeny
 	}
 	
 	public function order_detail($id) //Menampilkan detail order persatuan
