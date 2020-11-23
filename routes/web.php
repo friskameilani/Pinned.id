@@ -18,6 +18,8 @@ Route::get('/', function () {
 });
 
 Auth::routes();
+Route::get('auth/google', 'Auth\GoogleController@redirectToGoogle');
+Route::get('auth/google/callback', 'Auth\GoogleController@handleGoogleCallback');
 
 Route::get('/', 'HomeController@index')->name('home');
 
