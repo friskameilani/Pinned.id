@@ -58,7 +58,8 @@ class OrderController extends Controller
 			$order->total_price = $product->product_price * $order->qty;
 			$order->save();
 
-    	return redirect('/');
+		return redirect('/detailorder/{{$order->random_code}}'); //ini gimana biar langsung direct ke nomor order deh?
+																// ini kalo manual ketik laman order, bisa kebuka ko
 	}
 	
 	public function self_ordering(Request $request) //User
@@ -100,5 +101,12 @@ class OrderController extends Controller
 
 		return redirect('/');
 	}
+
+	public function showdetailorder($random_code)
+    {
+		$order = Order::where('random_code', $random_code)->get();
+		// $order = Order::where('user_id', Auth::user()->id)->get();
+        return view('order.detail', compact('order'));
+    }
 
 }

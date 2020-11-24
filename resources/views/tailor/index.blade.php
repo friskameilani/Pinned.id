@@ -39,14 +39,15 @@
                             </div>
                         </div>
                     </div>
-                    @foreach($products as $product)
+                    
                     <div class="card mt-3 mb-3">
                         <div class="card-body">
                             <h3>Produk</h3>
                             <div class="row" style="margin-top: 20px">
+                                @foreach($products as $product)
                                 <div class="col-6 col-lg-4 col-xl-3">
                                     <div class="card mb-3">
-                                    <img src= "{{$product->image}}" class="card-img-top" alt="...">
+                                    <img src= "{{$product->product_image}}" class="card-img-top" alt="...">
                                     <div class="card-body">
                                         <h5 class="card-title">{{$product->product_name}}</h5>
                                         <p class="card-text">
@@ -56,10 +57,10 @@
                                     </div>
                                     </div> 
                                 </div>
+                                @endforeach
                             </div>
-                        </div>
-                    </div>
-                    @endforeach
+                        </div>                       
+                    </div>                    
                 </div>
             </div>
         </div>
