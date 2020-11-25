@@ -7,8 +7,16 @@
         <div class="min-vh-100">
             <div class="row justify-content-center" >
                 <div class="col-md-10 mt-4 mb-3">
+
+                    @if (!$order)
+                    <!-- Ini ganti aja jadi page not found -->
+                        <a> Tidak ada page ini </a> 
+                    @elseif ($order->user_id != Auth::user()->id)
+                    <!-- Ini ganti aja jadi page not found -->
+                        <a> Bukan hak anda melihat ini </a> 
+                        
+                    @else
                     <div class="card">
-                        @foreach($order as $order)
                         <div class="card-body">
                             <h3 class="mb-3">Order Details</h3>
                             <p>Order Number: {{ $order->random_code }}</p>
@@ -29,8 +37,8 @@
                                             <td><center>{{ $order->qty }}</center></td>
                                             <td><center>{{ $order->product_id }}</center></td>
                                             <td><center>{{ $order->size }}</center></td>      
-                                            <td><center>Rp {{ $order->total_price }}</center></td>
-                                            <td><center>Rp {{ $order->qty*$order->total_price }}</center></td>
+                                            <td><center>Rp {{ number_format($order->product->product_price) }}</center></td>
+                                            <td><center>Rp {{number_format($order->total_price) }}</center></td>
                                         </tr>                                        
                                     </tbody>
                                     <tfoot>
@@ -39,20 +47,20 @@
                                             <td></td>
                                             <td></td>      
                                             <td>SHIPMENT</td>
-                                            <td><center>Rp 20000</center></td>
+                                            <td><center>Rp {{number_format(20000)}}</center></td>
                                         </tr>
                                         <tr>
                                             <td></td>
                                             <td></td>
                                             <td></td>      
                                             <td class="font-weight-bold">TOTAL</bold></td>
-                                            <td><center>Rp {{ 20000 + $order->qty*$order->total_price }}</center></td>
+                                            <td><center>Rp {{number_format( 20000 + $order->total_price) }}</center></td>
                                         </tr>
                                     </tfoot>
                                 </table>
                             </div>
                         </div>
-                        @endforeach
+                        
                         <div class="m-3">
                             <p>Silahkan lakukan pembayaran ke nomor rekening 1234567890 BNI an Friska Meilani. <br>Jika sudah selesai melakukan pembayaran, Anda dapat melakukan konfirmasi pembayaran melalui menu "Confirm Payment". <br>Terima kasih.</p>
                         </div>
@@ -60,6 +68,7 @@
                         <a href="{{ url('/') }}" class="btn btn-primary btn-block"> Kembali ke Beranda</a>
                         </div>
                     </div>
+                    @endif
                 </div>
             </div>
         </div>

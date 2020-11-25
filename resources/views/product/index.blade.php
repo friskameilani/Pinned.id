@@ -1,5 +1,9 @@
 @extends('layouts.app')
 @section('content')
+@if (!$product)
+<!-- Ini ganti aja jadi page not found -->
+    <a> Tidak ada page ini </a>
+@else
 <div class="body-inner">
     <div class="container-fluid">
         <div class="min-vh-100">
@@ -62,6 +66,7 @@
                             </div>
                         </div>
                     </div>
+                
                 </div>
             </div>
         </div>
@@ -74,4 +79,5 @@
         </div>
     </div>
 </div>
+@endif
 @endsection

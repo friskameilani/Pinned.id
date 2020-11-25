@@ -29,7 +29,7 @@ Route::post('order', 'OrderController@self_ordering');
 Route::get('order/{id}', 'OrderController@index');
 Route::post('order/{id}', 'OrderController@ordering');
 
-Route::get('detailorder/{random_code}', 'OrderController@showdetailorder');
+Route::get('detailorder/{random_code}', 'OrderController@showdetailorder')->name('detailorder');
 
 Route::get('product/{id}', 'ProductController@index');
 Route::get('catalog', 'ProductController@catalog');

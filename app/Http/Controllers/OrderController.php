@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use App\Product;
 use App\Order;
 use App\Tailor;
+use App\User;
 use Auth;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
@@ -58,7 +59,8 @@ class OrderController extends Controller
 			$order->total_price = $product->product_price * $order->qty;
 			$order->save();
 
-		return redirect('/detailorder/{{$order->random_code}}'); //ini gimana biar langsung direct ke nomor order deh?
+			return redirect()->route('detailorder', [$order->random_code]);
+		// return redirect('/detailorder/{{$order->random_code}}'); //ini gimana biar langsung direct ke nomor order deh?
 																// ini kalo manual ketik laman order, bisa kebuka ko
 	}
 	
@@ -104,8 +106,7 @@ class OrderController extends Controller
 
 	public function showdetailorder($random_code)
     {
-		$order = Order::where('random_code', $random_code)->get();
-		// $order = Order::where('user_id', Auth::user()->id)->get();
+		$order = Order::where('random_code', $random_code)->first();
         return view('order.detail', compact('order'));
     }
 
