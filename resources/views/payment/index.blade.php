@@ -9,13 +9,13 @@
                     <h4 style="text-align:center; margin-bottom: 20px">Confirm Payment</h4>
                     <div class="col-md-12">
                             <table class="table">
-                                <form method="POST" action="{{ url('confirm_payment') }}" enctype="multipart/form-data" >
+                                <form method="POST" action="{{ url('payments') }}_{{ $order->random_code }}" enctype="multipart/form-data" >
                                             @csrf
                                     <tbody>
                                         <tr>
                                             <td>No Order</td>
                                             <td>
-                                                <input id="order_id" type="text" name="order_id" class="form-control" required="">
+                                                {{$order->random_code}}
                                             </td>
                                         </tr>
                                         <tr>
@@ -27,7 +27,8 @@
                                         <tr>
                                             <td>Jumlah Pembayaran</td>
                                             <td>
-                                                <input id="bill_amount" type="text" name="bill_amount" class="form-control" required="">                                            </td>
+                                                <input id="bill_amount" type="text" name="bill_amount" class="form-control" required="">                                            
+                                            </td>
                                         </tr>
                                         <tr>
                                             <td>Tanggal transfer</td>

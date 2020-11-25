@@ -24,4 +24,15 @@ class PaymentController extends Controller
         $payment = Payment::where('id', $id)->first();
         return view('admin.viewpayment', compact('payment')); //Nanti diganti menyesuaikan nama file bladeny
     }
+
+    public function destroy($id) //Ini delete buat di admin
+    {
+        $payments = Payment::where('id', $id);
+        $image = app_path("uploads/payments/{$payments->transfer_evidence}");
+        if (File::exists($image)) 
+        {
+            File::delete($image);
+        }
+        $payments->delete();
+    }
 }
