@@ -51,6 +51,7 @@
                                 <td>
                                 @if($order->status == 0)
                                     <a href="{{ url('history') }}/{{ $order->id }}" class="btn btn-primary"><i class="fa fa-info"></i> Detail</a>
+                                    <a href="{{ url('history/payments') }}_{{ $order->random_code }}" class="btn btn-primary"><i class="fa fa-info"></i> Konfirmasi Pembayaran</a>
                                     <form method="POST" action="{{ route('history.destroy', [$order->id]) }}">
                                         {{ csrf_field() }}
                                         <button type="submit" class="btn btn-danger">Delete</button>

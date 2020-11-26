@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Payment;
 use App\User;
+use App\Order;
 use Auth;
 use File;
 
@@ -15,21 +16,18 @@ class PaymentController extends Controller
     {
         $this->middleware('auth');
     }
-
-    public function index() //Ini view buat di admin
+   
+    public function index($random_code) //Ini view buat nampilin page ny
     {
-        return view('payment.index');
+        $order = Order::where('random_code', $random_code)->first();
+        
+        return view('payment.index', compact('order'));
     }
 
-    public function view() //Ini view buat di admin
+    public function create(Request $request, $random_code) //Ini user create payments
     {
-        $payments = Payment::all();
-        return view('......?', compact('payments'));
-    }
-
-    public function create(Request $request) //Ini user create payments
-    {
-
+        
+        $order = Order::where('random_code', $random_code)->first();
         $this->validate($request, [
 			'date' => 'required|date_format:Y-m-d',
 		]);
@@ -43,25 +41,38 @@ class PaymentController extends Controller
 
         $payment = new Payment;
         $payment->user_id = Auth::user()->id;
-        $payment->order_id = $request->order_id;
+        $payment->order_id = $order->random_code;
         $payment->account_name = $request->account_name;
         $payment->bill_amount = $request->bill_amount;
         $payment->transfer_evidence = $request->transfer_evidence;
         $payment->date = $request->date;
         $payment->save();
+        
+        $order->status = 1;
+        $order->save();
 
-        return redirect('/'); //ntar ganti pake notif berhasil
+        return redirect('/history'); //ntar ganti pake notif berhasil
     }
 
-    public function destroy($id) //Ini delete buat di admin
+    public function edit($random_code) //Ini view buat nampilin page ny
     {
-        $payments = Payment::where('id', $id);
-        $image = app_path("uploads/payments/{$payments->transfer_evidence}");
-        if (File::exists($image)) 
-        {
-            File::delete($image);
-        }
-        $payments->delete();
+        $order = Order::where('random_code', $random_code)->first();
+        
+        return view('payment.index', compact('order'));
+    }
+
+    public function update(Request $request)
+    {
+    	 
+    	$payment->user_id = Auth::user()->id;
+    	$payment->order_id = $order->random_code;
+    	$payment->account_name = $request->account_name;
+        $payment->bill_amount = $request->bill_amount;
+        $payment->transfer_evidence = $request->transfer_evidence;
+        $payment->date = $request->date;
+    	
+    	$user->update();
+        return redirect('/history');
     }
 
 }
