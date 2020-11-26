@@ -61,7 +61,7 @@ Route::get('/tailor/{tailor}', 'TailorController@showtailor')->name('tailor.show
 
 
     /* ---------- Catalog --------------  */ 
-    Route::get('/admincatalog', 'Admin\ProductController@catalog'); //Ini file catalognya belum ada
+    
     Route::get('/adminviewcatalog', 'Admin\ProductController@catalogview'); //Ini file catalognya juga belum ada
     Route::get('/admineditcatalog', 'Admin\ProductController@catalogedit');
     Route::get('/adminaddcatalog', 'Admin\ProductController@catalogadd');
@@ -83,3 +83,8 @@ Route::get('/tailor/{tailor}', 'TailorController@showtailor')->name('tailor.show
 
     /* ---------- Payment --------------  */
     Route::get('/adminpayment', 'Admin\PaymentController@allpayments');
+
+
+    Route::get('/admincatalog', function () {
+        return view('/admin/catalog/catalog');
+    });

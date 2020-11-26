@@ -102,35 +102,32 @@
   <!-- Modal popup -->
 
   <div class="modal fade" id="deletetailor">
-       <div class="modal-dialog">
-  <!-- Modal Content -->
-            <div class="modal-content">
-              <div class="modal-header">
-                <button  type="button" data-dismiss="modal" class="close">&times;</button>
-                <h3 class="modal-title">Konfirmasi Penghapusan</h3>
-              </div>
-              <form action="/admintailor/{{ $tailors->id }}" method="POST" id="deleteForm">
-                @csrf
-                @method('delete')
-
-                <div class="modal-body">
-
-                    <h4> Setelah dihapus data akan benar-benar hilang. </h4>
-                    <h4> Apakah tetap ingin melanjutkan? </h4>
-
-                    <!-- <input type="hidden" name="_method" value="DELETE"> -->
-                    <input type="hidden" name="tailor_id" id="tailor_id" value="">
-
-                </div>
-
-                <div class="modal-footer">
-                  <button type="submit" class="btn btn-primary"> Hapus </button>
-                  <button type="button" class="btn btn-default"  data-dismiss="modal">Batal</button>
-                </div>
-
-              </form>
-            </div>
+    <div class="modal-dialog">
+      <!-- Modal Content -->
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3 class="modal-title">Konfirmasi Penghapusan</h3>
+          <button type="button" data-dismiss="modal" class="close">&times;</button>
         </div>
+        <form action="/admintailor/{{ $tailors->id }}" method="POST" id="deleteForm">
+          @csrf
+          @method('delete')
+
+          <div class="modal-body">
+            <h5> Setelah dihapus data akan benar-benar hilang. </h5>
+            <h5> Apakah tetap ingin melanjutkan? </h5>
+
+            <!-- <input type="hidden" name="_method" value="DELETE"> -->
+            <input type="hidden" name="tailor_id" id="tailor_id" value="">
+          </div>
+          <div class="modal-footer" style="background-color: #EEE;>
+            <button type="submit" class="btn btn-primary"> Hapus </button>
+            <button type="button" class="btn btn-default"  data-dismiss="modal">Batal</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
 
 @endsection
 
