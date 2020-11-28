@@ -8,11 +8,10 @@
     
 
     <main>
-    <!-- JUDUL SAMA BUTTON -->
     <section class="title" id="title">
         <div class="row">
             <div class="col-md-6">
-                <!-- JUDUL TAILOR -->
+                <!-- JUDUL PAYMENT -->
                 <h1 class="text-left">
                     Payment
                 </h1>

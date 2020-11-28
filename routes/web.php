@@ -38,8 +38,8 @@ Route::get('profile', 'ProfileController@index');
 Route::get('profile/edit', 'ProfileController@edit');
 Route::post('profile/edit', 'ProfileController@update');
 
-Route::get('/confirm_payment', 'PaymentController@index');
-Route::post('/confirm_payment', 'PaymentController@create');
+Route::get('/history/payments_{id}', 'PaymentController@index');
+Route::post('/history/payments_{id}', 'PaymentController@create');
 
 Route::get('/faq', 'FAQController@index')->name('faq');
 
@@ -61,16 +61,16 @@ Route::get('/tailor/{tailor}', 'TailorController@showtailor')->name('tailor.show
 
 
     /* ---------- Catalog --------------  */ 
-    Route::get('/admincatalog', 'Admin\ProductController@catalog'); //Ini file catalognya belum ada
-    Route::get('/adminviewcatalog', 'Admin\ProductController@catalogview'); //Ini file catalognya juga belum ada
-    Route::get('/admineditcatalog', 'Admin\ProductController@catalogedit');
+    
+    /* Route::get('/adminviewcatalog', 'Admin\ProductController@catalogview'); //Ini file catalognya juga belum ada */
+    /* Route::get('/admineditcatalog', 'Admin\ProductController@catalogedit'); */
     Route::get('/adminaddcatalog', 'Admin\ProductController@catalogadd');
     Route::get('/adminaddcatalogsuccess', 'Admin\ProductController@catalogaddsuccess'); //Ini file catalognya juga belum ada
 
 
     /* ---------- Tailor --------------  */
     Route::get('/admintailor', 'Admin\TailorController@index');
-    Route::get('/admintailor/{tailor}', 'Admin\TailorController@showtailor'); //ini file blm ada
+    /* Route::get('/admintailor/{tailor}', 'Admin\TailorController@showtailor'); //ini file blm ada */
     Route::get('/admintailor/{tailor}/edit', 'Admin\TailorController@edit');
     Route::patch('/admintailor/{tailor}', 'Admin\TailorController@postedit');
     Route::delete('/admintailor/{tailor}', 'Admin\TailorController@delete');
@@ -83,3 +83,30 @@ Route::get('/tailor/{tailor}', 'TailorController@showtailor')->name('tailor.show
 
     /* ---------- Payment --------------  */
     Route::get('/adminpayment', 'Admin\PaymentController@allpayments');
+
+
+
+    Route::get('/admincatalog', function () {
+        return view('/admin/catalog/catalog');
+    });
+
+    Route::get('/adminviewcatalog', function () {
+        return view('/admin/catalog/view');
+    });
+
+    Route::get('/admineditcatalog', function () {
+        return view('/admin/catalog/edit');
+    });
+
+
+    Route::get('/adminorderdetail', function () {
+        return view('/admin/order/detail');
+    });
+
+    Route::get('/adminpaymentdetail', function () {
+        return view('/admin/payment/detail');
+    });
+
+    Route::get('/adminviewtailor', function () {
+        return view('/admin/tailor/view');
+    });

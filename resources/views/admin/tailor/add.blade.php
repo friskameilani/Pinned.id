@@ -75,9 +75,11 @@
                         <!-- Save Button -->
                         <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-5">
-                                <button type="submit" class="btn btn-primary float-right">
+                                <a href="/adminaddtailorsuccess">
+                                    <button type="submit" class="btn btn-primary float-right">
                                     Save
-                                </button>
+                                    </button>
+                                </a>
                             </div>
                         </div>
                     </form>

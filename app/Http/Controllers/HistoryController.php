@@ -17,8 +17,8 @@ class HistoryController extends Controller
 
     public function index()
     {
-    	$orders = Order::where('user_id', Auth::user()->id)->get();
-
+    	$orders_nosorted = Order::where('user_id', Auth::user()->id)->get();
+        $orders = $orders_nosorted->sortByDesc('created_at');
     	return view('history.index', compact('orders'));
     }
 

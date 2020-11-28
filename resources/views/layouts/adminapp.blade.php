@@ -64,6 +64,20 @@
                     <a class="nav-link" href="{{ url('/adminpayment') }}">Payment</a>
                 </li>
 
+                <!-- NUMPANG -->
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ url('/adminorderdetail') }}">Order Detail</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ url('/adminpaymentdetail') }}">Payment Detail</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ url('/adminviewtailor') }}">View Tailor</a>
+                </li>
+                <!-- -->
+
                 <li class="nav-item">
                     <a class="nav-link" href="{{ url('admin/logout') }}">Logout</a>
                 </li>

@@ -10,7 +10,7 @@
                 <div class="card-body">
                     <div class="row">
                         <div class="col-md-6 mt-5">
-                            <table class="table">
+                            <table class="table">                                 
                                 <tbody>
                                     <tr>
                                         <td>Nama Pemesan</td>
@@ -69,6 +69,19 @@
                                         <td>
                                         Rp. {{ number_format($order->total_price) }}
                                         </td> 
+                                    </tr>
+                                    @endif
+
+                                    @if($order->status == 0)
+                                    <tr>
+                                        <td> <a href="{{ url('history/payments') }}_{{ $order->random_code }}" class="btn btn-primary"> Pembayaran </a>
+                                        </td>
+                                    </tr>
+                                    @else
+                                    <tr>
+                                        <td> 
+                                        ANDA TELAH MELAKUKAN PEMBAYARAN, SILAHKAN TUNGGU
+                                        </td>
                                     </tr>
                                     @endif
                                 </tbody>  
