@@ -2,16 +2,8 @@
 @section('content')
 <div class="container">
     <div class="row">
-        <div class="col-md-12 mt-2">
-            <nav aria-label="breadcrumb">
-                <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="{{ url('home') }}">Home</a></li>
-                    <li class="breadcrumb-item active" aria-current="page">Profile</li>
-                </ol>
-            </nav>
-        </div>
         <div class="col-md-12">
-            <div class="card">
+            <div class="card mt-3">
                 <div class="card-body">
                     <div class="row" style="margin-bottom:10px;">
                         <div class="col-6">

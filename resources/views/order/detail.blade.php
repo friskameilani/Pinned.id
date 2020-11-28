@@ -23,24 +23,33 @@
                             <p>Order Date: {{ $order->date }}</p>
                             <div class="box-body table-responsive">
                                 <table id="example1" class="table table-bordered table-striped">
-                                    <thead>
+                                    <thead style="text-align:center">
                                     <tr>
-                                        <th ><center>Jumlah</center></th>
-                                        <th ><center>Kode Produk</center></th>
-                                        <th><center>Nama Barang</center></th>
-                                        <th ><center>Ukuran</center></th>
-                                        <th ><center>Harga</center></th>
-                                        <th ><center>Total</center></th>
+                                        <th>Jumlah</th>
+                                        <th>Kode Produk</th>
+                                        <th>Nama Barang</th>
+                                        <th>Ukuran</th>
+                                        <th>Harga</th>
+                                        <th>Total</th>
                                     </tr>
                                     </thead>
-                                    <tbody>                                    
+                                    <tbody style="text-align:center">                                    
                                         <tr>
-                                            <td><center>{{ $order->qty }}</center></td>
-                                            <td><center>{{ $order->product_id }}</center></td>
-                                            <td><center>{{ $order->product->product_name }}</center></td>
-                                            <td><center>{{ $order->size }}</center></td>      
-                                            <td><center>Rp {{ number_format($order->product->product_price) }}</center></td>
-                                            <td><center>Rp {{number_format($order->total_price) }}</center></td>
+                                            <td>{{ $order->qty }}</td>
+                                            @if($order->product_id == NULL)
+                                            <td></td>
+                                            <td></td>
+                                            @else
+                                            <td>{{ $order->product_id }}</td>
+                                            <td>{{ $order->product->product_name }}</td>
+                                            @endif
+                                            <td>{{ $order->size }}</td>      
+                                            @if($order->product_id == NULL)
+                                            <td style="text-align:left">Mohon tunggu perhitungan dari penjahit kami.</td>
+                                            @else
+                                            <td>Rp {{ number_format($order->product->product_price) }}</td>
+                                            @endif
+                                            <td style="text-align:left">Rp {{number_format($order->total_price) }}</td>
                                         </tr>                                        
                                     </tbody>
                                     <tfoot>
@@ -49,16 +58,8 @@
                                             <td></td>
                                             <td></td>
                                             <td></td>      
-                                            <td>SHIPMENT</td>
-                                            <td><center>Rp {{number_format(20000)}}</center></td>
-                                        </tr>
-                                        <tr>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>      
                                             <td class="font-weight-bold">TOTAL</bold></td>
-                                            <td><center>Rp {{number_format( 20000 + $order->total_price) }}</center></td>
+                                            <td>Rp {{number_format($order->total_price) }}</td>
                                         </tr>
                                     </tfoot>
                                 </table>

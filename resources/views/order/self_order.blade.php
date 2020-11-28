@@ -32,13 +32,24 @@
                                     <tr>
                                         <td>Design</td>
                                         <td>
-                                            <input id="design" type="file" name="design" class="form-control">
+                                            <input id="design" type="file" name="design" class="form-control" required="">
                                         </td>
                                     </tr>
                                     <tr>
                                         <td>ID Penjahit</td>
                                         <td>
-                                            <input id="tailor_id" type="text" name="tailor_id" class="form-control">
+                                            <input id="tailor_id" type="text" name="tailor_id" class="form-control" required="">
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Ukuran</td>
+                                        <td>
+                                            <select id="size" name="size" class="form-control" required="">
+                                                <option value="size-s">S</option>
+                                                <option value="size-m">M</option>
+                                                <option value="size-l">L</option>
+                                                <option value="size-xl">XL</option>
+                                            </select>
                                         </td>
                                     </tr>
                                     <tr>
@@ -50,10 +61,9 @@
                                     <tr>
                                         <td>Keterangan</td>
                                         <td>
-                                            <textarea id="notes" type="text" name="notes" class="form-control" rows="4"  placeholder="Tuliskan detail ukuran lingkar dada, lingkar bahu, dsb." ></textarea>
+                                            <textarea id="notes" type="text" name="notes" class="form-control" rows="4"  placeholder="Tuliskan detail ukuran lingkar dada, lingkar bahu, dsb." required=""></textarea>
                                         </td>
                                     </tr>
-
                                     <div class="row">
                                         <div class="col-6">
                                             <h3>Order Form</h3>

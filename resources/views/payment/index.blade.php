@@ -7,18 +7,18 @@
         <!-- Jika pagenya tidak ada (user ngasal input lewat linknya)  -->
         @if (!$order)
         <!-- Ini ganti aja jadi page not found -->
-            <a> Tidak ada page ini </a> 
+            <a> Page not found. </a> 
         <!-- Jika paymentnya bukan punya user tsb -->
         @elseif ($order->user_id != Auth::user()->id)
         <!-- Ini ganti aja jadi page not found -->
-            <a> Bukan hak anda melihat ini </a> 
+            <a> Page not found. </a> 
         @else
             <div class="card">
                 <div class="card-body">
                     <h4 style="text-align:center; margin-bottom: 20px">Confirm Payment</h4>
                     <div class="col-md-12">
                         <table class="table">
-                            <form method="POST" action="{{ url('payments') }}_{{ $order->random_code }}" enctype="multipart/form-data" >
+                            <form method="POST" action="{{ url('history') }}/{{'payments'}}_{{ $order->random_code }}" enctype="multipart/form-data" >
                                         @csrf
                                 <tbody>
                                     <tr>
@@ -42,13 +42,13 @@
                                     <tr>
                                         <td>Tanggal transfer</td>
                                         <td>
-                                            <input id="date" type="date" name="date" class="form-control">
+                                            <input id="date" type="date" name="date" class="form-control" required="">
                                         </td>
                                     </tr>
                                     <tr>
                                         <td>Bukti Transfer</td>
                                         <td>
-                                            <input id="transfer_evidence" type="file" name="transfer_evidence" class="form-control">
+                                            <input id="transfer_evidence" type="file" name="transfer_evidence" class="form-control" required="">
                                         </td>
                                     </tr>
                                     <tr>
@@ -68,4 +68,5 @@
         </div>
     </div>
 </div>
+
 @endsection

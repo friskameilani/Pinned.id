@@ -51,13 +51,13 @@
                                 @foreach($products as $product)
                                 <div class="col-6 col-lg-4 col-xl-3">
                                     <div class="card mb-3">
-                                    <img src= "{{$product->product_image}}" class="card-img-top" alt="...">
+                                    <img src= "{{url('uploads')}}/{{$product->product_image}}" class="card-img-top" alt="...">
                                     <div class="card-body">
                                         <h5 class="card-title">{{$product->product_name}}</h5>
                                         <p class="card-text">
                                             <strong> {{ number_format($product->product_price) }} </strong><br>
                                         </p>
-                                        <a href="#" class="btn btn-primary btn-block"> Lihat</a>
+                                        <a href="{{ url('product') }}/{{ $product->id }}" class="btn btn-primary btn-block"> Lihat</a>
                                     </div>
                                     </div> 
                                 </div>

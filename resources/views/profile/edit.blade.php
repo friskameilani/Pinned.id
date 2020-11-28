@@ -3,16 +3,7 @@
 <div class="container">
     <div class="row">
         <div class="col-md-12 mt-2">
-            <nav aria-label="breadcrumb">
-                <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="{{ url('home') }}">Home</a></li>
-                    <li class="breadcrumb-item "><a href="{{ url('profile') }}">Profile</a></li>
-                    <li class="breadcrumb-item active" aria-current="page">Edit Profile</li>
-                </ol>
-            </nav>
-        </div>
-        <div class="col-md-12 mt-2">
-            <div class="card">
+            <div class="card mt-3">
                 <div class="card-body">
                     <h4><i class="fa fa-pencil-alt"></i> Edit Profile</h4>
                     <form method="POST" action="{{ url('profile/edit') }}">

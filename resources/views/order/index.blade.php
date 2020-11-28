@@ -12,7 +12,11 @@
                                 <div class="col-md-4">
                                     <img src="{{ url('uploads') }}/{{ $product->product_image }}" class="rounded mx-auto d-block" width="100%" alt=""> 
                                     <div class="m-3">
+                                        @if($product->product_id == NULL )
+                                        <h3>Barang pesanan sendiri</h3>
+                                        @else
                                         <h3>{{ $product->product_name }}</h3>
+                                        @endif
                                         <div style="color: #A06357; "> 
                                             <h4>Rp {{ number_format($product->product_price) }}</h4>
                                         </div>

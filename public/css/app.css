@@ -11177,3 +11177,31 @@ body .body-inner{
   display: none;
   text-align: center;
 }
+
+.btn-unpaid.disabled,
+.btn-unpaid:disabled {
+  color: #000;
+  background-color: #E79E8F;
+  border-radius: 16px;
+}
+
+.btn-paid.disabled,
+.btn-paid:disabled {
+  color: #000;
+  background-color: #DBABD3;
+  border-radius: 16px;
+}
+
+.btn-process.disabled,
+.btn-process:disabled {
+  color: #000;
+  background-color: #329DFF;
+  border-radius: 16px;
+}
+
+.btn-completed.disabled,
+.btn-completed:disabled {
+  color: #000;
+  background-color: #81F1AE;
+  border-radius: 16px;
+}
