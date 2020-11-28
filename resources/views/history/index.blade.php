@@ -2,15 +2,7 @@
 @section('content')
 <div class="container">
     <div class="row">
-        <div class="col-md-12 mt-2">
-            <nav aria-label="breadcrumb">
-                <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="{{ url('/') }}">Home</a></li>
-                    <li class="breadcrumb-item active" aria-current="page">Riwayat Pemesanan</li>
-                </ol>
-            </nav>
-        </div>
-        <div class="col-md-12">
+        <div class="col-md-12 mt-3">
             <div class="card">
                 <div class="card-body">
                     <h3><i class="fa fa-history"></i> Riwayat Pemesanan</h3>

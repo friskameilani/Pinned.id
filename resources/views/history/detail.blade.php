@@ -4,17 +4,7 @@
     <div class="row">
         <div class="col-md-12">
             <a href="{{ url('history') }}" class="btn btn-primary"><i class="fa fa-arrow-left"></i> Kembali</a>
-        </div>
-        <div class="col-md-12 mt-2">
-            <nav aria-label="breadcrumb">
-                <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="{{ url('/') }}">Home</a></li>
-                    <li class="breadcrumb-item"><a href="{{ url('/history') }}">Riwayat Pemesanan</a></li>
-                    <li class="breadcrumb-item active" aria-current="page">Pesanan</li>
-                </ol>
-            </nav>
-        </div>
-        
+        </div>        
         <div class="col-md-12 mt-1">
             <div class="card">
                 <div class="card-body">

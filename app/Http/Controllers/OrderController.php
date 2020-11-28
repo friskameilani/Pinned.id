@@ -101,7 +101,7 @@ class OrderController extends Controller
 
 			$order->save();
 
-		return redirect('/');
+		return redirect()->route('detailorder', [$order->random_code]);
 	}
 
 	public function showdetailorder($random_code)

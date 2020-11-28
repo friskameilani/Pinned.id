@@ -19,6 +19,10 @@
                                     <table class="table">
                                         <tbody>
                                             <tr>
+                                                <td>ID PENJAHIT</td>
+                                                <td>{{ $tailor->id }}</td>
+                                            </tr>
+                                            <tr>
                                                 <td>DESKRIPSI</td>
                                                 <td>{{ $tailor->tailor_desc }}</td>
                                             </tr>

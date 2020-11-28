@@ -18,7 +18,7 @@
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td>No.HP</td>
+                                        <td>No. HP</td>
                                         <td>
                                             <input id="ordered_phone" type="text" name="ordered_phone" class="form-control" required="">
                                         </td>
@@ -42,23 +42,15 @@
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td>Ukuran</td>
-                                        <td>
-                                            <input id="size" type="text" name="size" class="form-control" required=""> </>
-                                        </td>
-                                    </tr>
-
-                                    <tr>
                                         <td>Jumlah Pesan</td>
                                         <td>
                                             <input id="qty" type="number" name="qty" class="form-control" required="">
                                         </td>
                                     </tr>
-
                                     <tr>
                                         <td>Keterangan</td>
                                         <td>
-                                            <textarea id="notes" type="text" name="notes" class="form-control" rows="4"> </textarea>
+                                            <textarea id="notes" type="text" name="notes" class="form-control" rows="4"  placeholder="Tuliskan detail ukuran lingkar dada, lingkar bahu, dsb." ></textarea>
                                         </td>
                                     </tr>
 

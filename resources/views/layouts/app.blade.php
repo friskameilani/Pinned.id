@@ -40,7 +40,7 @@
                         <a class="nav-link" href="{{ url('/catalog') }}">Catalog</a>
                     </li>
                     <li class="{{ Request::is('/order') ? 'active' : '' }}">
-                        <a class="nav-link" href="{{ url('/order') }}">Order</a>
+                        <a class="nav-link" href="{{ url('/order') }}">Self-Order</a>
                     </li>
                     <li class="{{ Request::is('/confirm_payment') ? 'active' : '' }}">
                         <a class="nav-link" href="{{ url('/confirm_payment') }}">Confirm Payment</a>
