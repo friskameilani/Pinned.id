@@ -42,10 +42,6 @@
             </div>
             <!-- -->
         </div>
-      
-        
-
-
         <p class="card-text">
             <strong> Rp40.000 </strong><br>
         </p>
