@@ -8,14 +8,7 @@
             <div class="row justify-content-center" >
                 <div class="col-md-10 mt-4 mb-3">
 
-                    @if (!$order)
-                    <!-- Ini ganti aja jadi page not found -->
-                        <a> Tidak ada page ini </a> 
-                    @elseif ($order->user_id != Auth::user()->id)
-                    <!-- Ini ganti aja jadi page not found -->
-                        <a> Bukan hak anda melihat ini </a> 
-                        
-                    @else
+                    
                     <div class="card">
                         <div class="card-body">
                             <h3 class="mb-3">Order Details</h3>
@@ -73,7 +66,6 @@
                         <a href="{{ url('/') }}" class="btn btn-primary btn-block"> Kembali ke Beranda</a>
                         </div>
                     </div>
-                    @endif
                 </div>
             </div>
         </div>

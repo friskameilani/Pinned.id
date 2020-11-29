@@ -20,8 +20,12 @@ class PaymentController extends Controller
     public function index($random_code) //Ini view buat nampilin page ny
     {
         $order = Order::where('random_code', $random_code)->first();
-        
-        return view('payment.index', compact('order'));
+        if ((!$order) || ($order->user_id != Auth::user()->id))  {
+            abort(404);
+        }
+        else{
+            return view('payment.index', compact('order'));
+        } 
     }
 
     public function create(Request $request, $random_code) //Ini user create payments
@@ -54,25 +58,31 @@ class PaymentController extends Controller
         return redirect('/history'); //ntar ganti pake notif berhasil
     }
 
-    public function edit($random_code) //Ini view buat nampilin page ny
-    {
-        $order = Order::where('random_code', $random_code)->first();
+    //Ini buat apa yak, lupa
+    // public function edit($random_code) //Ini view buat nampilin page ny
+    // {
+    //     $order = Order::where('random_code', $random_code)->first();
+    //     if ((!$order) || ($order->user_id != Auth::user()->id))  {
+    //         abort(404);
+    //     }
+    //     else{
+    //         return view('payment.index', compact('order'));
+    //     } 
         
-        return view('payment.index', compact('order'));
-    }
+    // }
 
-    public function update(Request $request)
-    {
+    // public function update(Request $request)
+    // {
     	 
-    	$payment->user_id = Auth::user()->id;
-    	$payment->order_id = $order->random_code;
-    	$payment->account_name = $request->account_name;
-        $payment->bill_amount = $request->bill_amount;
-        $payment->transfer_evidence = $request->transfer_evidence;
-        $payment->date = $request->date;
+    // 	$payment->user_id = Auth::user()->id;
+    // 	$payment->order_id = $order->random_code;
+    // 	$payment->account_name = $request->account_name;
+    //     $payment->bill_amount = $request->bill_amount;
+    //     $payment->transfer_evidence = $request->transfer_evidence;
+    //     $payment->date = $request->date;
     	
-    	$user->update();
-        return redirect('/history');
-    }
+    // 	$user->update();
+    //     return redirect('/history');
+    // }
 
 }

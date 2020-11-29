@@ -6,7 +6,7 @@ use App\Order;
 use App\Tailor;
 use App\User;
 use Auth;
-use Carbon\Carbon;
+use Illuminate\Support\Facades\Validator;
 use Illuminate\Http\Request;
 
 class OrderController extends Controller
@@ -66,12 +66,6 @@ class OrderController extends Controller
 	
 	public function self_ordering(Request $request) //User
     {	
-		$date = Carbon::now();
-		
-    	//cek validasi
-    	// $cek_order = Order::where('user_id', Auth::user()->id)->where('status',0)->first();
-    	//simpan ke database order
-		// if(empty($cek_order))
 		$this->validate($request, [
 			'design' => 'mimes:jpeg,png,bmp,tiff |max:4096',
 			'qty' => 'required|numeric',
@@ -82,7 +76,7 @@ class OrderController extends Controller
             $dest = "uploads/self_design";
             $filename = $request->file('design');
             $filename-> move($dest, $filename->getClientOriginalName());
-        }
+		}
     	
     		$order = new Order;
 			$order->user_id = Auth::user()->id;
@@ -94,7 +88,6 @@ class OrderController extends Controller
 			$order->qty = $request->qty;
 			$order->size = $request->size;
 			$order->notes = $request->notes;
-	    	$order->date = $date;
 	    	$order->status = 0;
 			$order->design = $request->design;
 			$order->total_price = 0;
@@ -107,7 +100,14 @@ class OrderController extends Controller
 	public function showdetailorder($random_code)
     {
 		$order = Order::where('random_code', $random_code)->first();
-        return view('order.detail', compact('order'));
+		if ((!$order) || ($order->user_id != Auth::user()->id))  {
+            abort(404);
+		}
+		else{
+		return view('order.detail', compact('order'));
+
+		
+		}
     }
 
 }

@@ -32,7 +32,12 @@ class HistoryController extends Controller
     public function detail($id)
     {
         $order = Order::where('id', $id)->first();
-        
-     	return view('history.detail', compact('order'));
+        if (!$order) {
+            abort(404);
+        }
+        else {
+            return view('history.detail', compact('order'));
+        }
+     	
     }
 }

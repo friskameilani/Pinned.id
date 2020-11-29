@@ -11,7 +11,7 @@
                             <tr>
                                 <th>No</th>
                                 <th>Nama Barang</th>
-                                <th>Tanggal</th>
+                                <th>Waktu Pemesanan</th>
                                 <th>Status</th>
                                 <th>Jumlah Harga</th>
                                 <th>Aksi</th>
@@ -27,7 +27,12 @@
                                 @else
                                 <td style="text-align:left">{{ $order->product->product_name }}</td>
                                 @endif
-                                <td>{{ $order->date }}</td>
+                                <td> 
+                                    <?php
+                                        $date = $order->created_at;
+                                        echo date('d F Y, H:i', strtotime($date)); //June, 2017
+                                    ?>
+                                </td>
                                 <td>
                                     <!-- INI STATUSNYA PAID/UNPAID BELUM DITENTUIN -->
 

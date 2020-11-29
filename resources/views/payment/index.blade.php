@@ -4,15 +4,6 @@
 <div class="container">
     <div class="row">
         <div class="col-md-12 mt-3 mb-3">
-        <!-- Jika pagenya tidak ada (user ngasal input lewat linknya)  -->
-        @if (!$order)
-        <!-- Ini ganti aja jadi page not found -->
-            <a> Page not found. </a> 
-        <!-- Jika paymentnya bukan punya user tsb -->
-        @elseif ($order->user_id != Auth::user()->id)
-        <!-- Ini ganti aja jadi page not found -->
-            <a> Page not found. </a> 
-        @else
             <div class="card">
                 <div class="card-body">
                     <h4 style="text-align:center; margin-bottom: 20px">Confirm Payment</h4>
@@ -64,7 +55,6 @@
                     </div>
                 </div>
             </div>
-        @endif
         </div>
     </div>
 </div>
