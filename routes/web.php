@@ -61,16 +61,19 @@ Route::get('/tailor/{tailor}', 'TailorController@showtailor')->name('tailor.show
 
 
     /* ---------- Catalog --------------  */ 
-    
-    /* Route::get('/adminviewcatalog', 'Admin\ProductController@catalogview'); //Ini file catalognya juga belum ada */
-    /* Route::get('/admineditcatalog', 'Admin\ProductController@catalogedit'); */
+    Route::get('/admincatalog', 'Admin\ProductController@catalog');
+    Route::get('/adminviewcatalog/{product}', 'Admin\ProductController@catalogview'); 
+    Route::get('/admincatalog/{product}/edit', 'Admin\ProductController@catalogedit');
+    Route::patch('/admincatalog/{product}/edit', 'Admin\ProductController@editpost'); 
     Route::get('/adminaddcatalog', 'Admin\ProductController@catalogadd');
-    Route::get('/adminaddcatalogsuccess', 'Admin\ProductController@catalogaddsuccess'); //Ini file catalognya juga belum ada
+    Route::post('/admincatalog', 'Admin\ProductController@addpost');
+    Route::delete('/admincatalog/{product}', 'Admin\ProductController@delete');
+    //Route::get('/adminaddcatalogsuccess', 'Admin\ProductController@catalogaddsuccess'); //Ini file catalognya juga belum ada
 
 
     /* ---------- Tailor --------------  */
     Route::get('/admintailor', 'Admin\TailorController@index');
-    /* Route::get('/admintailor/{tailor}', 'Admin\TailorController@showtailor'); //ini file blm ada */
+    Route::get('/admintailor/{tailor}', 'Admin\TailorController@showtailor'); 
     Route::get('/admintailor/{tailor}/edit', 'Admin\TailorController@edit');
     Route::patch('/admintailor/{tailor}', 'Admin\TailorController@postedit');
     Route::delete('/admintailor/{tailor}', 'Admin\TailorController@delete');
@@ -86,17 +89,11 @@ Route::get('/tailor/{tailor}', 'TailorController@showtailor')->name('tailor.show
 
 
 
-    Route::get('/admincatalog', function () {
-        return view('/admin/catalog/catalog');
-    });
+    // Route::get('/admincatalog', function () {
+    //     return view('/admin/catalog/catalog');
+    // });
 
-    Route::get('/adminviewcatalog', function () {
-        return view('/admin/catalog/view');
-    });
-
-    Route::get('/admineditcatalog', function () {
-        return view('/admin/catalog/edit');
-    });
+   
 
 
     Route::get('/adminorderdetail', function () {
@@ -122,3 +119,4 @@ Route::get('/tailor/{tailor}', 'TailorController@showtailor')->name('tailor.show
     Route::get('/adminnewfaq', function () {
         return view('/admin/faq/new');
     });
+

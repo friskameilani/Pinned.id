@@ -18,15 +18,37 @@
   </div>
 </section>
 
+<section class="title" id="title">
+        <div class="row">
+            <div class="col-md-6">
+                <!-- JUDUL TAILOR -->
+                <h1 class="text-left" style="color: #111;">
+                    Produk Tersedia
+                </h1>
+            </div>
+
+            <div class="col-md-6 clearfix" style="padding-right: 55px;">
+                <!-- BUTTON ADD -->
+                <a href="{{ url('adminaddcatalog') }}">
+                    <button type="button" class="btn btn-success float-right">
+                        +Add New Product
+                    </button>
+                </a>
+            </div>
+        </div>
+    </section>
+    <br></br>
+
 <div class="row" style="margin: 20px">
+@foreach( $products as $products )
   <div class="col-6 col-md-4 col-lg-3 col-xl-2">
     <div class="card">
-      <img src= "/images/contohbaju.png" class="card-img-top" alt="...">
+      <img src= "{{ url('uploads') }}/product/{{ $products->product_image }}" class="card-img-top" alt="...">
       <div class="card-body">
         <div class="row">
             <!-- TITLE -->
             <div class="col-md-9">
-                <h5 class="card-title">Tie Dye Clothes</h5>
+                <h5 class="card-title">{{ $products->product_name }}</h5>
             </div>
             <!-- KEBAB MENU -->
             <div class="col-md-3">
@@ -34,7 +56,7 @@
                     <div class="dropdown">
                         <a data-toggle="dropdown"><i class="fa fa-ellipsis-v fa-2x waves-effect"></i></a>
                         <div class="dropdown-menu">
-                        <a class="dropdown-item" href="/admineditcatalog">Edit</a>
+                        <a class="dropdown-item" href="/admincatalog/{{$products->id}}/edit">Edit</a>
                         <a class="dropdown-item delete" data-id="#deletecatalog" data-toggle="modal" data-target="#deletecatalog" href="#">Delete</a>
                         </div>
                     </div>
@@ -43,14 +65,14 @@
             <!-- -->
         </div>
         <p class="card-text">
-            <strong> Rp40.000 </strong><br>
+            <strong> Rp{{ number_format($products->product_price)}} </strong><br>
         </p>
-        <a href="/adminviewcatalog" class="btn btn-primary btn-block"> Lihat</a>
+        <a href="/adminviewcatalog/{{ $products->id }}" class="btn btn-primary btn-block"> Lihat</a>
       </div>
     </div> 
   </div>
+@endforeach
 </div>
-
     <!-- Pop Up for Delete Confirmation -->
     <!-- Modal popup -->
 
@@ -62,7 +84,9 @@
                 <h3 class="modal-title">Konfirmasi Penghapusan</h3>
                 <button type="button" data-dismiss="modal" class="close">&times;</button>
             </div>
-            <form action="/admincatalog" method="POST" id="deleteForm">
+            <form action="/admincatalog/{{$products->id}}" method="POST" id="deleteForm">
+            @csrf
+            @method('delete')
                 <div class="modal-body">
 
                     <h5> Setelah dihapus data akan benar-benar hilang. </h5>
