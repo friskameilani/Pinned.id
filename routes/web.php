@@ -110,3 +110,15 @@ Route::get('/tailor/{tailor}', 'TailorController@showtailor')->name('tailor.show
     Route::get('/adminviewtailor', function () {
         return view('/admin/tailor/view');
     });
+
+    Route::get('/adminfaq', function () {
+        return view('/admin/faq/faq');
+    });
+
+    Route::get('/admineditfaq', function () {
+        return view('/admin/faq/edit');
+    });
+    
+    Route::get('/adminnewfaq', function () {
+        return view('/admin/faq/new');
+    });
