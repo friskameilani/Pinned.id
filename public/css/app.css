@@ -11185,6 +11185,13 @@ body .body-inner{
   border-radius: 16px;
 }
 
+.btn-wait.disabled,
+.btn-wait:disabled {
+  color: #000;
+  background-color: #F8FC38;
+  border-radius: 16px;
+}
+
 .btn-paid.disabled,
 .btn-paid:disabled {
   color: #000;

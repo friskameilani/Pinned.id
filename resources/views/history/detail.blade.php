@@ -101,16 +101,45 @@
                     <div class="row justify-content-center mt-3 pt-3">
                         <form method="POST" action="{{ route('history.destroy', [$order->id]) }}">
                             {{ csrf_field() }}
-                            <button type="submit" class="btn btn-outline-danger">Batalkan Pesanan</button>
+                            <input name="_method" type="hidden" value="POST">
+                            <button type="button" class="btn btn-outline-danger order-cancel" data-toggle="modal" data-target="#order-cancel-modal" style="padding: 5px 30px">Batalkan Pesanan</button>
+
+                            <!-- POPUP CONFIRMATION -->
+                            <div class="modal fade" id="order-cancel-modal" tabindex="-1" role="dialog" aria-hidden="true">
+                                <div class="modal-dialog modal-dialog-centered" role="document">
+                                    <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLongTitle">Batalkan Pemesanan</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <p> Pesanan yang sudah dibatalkan tidak dapat dikembalikan, namun Anda dapat melakukan pemesanan ulang. </p>
+                                        <p> Apakah Anda yakin untuk untuk membatalkan pemesanan? </p>
+
+                                        <!-- <input type="hidden" name="_method" value="DELETE"> -->
+                                        <input type="hidden" name="order_id" id="order_id" value="">
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="submit" class="btn btn-danger">Batalkan</button>
+                                        <button type="button" class="btn btn-primary" data-dismiss="modal">Kembali</button>
+                                    </div>
+                                    </div>
+                                </div>
+                                </div>
                         </form>
                     </div>
+
                     @else
                     <div class="row justify-content-center mt-3 pt-3"  style="background-color:#F1F1F1">
                         @if($order->status == 1)
-                        <p>ANDA TELAH MELAKUKAN PEMBAYARAN, PESANAN AKAN SEGERA DIPROSES.</p>
+                        <p>ANDA TELAH MELAKUKAN PEMBAYARAN, PEMBAYARAN AKAN DIKONFIRMASI.</p>
                         @elseif($order->status == 2)
-                        <p>ANDA TELAH MELAKUKAN PEMBAYARAN, PESANAN SEDANG DIPROSES.</p>
+                        <p>ANDA TELAH MELAKUKAN PEMBAYARAN, PESANAN AKAN SEGERA DIPROSES.</p>
                         @elseif($order->status == 3)
+                        <p>ANDA TELAH MELAKUKAN PEMBAYARAN, PESANAN SEDANG DIPROSES.</p>
+                        @elseif($order->status == 4)
                         <p>PESANAN TELAH SELESAI.</p>
                         @endif
                     </div>

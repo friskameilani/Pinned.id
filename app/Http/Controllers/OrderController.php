@@ -6,6 +6,7 @@ use App\Order;
 use App\Tailor;
 use App\User;
 use Auth;
+use Carbon\Carbon;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Http\Request;
 
@@ -77,6 +78,7 @@ class OrderController extends Controller
             $filename = $request->file('design');
             $filename-> move($dest, $filename->getClientOriginalName());
 		}
+		$date = Carbon::now();
     	
     		$order = new Order;
 			$order->user_id = Auth::user()->id;
@@ -91,6 +93,7 @@ class OrderController extends Controller
 	    	$order->status = 0;
 			$order->design = $request->design;
 			$order->total_price = 0;
+			$order->date = $date;
 
 			$order->save();
 
