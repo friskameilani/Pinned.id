@@ -21,7 +21,7 @@
   @foreach($products as $product)
   <div class="col-6 col-md-4 col-lg-3 col-xl-2">
     <div class="card">
-      <img src= "{{ url('uploads') }}/{{ $product->product_image }}" class="card-img-top" alt="...">
+      <img src= "{{ url('uploads') }}/product/{{ $product->product_image }}" class="card-img-top" alt="...">
       <div class="card-body">
         <h5 class="card-title">{{ $product->product_name }}</h5>
         <p class="card-text">

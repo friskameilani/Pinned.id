@@ -9,7 +9,7 @@
                         <div class="card-body">
                             <div class="row">
                                 <div class="col-md-6">
-                                    <img src="{{ url('uploads') }}/{{ $product->product_image }}" class="rounded mx-auto d-block" width="100%" alt=""> 
+                                    <img src="{{ url('uploads') }}/product/{{ $product->product_image }}" class="rounded mx-auto d-block" width="100%" alt=""> 
                                 </div>
                                 <div class="col-md-6 mt-2">
                                     <div class="row mt-2">
