@@ -16,17 +16,17 @@
     </div>
 </div>
 <div class="col-12 title" style="text-align: center; min-height: 200px; padding-top: 30px; padding-bottom:30px; background-color: #3E3434;">
-    <h1 style="font-size:28px;">About Pinned.id</h1>
+    <h1 style="font-size:28px;">Tentang Pinned.id</h1>
     <hr size="10px" width="15%" color="#fff">
     <p style="color:#fff">Pinned.id merupakan platform pelayanan menjahit pakaian yang cepat dan berkualitas. </br>Kami akan membantu Anda untuk mencari penjahit yang sesuai dengan kebutuhan Anda.</p>
 </div>
 <div style="display:flex">
     <div class="col-6" style="text-align: right; min-height: 200px; padding-top: 30px; padding-bottom:30px; background-color: #fff;">
-        <p style="color:#3E3434">It's all about quality, not quantity.</p>
+        <p style="color:#3E3434">Ini semua tentang kualitas, bukan kuantitas.</p>
         <hr size="10px" width="25%" color="#3E3434" align="right">
-        <p style="color:#3E3434">Customer satisfaction is our goal.</p>
+        <p style="color:#3E3434">Kepuasan pelanggan adalah tujuan kami.</p>
         <hr size="10px" width="25%" color="#3E3434" align="right">
-        <p style="color:#3E3434">We offer 24/7 services, you can shop with us anytime!</p>
+        <p style="color:#3E3434">Kami menawarkan layanan 24/7, Anda dapat berbelanja kapanpun!</p>
         <hr size="10px" width="25%" color="#3E3434" align="right">
     </div>
     <div class="col-6;" style="margin-left: 20px">
@@ -38,7 +38,7 @@
     </div>
 </div>
 <div class="col-12 title" style="text-align: center; min-height: 200px; padding-top: 30px; padding-bottom:30px; background-color: #3E3434;">
-    <h1 style="font-size:28px;">Design Your Own Clothes</h1>
+    <h1 style="font-size:28px;">Desain Sendiri Pakaian Anda</h1>
     <hr size="10px" width="15%" color="#fff">    
     <div class="align-items-center ">
         <img src="images/model1.png" alt="" style="height: 250px; margin: 30px;">

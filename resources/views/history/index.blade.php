@@ -11,7 +11,7 @@
                             <tr>
                                 <th>No</th>
                                 <th>Nama Barang</th>
-                                <th>Tanggal</th>
+                                <th>Waktu Pemesanan</th>
                                 <th>Status</th>
                                 <th>Jumlah Harga</th>
                                 <th>Aksi</th>
@@ -27,26 +27,38 @@
                                 @else
                                 <td style="text-align:left">{{ $order->product->product_name }}</td>
                                 @endif
-                                <td>{{ $order->date }}</td>
+                                <td> 
+                                    <?php
+                                        $date = $order->created_at;
+                                        echo date('d F Y, H:i', strtotime($date)); //June, 2017
+                                    ?>
+                                </td>
                                 <td>
                                     <!-- INI STATUSNYA PAID/UNPAID BELUM DITENTUIN -->
 
                                     <!-- STATUS: BELUM DIBAYAR -->
                                     @if($order->status == 0)
                                     <a href="#" class="btn btn-unpaid disabled">Belum dibayar</a>
-                                    <!-- STATUS: SUDAH DIBAYAR BELUM DIPROSES-->
+                                    <!-- STATUS: SUDAH DIBAYAR BELUM DIKONFIRMASI-->
                                     @elseif($order->status == 1)
+                                    <a href="#" class="btn btn-wait disabled">Menunggu konfirmasi</a>
+                                    <!-- STATUS: SUDAH DIBAYAR BELUM DIPROSES-->
+                                    @elseif($order->status == 2)
                                     <a href="#" class="btn btn-paid disabled">Sudah dibayar</a>
                                     <!-- STATUS: SEDANG DIPROSES-->
-                                    @elseif($order->status == 2)
+                                    @elseif($order->status == 3)
                                     <a href="#" class="btn btn-process disabled">Sedang diproses</a>
                                     <!-- STATUS: SELESAI-->
-                                    @elseif($order->status == 3)
+                                    @elseif($order->status == 4)
                                     <a href="#" class="btn btn-completed disabled">Selesai</a>
                                     @endif
                                 </td>
-                                @if($order->product_id == 0)
+                                @if($order->product_id == 0 & $order->status == 0)
                                 <td style="text-align:left">Mohon tunggu perhitungan dari penjahit kami.</td>
+                                @elseif($order->product_id == 0 & $order->status == 1)
+                                <td style="text-align:left">Sesuai kesepakatan</td>
+                                @elseif($order->product_id == 0 & $order->status == 2)
+                                <td style="text-align:left">Sesuai kesepakatan.</td>
                                 @else
                                 <td style="text-align:left">Rp. {{ number_format($order->total_price) }}</td>
                                 @endif

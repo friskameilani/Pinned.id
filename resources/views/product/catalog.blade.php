@@ -6,7 +6,7 @@
       <div class="col-md-4">
           <!-- SEARCH BUTTON -->
           <div class="input-group">
-              <input type="text" class="form-control" placeholder="Search product..">
+              <input type="text" class="form-control" placeholder="Cari produk..">
               <div class="input-group-append">
               <button class="btn btn-secondary" type="button">
                   <i class="fa fa-search"></i>

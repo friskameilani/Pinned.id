@@ -34,16 +34,16 @@
                 <!-- Left Side Of Navbar -->
                 <ul class="nav nav-second-level navbar mr-auto" style="font-weight:bold; letter-spacing:1px">
                     <li class="{{ Request::is('/') ? 'active' : '' }}">
-                        <a class="nav-link" href="{{ url('/') }}">Home</a>
+                        <a class="nav-link" href="{{ url('/') }}">Beranda</a>
                     </li>                    
                     <li class="{{ Request::is('/catalog') ? 'active' : '' }}">
-                        <a class="nav-link" href="{{ url('/catalog') }}">Catalog</a>
+                        <a class="nav-link" href="{{ url('/catalog') }}">Katalog</a>
                     </li>
                     <li class="{{ Request::is('/order') ? 'active' : '' }}">
-                        <a class="nav-link" href="{{ url('/order') }}">Self-Order</a>
+                        <a class="nav-link" href="{{ url('/order') }}">Pesanan Khusus</a>
                     </li>
                     <li class="{{ Request::is('/faq') ? 'active' : '' }}">
-                        <a class="nav-link" href="{{ url('/faq') }}">FAQ</a>
+                        <a class="nav-link" href="{{ url('/faq') }}">Tanya Jawab</a>
                     </li>
 
                     <!-- NUMPANG BENTAR TAMBAH MENU ADMIN SOALNYA BELOM ADA USER ADMIN -->
@@ -74,7 +74,7 @@
 
                             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                                 <a class="dropdown-item" href="{{ url('profile') }}">
-                                    Profile
+                                    Profil
                                 </a>
 
                                 <a class="dropdown-item" href="{{ url('history') }}">
