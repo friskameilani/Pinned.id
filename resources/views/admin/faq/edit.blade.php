@@ -32,17 +32,18 @@
                             Perbarui FAQ 
                         </h3>
                         <br></br>
-                        <form method="POST" action="/adminfaq">
+                        <form method="POST" action="/adminfaq/edit/{{$faq->id}}">
+                        @csrf
                             <!-- Pertanyaan -->
                             <div class="form-group">
                                 <label for="faq_question" class="col-form-label text-md-left">{{ __('Pertanyaan') }}</label>
-                                <textarea id="faq_question" type="text" class="form-control @error('faq_question') is-invalid @enderror border border-dark" name="faq_question" value="" required autocomplete="faq_question" autofocus>Apakah Pinned.id itu?</textarea>
+                                <textarea id="ask" type="text" class="form-control @error('ask') is-invalid @enderror border border-dark" name="ask" value="{{$faq->ask}}" required autocomplete="faq_question" autofocus>{{$faq->ask}}</textarea>
                             </div>
 
                             <!-- Jawaban -->
                             <div class="form-group">
                                 <label for="description" class="col-form-label text-md-left">{{ __('Jawaban') }}</label>
-                                <textarea class="form-control @error('faq_answer') is-invalid @enderror border border-dark" name="faq_answer" >Pinned.id adalah aplikasi penyalur jasa penjahit dengan pemesanan sesuai yang Anda inginkan.</textarea>
+                                <textarea class="form-control @error('answer') is-invalid @enderror border border-dark" name="answer" >{{$faq->answer}}</textarea>
                             </div>
 
                             <!-- Save Button -->

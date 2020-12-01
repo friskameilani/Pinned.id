@@ -87,7 +87,13 @@ Route::get('/tailor/{tailor}', 'TailorController@showtailor')->name('tailor.show
     /* ---------- Payment --------------  */
     Route::get('/adminpayment', 'Admin\PaymentController@allpayments');
 
-
+    /* ---------- FAQ --------------  */
+    Route::get('/adminfaq', 'Admin\FAQController@index');
+    Route::get('/adminfaq/new', 'Admin\FAQController@create');
+    Route::post('/adminfaq/new', 'Admin\FAQController@post');
+    Route::get('/adminfaq/edit/{id}', 'Admin\FAQController@edit');
+    Route::post('/adminfaq/edit/{id}', 'Admin\FAQController@update');
+    Route::get('/adminfaq/delete/{id} ', 'Admin\FAQController@destroy');
 
     // Route::get('/admincatalog', function () {
     //     return view('/admin/catalog/catalog');
@@ -108,9 +114,9 @@ Route::get('/tailor/{tailor}', 'TailorController@showtailor')->name('tailor.show
         return view('/admin/tailor/view');
     });
 
-    Route::get('/adminfaq', function () {
-        return view('/admin/faq/faq');
-    });
+    // Route::get('/adminfaq', function () {
+    //     return view('/admin/faq/faq');
+    // });
 
     Route::get('/admineditfaq', function () {
         return view('/admin/faq/edit');

@@ -38,11 +38,6 @@ class OrderController extends Controller
 		$product = Product::where('id', $id)->first();
 		$tailor = Tailor::where('id', $product->tailor_id)->first();
     	$date = Carbon::now();
-
-    	//cek validasi
-    	// $cek_order = Order::where('user_id', Auth::user()->id)->where('status',0)->first();
-    	//simpan ke database order
-    	// if(empty($cek_order))
     	
     		$order = new Order;
 			$order->user_id = Auth::user()->id;
@@ -61,8 +56,6 @@ class OrderController extends Controller
 			$order->save();
 
 			return redirect()->route('detailorder', [$order->random_code]);
-		// return redirect('/detailorder/{{$order->random_code}}'); //ini gimana biar langsung direct ke nomor order deh?
-																// ini kalo manual ketik laman order, bisa kebuka ko
 	}
 	
 	public function self_ordering(Request $request) //User
@@ -108,8 +101,6 @@ class OrderController extends Controller
 		}
 		else{
 		return view('order.detail', compact('order'));
-
-		
 		}
     }
 

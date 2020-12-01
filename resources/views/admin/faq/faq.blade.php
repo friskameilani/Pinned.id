@@ -48,13 +48,16 @@
 
 
                 <tbody>
+                <?php $no = 1; ?>
+                @foreach($faqs as $faq)
                 <tr>
-                  <td >1.</td>
-                  <td >Apakah Pinned.id itu?</td>
-                  <td >Pinned.id adalah aplikasi penyalur jasa penjahit dengan pemesanan sesuai yang Anda inginkan.</td>
-                  <td ><a href="/admineditfaq" type="button" class="btn btn-block btn-primary btn-sm">Perbarui</a>
+                  <td >{{ $no++ }}</td>
+                  <td >{{$faq->ask}}</td>
+                  <td >{{$faq->answer}}</td>
+                  <td ><a href=" {{ url('adminfaq/edit') }}/{{ $faq->id }} " type="button" class="btn btn-block btn-primary btn-sm">Perbarui</a>
                   <a type="button" class="btn btn-block btn-danger btn-sm delete" data-id="#deletefaq" data-toggle="modal" data-target="#deletefaq" >Hapus</a></td>
                 </tr>
+                @endforeach
                 </tbody>
                 <tfoot>
                 </tfoot>
@@ -84,7 +87,6 @@
           <h3 class="modal-title">Konfirmasi Penghapusan</h3>
           <button type="button" data-dismiss="modal" class="close">&times;</button>
         </div>
-        <form action="/adminfaq" method="POST" id="deleteForm">
           <div class="modal-body">
             <h5> Setelah dihapus data akan benar-benar hilang. </h5>
             <h5> Apakah tetap ingin melanjutkan? </h5>
@@ -93,7 +95,8 @@
             <input type="hidden" name="faq_id" id="faq_id" value="">
           </div>
           <div class="modal-footer" style="background-color: #EEE;">
-            <button type="submit" class="btn btn-primary"> Hapus </button>
+            
+            <a href="{{ url('adminfaq/delete') }}/{{ $faq->id }}" class="btn btn-primary"> Hapus </a>
             <button type="button" class="btn btn-default"  data-dismiss="modal">Batal</button>
           </div>
         </form>

@@ -32,17 +32,19 @@
                             Buat FAQ Baru
                         </h3>
                         <br></br>
-                        <form method="POST" action="/adminfaq">
+                        <form method="POST" action="/adminfaq/new">
+                        @csrf
                             <!-- Pertanyaan -->
                             <div class="form-group">
                                 <label for="faq_question" class="col-form-label text-md-left">{{ __('Pertanyaan') }}</label>
-                                <input id="faq_question" type="text" class="form-control @error('faq_question') is-invalid @enderror border border-dark" name="faq_question" value="" required autocomplete="faq_question" autofocus>
+                                <textarea id="faq_question" type="text" class="form-control @error('faq_question') is-invalid @enderror border border-dark" name="ask" value="" required autocomplete="faq_question" autofocus></textarea>
+                            
                             </div>
 
                             <!-- Jawaban -->
                             <div class="form-group">
                                 <label for="description" class="col-form-label text-md-left">{{ __('Jawaban') }}</label>
-                                <input class="form-control @error('faq_answer') is-invalid @enderror border border-dark" name="faq_answer" >
+                                <textarea class="form-control @error('answer') is-invalid @enderror border border-dark" name="answer"></textarea>
                             </div>
 
                             <!-- Save Button -->
