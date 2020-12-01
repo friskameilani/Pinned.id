@@ -76,6 +76,10 @@
                 <li class="nav-item">
                     <a class="nav-link" href="{{ url('/adminviewtailor') }}">View Tailor</a>
                 </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ url('/adminfaq') }}">FAQ</a>
+                </li>
                 <!-- -->
 
                 <li class="nav-item">
