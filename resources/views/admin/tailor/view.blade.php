@@ -7,8 +7,8 @@
 <div class="container">
     <nav aria-label="breadcrumb">
         <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="{{ url('admincatalog') }}">Penjahit</a></li>
-            <li class="breadcrumb-item active" aria-current="admineditcatalog">Penjahit: Suprapto</li>
+            <li class="breadcrumb-item"><a href="{{ url('admintailor') }}">Penjahit</a></li>
+            <li class="breadcrumb-item active" aria-current="admineditcatalog">Penjahit: {{ $tailor->tailor_name }}</li>
         </ol>
     </nav>
 </div>
@@ -27,16 +27,16 @@
                                 <div class="col-md-6 mt-2">
                                     <div class="row mt-2">
                                         <div class="col-6">
-                                            <h3>Suprapto</h3>
+                                            <h3>{{ $tailor->tailor_name }}</h3>
                                         </div>
                                         <div class="col-6">
-                                            <a class ="btn btn-secondary float-right" href ="/adminedittailor" style="padding: 5px 30px; width: 120px; height: 35px;"> Perbarui</a>
+                                            <a class ="btn btn-secondary float-right" href ="/admintailor/{{ $tailor->id }}/edit" style="padding: 5px 30px; width: 120px; height: 35px;"> Perbarui</a>
                                         </div>
                                     </div>
                                     <div class="row mt-2">
                                         <div class="col-8 product-price">
-                                            <h5>Umur: 55 tahun</h5>
-                                            <h5>Asal: Banten</h5>
+                                            <h5>Umur: {{ $tailor->tailor_age }} tahun</h5>
+                                            <h5>Alamat: {{ $tailor->tailor_address }}</h5>
                                             <h5>Total Produk: 2</h5>
                                         </div>
                                         <div class="col-4">
@@ -47,11 +47,11 @@
                                         <tbody>
                                             <tr>
                                                 <td style="width: 160px;">Deskripsi :</td>
-                                                <td class="text-justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</td>
+                                                <td class="text-justify">{{ $tailor->tailor_desc }}</td>
                                             </tr>
                                             <tr>
                                                 <td style="width: 160px;"> <i class="fa fa-phone" style="font-size:15px; transform: scale(-1, 1); padding-left:5px;"></i>  Nomor Telepon :</td>
-                                                <td>08493839293</td>
+                                                <td>{{ $tailor->tailor_contact }}</td>
                                             </tr>
                                         </tbody>
                                     </table>
@@ -108,7 +108,9 @@
             <h3 class="modal-title">Konfirmasi Penghapusan</h3>
             <button type="button" data-dismiss="modal" class="close">&times;</button>
         </div>
-        <form action="/admintailor" method="POST" id="deleteForm">
+        <form action="/admintailor/{{ $tailor->id }}" method="POST" id="deleteForm">
+        @csrf
+        @method('delete')
             <div class="modal-body">
 
                 <h5> Setelah dihapus data akan benar-benar hilang. </h5>

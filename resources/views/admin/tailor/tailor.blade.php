@@ -71,7 +71,7 @@
                 @foreach($tailors as $tailors)
                 <tr>
                   <td>{{ $tailors->id }}</td>
-                  <td><a href="#">{{ $tailors->tailor_name }}</a></td>
+                  <td><a href="/admintailor/{{ $tailors->id }}">{{ $tailors->tailor_name }}</a></td>
                   <td>{{ $tailors->tailor_age }}</td>
                   <td>{{ $tailors->tailor_address }}</td>                 
                   <td>  </td>

@@ -7,7 +7,7 @@
     <nav aria-label="breadcrumb">
         <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="{{ url('admincatalog') }}">Catalog</a></li>
-            <li class="breadcrumb-item active" aria-current="admineditcatalog">Catalog Name</li>
+            <li class="breadcrumb-item active" aria-current="admineditcatalog">Catalog View</li>
         </ol>
     </nav>
 </div>
@@ -21,20 +21,20 @@
                         <div class="card-body">
                             <div class="row">
                                 <div class="col-md-6">
-                                    <img src="/images/contohbaju.png" class="rounded mx-auto d-block" width="100%" alt=""> 
+                                    <img src="/uploads/product/{{$product->product_image}}" class="rounded mx-auto d-block" width="100%" alt=""> 
                                 </div>
                                 <div class="col-md-6 mt-2">
                                     <div class="row mt-2">
                                         <div class="col-6">
-                                            <h3>Tie Dye Clothes</h3>
+                                            <h3>{{ $product->product_name }}</h3>
                                         </div>
                                         <div class="col-6">
-                                            <a class ="btn btn-secondary float-right" href ="/admineditcatalog" style="padding: 5px 30px; width: 120px; height: 35px;"> Perbarui</a>
+                                            <a class ="btn btn-secondary float-right" href ="/admincatalog/{{ $product->id }}/edit" style="padding: 5px 30px; width: 120px; height: 35px;"> Perbarui</a>
                                         </div>
                                     </div>
                                     <div class="row mt-2">
                                         <div class="col-8 product-price">
-                                            <ins>Rp50.000</ins>
+                                            <ins>Rp{{ number_format($product->product_price)}}</ins>
                                         </div>
                                         <div class="col-4">
                                             <a class="btn btn-block btn-danger btn-sm delete float-right" data-id="#deletecatalog" data-toggle="modal" data-target="#deletecatalog" style="padding: 5px 30px; width: 120px; height: 30px;">Hapus</a>
@@ -44,19 +44,19 @@
                                         <tbody>
                                             <tr>
                                                 <td>Deskripsi :</td>
-                                                <td>Ini adalah produk tie dye</td>
+                                                <td>{{ $product->product_desc }}</td>
                                             </tr>
                                             <tr>
                                                 <td>Kategori :</td>
-                                                <td>Kaos</td>
+                                                <td>{{ $product->product_category }}</td>
                                             </tr>
                                             <tr>
                                                 <td>Tipe :</td>
-                                                <td>Tipe 3</td>
+                                                <td>{{ $product->product_type }}</td>
                                             </tr>
                                             <tr>
                                                 <td>Bahan :</td>
-                                                <td>Katun</td>
+                                                <td>{{ $product->product_material }}</td>
                                             </tr>
                                         </tbody>
                                     </table>
@@ -64,11 +64,11 @@
                                         <div class="card">
                                             <div class="row">
                                                 <div class="col-5 m-3">
-                                                    <a href="#suprapto"><h4>Suprapto</h4></a>
-                                                    <p>Jalan Merdeka</p>
+                                                    <a href="/admintailor/{{$product->tailor->id}}"><h4>{{ $product->tailor->tailor_name }}</h4></a>
+                                                    <p>{{ $product->tailor->tailor_address }}</p>
                                                 </div>
                                                 <div class="col-2">
-                                                    <a class="btn btn-lg btn-success m-3" href="https://api.whatsapp.com/send?phone=+6284920392309&text=Hi,%20I%20would%20like%20to%20get%20more%20information..">
+                                                    <a class="btn btn-lg btn-success m-3" href="https://api.whatsapp.com/send?phone={{$product->tailor->tailor_contact}}&text=Hi,%20I%20would%20like%20to%20get%20more%20information..">
                                                         <i class="fab fa-whatsapp fa-2x"></i>
                                                     </a>
                                                 </div>
@@ -104,7 +104,9 @@
                 <h3 class="modal-title">Konfirmasi Penghapusan</h3>
                 <button type="button" data-dismiss="modal" class="close">&times;</button>
             </div>
-            <form action="/admincatalog" method="POST" id="deleteForm">
+            <form action="/admincatalog/{{$product->id}}" method="POST" id="deleteForm">
+            @csrf
+            @method('delete')
                 <div class="modal-body">
 
                     <h5> Setelah dihapus data akan benar-benar hilang. </h5>
