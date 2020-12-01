@@ -22,7 +22,7 @@
                     <div class="row">
                         <div class="col-md-3 mt-3">
                             @if($order->design == NULL)
-                            <img src= "{{ url('uploads') }}/{{ $order->product->product_image }}" class="card-img-top" alt="...">
+                            <img src= "{{ url('uploads/product') }}/{{ $order->product->product_image }}" class="card-img-top" alt="...">
                             @else
                             <!-- MASING BINGUNG GIMANA KONVERSI LOKASI FOTO JADI NAMA FOTO NYA AJA -->
                             <img src= "{{ url('uploads/self_design') }}/{{ $order->design}}" class="card-img-top" alt="...">

@@ -91,7 +91,7 @@ class OrderController extends Controller
 			$order->size = $request->size;
 			$order->notes = $request->notes;
 	    	$order->status = 0;
-			$order->design = $request->design;
+			$order->design = $filename->getClientOriginalName();
 			$order->total_price = 0;
 			$order->date = $date;
 
