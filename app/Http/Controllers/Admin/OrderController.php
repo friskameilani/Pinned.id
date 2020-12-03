@@ -20,10 +20,9 @@ class OrderController extends Controller
         return view('admin/order/order', compact('orders')); //Nanti diganti menyesuaikan nama file bladeny
 	}
 	
-	public function order_detail($id) //Menampilkan detail order persatuan
+	public function order_detail(Order $order) //Menampilkan detail order persatuan
     {
-        $product = Order::where('id', $id)->first();
-        return view('admin.vieworder', compact('product')); //Nanti diganti menyesuaikan nama file bladeny
+        return view('admin.order.detail', compact('order')); //Nanti diganti menyesuaikan nama file bladeny
     }
 
     public function destroy($id) //Menghapus order (Otomatis terhapus juga di history user)

@@ -41,6 +41,7 @@ class PaymentController extends Controller
             $dest = "uploads/payments";
             $filename = $request->file('transfer_evidence');
             $filename-> move($dest, $filename->getClientOriginalName());
+            $namefile = $filename->getClientOriginalName();
         }
 
         $payment = new Payment;
@@ -48,7 +49,7 @@ class PaymentController extends Controller
         $payment->order_id = $order->random_code;
         $payment->account_name = $request->account_name;
         $payment->bill_amount = $request->bill_amount;
-        $payment->transfer_evidence = $request->transfer_evidence;
+        $payment->transfer_evidence = $namefile;
         $payment->date = $request->date;
         $payment->save();
         

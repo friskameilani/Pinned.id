@@ -19,10 +19,9 @@ class PaymentController extends Controller
         return view('admin.payment.payment', compact('payments')); //Nanti diganti menyesuaikan nama file bladeny
 	}
 	
-	public function payment_detail($id) //Menampilkan detail order persatuan
+	public function payment_detail(Payment $payment) //Menampilkan detail order persatuan
     {
-        $payment = Payment::where('id', $id)->first();
-        return view('admin.viewpayment', compact('payment')); //Nanti diganti menyesuaikan nama file bladeny
+        return view('admin.payment.detail', compact('payment')); //Nanti diganti menyesuaikan nama file bladeny
     }
 
     public function destroy($id) //Ini delete buat di admin

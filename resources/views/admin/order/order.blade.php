@@ -33,16 +33,16 @@
                 <tr>
                   <th ><center>#</center></th>
                   <th ><center>Order ID</center></th>
-                  <th ><center>Status</center></th>
+                  <th ><center>Status Pembayaran</center></th>
                   <th ><center>Nama</center></th>
                   <th ><center>Tanggal</center></th>
-                  <th ><center>Status Pembayaran</center></th>
+                  <th ><center>Status Pemesanan</center></th>
                   <th ><center>Aksi</center></th>
                 </tr>
                 </thead>
 
 
-                <tbody>
+                <tbody style="text-align:center">
                 @foreach($orders as $orders)
                 <tr>
                   <td>{{ $loop->iteration }}</td>
@@ -50,12 +50,21 @@
                   
                   <!-- DISINI TAMBAHIN KONDISI COMPLETED, CANCELLED, PENDING -->
                   <td>
-                    @if ( $orders->status == 0 )
-                      Processing
-                    @elseif ( $orders->status == 1)
-                      Completed
-                    @else
-                      Cancelled
+                    <!-- STATUS: BELUM DIBAYAR -->
+                    @if($orders->status == 0)
+                    <a href="#" class="btn btn-unpaid disabled">Belum dibayar</a>
+                    <!-- STATUS: SUDAH DIBAYAR BELUM DIKONFIRMASI-->
+                    @elseif($orders->status == 1)
+                    <a href="#" class="btn btn-wait disabled">Menunggu konfirmasi</a>
+                    <!-- STATUS: SUDAH DIBAYAR BELUM DIPROSES-->
+                    @elseif($orders->status == 2)
+                    <a href="#" class="btn btn-paid disabled">Sudah dibayar</a>
+                    <!-- STATUS: SEDANG DIPROSES-->
+                    @elseif($orders->status == 3)
+                    <a href="#" class="btn btn-process disabled">Sedang diproses</a>
+                    <!-- STATUS: SELESAI-->
+                    @elseif($orders->status == 4)
+                    <a href="#" class="btn btn-completed disabled">Selesai</a>
                     @endif
                   </td>
                   <!-- -->
@@ -67,10 +76,10 @@
                   <!-- -->
 
                   <!-- DISINI KONDISI PAID/UNPAID -->
-                  <td> </td>
+                  <td></td>
                   <!-- -->
 
-                  <td><a href="/adminorderdetail" type="button" class="btn btn-block btn-secondary btn-sm">Detail</a></td>
+                  <td><a href="/adminorder/{{ $orders->id }}" type="button" class="btn btn-block btn-secondary btn-sm">Detail</a></td>
                 </tr>
                 @endforeach
 

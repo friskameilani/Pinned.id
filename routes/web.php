@@ -82,10 +82,12 @@ Route::get('/tailor/{tailor}', 'TailorController@showtailor')->name('tailor.show
 
     /* ---------- Order --------------  */
     Route::get('/adminorder', 'Admin\OrderController@allorder');
+    Route::get('/adminorder/{order}', 'Admin\OrderController@order_detail');
     
 
     /* ---------- Payment --------------  */
     Route::get('/adminpayment', 'Admin\PaymentController@allpayments');
+    Route::get('/adminpayment/{payment}', 'Admin\PaymentController@payment_detail');
 
     /* ---------- FAQ --------------  */
     Route::get('/adminfaq', 'Admin\FAQController@index');
@@ -99,16 +101,6 @@ Route::get('/tailor/{tailor}', 'TailorController@showtailor')->name('tailor.show
     //     return view('/admin/catalog/catalog');
     // });
 
-   
-
-
-    Route::get('/adminorderdetail', function () {
-        return view('/admin/order/detail');
-    });
-
-    Route::get('/adminpaymentdetail', function () {
-        return view('/admin/payment/detail');
-    });
 
     Route::get('/adminviewtailor', function () {
         return view('/admin/tailor/view');

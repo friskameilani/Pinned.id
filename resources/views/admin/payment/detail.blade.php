@@ -29,35 +29,35 @@
                 <div class="card">
                     <div class="card-body">
                         <h3>
-                            Detail Pembayaran: 1245
+                            Detail Pembayaran: {{ $payment->order_id }}
                         </h3>
                         <br></br>
                         <table class="table">
                             <tbody>
                                 <tr>
                                     <td>No. Order :</td>
-                                    <td>1245</td>
+                                    <td>{{ $payment->order_id }}</td>
                                 </tr>
                                 <tr>
                                     <td>Nama Pemilik Rekening :</td>
-                                    <td>Mahardhika Adhi</td>
+                                    <td>{{ $payment->account_name }}</td>
                                 </tr>
                                 <tr>
                                     <td>No. HP :</td>
-                                    <td>08347829392</td>
+                                    <td>{{ $payment->user->phone_number }}</td>
                                 </tr>
                                 <tr>
                                     <td>Jumlah Pembayaran :</td>
-                                    <td>Rp 450.000</td>
+                                    <td>Rp {{ $payment->bill_amount }}</td>
                                 </tr>
                                 <tr>
                                     <td>Tanggal Transfer :</td>
-                                    <td>22-09-2020 18:31</td>
+                                    <td>{{ $payment->date }}</td>
                                 </tr>
                                 <tr>
                                     <td>Bukti Transfer :</td>
                                     <td>
-                                        <img src="/images/contohstruk.png" style="width: 200px; height: 400px;">
+                                        <img src="/uploads/payments/{{ $payment->transfer_evidence}}" style="width: 200px; height: 400px;">
                                     </td>
                                 </tr>
                             </tbody>

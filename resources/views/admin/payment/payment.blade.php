@@ -61,7 +61,7 @@
                   <td>{{ $payments->date }}</td>                  
                   <!-- -->
 
-                  <td><a href="/adminpaymentdetail" type="button" class="btn btn-block btn-secondary btn-sm">Detail</a></td>
+                  <td><a href="/adminpayment/{{ $payments->id }}" type="button" class="btn btn-block btn-secondary btn-sm">Detail</a></td>
                 </tr>
                 @endforeach
 

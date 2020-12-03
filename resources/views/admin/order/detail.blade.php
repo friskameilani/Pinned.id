@@ -29,60 +29,48 @@
                 <div class="card">
                     <div class="card-body">
                         <h3>
-                            Detail Pemesanan: #12345
+                            Detail Pemesanan: {{ $order->random_code }}
                         </h3>
                         <br></br>
                         <table class="table">
                             <tbody>
                                 <tr>
                                     <td>Nama :</td>
-                                    <td>Mahardhika Adhi</td>
+                                    <td>{{ $order->ordered_name }}</td>
                                 </tr>
                                 <tr>
                                     <td>No. HP :</td>
-                                    <td>08347829392</td>
+                                    <td>{{ $order->ordered_phone }}</td>
                                 </tr>
                                 <tr>
                                     <td>Kode Produk :</td>
-                                    <td>#12345</td>
+                                    <td>{{ $order->product_id }}</td>
                                 </tr>
                                 <tr>
                                     <td>Jumlah :</td>
-                                    <td>4</td>
+                                    <td>{{ $order->qty }}</td>
                                 </tr>
                                 <tr>
                                     <td>Ukuran :</td>
-                                    <td>XL</td>
+                                    <td>{{ $order->size }}</td>
                                 </tr>
                                 <tr>
                                     <td>Desain :</td>
                                     <td>
-                                        <img src="/images/contohbaju.png" style="width: 200px; height: 200px;">
+                                        @if( $order->design == null)
+                                        <img src="/uploads/product/{{$order->product->product_image}}" style="width: 200px; height: 200px;">
+                                        @else
+                                        <img src="/uploads/self_design/{{ $order->design }}" style="width: 200px; height: 200px;">
+                                        @endif
                                     </td>
                                 </tr>
                                 <tr>
                                     <td>Keterangan :</td>
-                                    <td>gaada</td>
-                                </tr>
-                                <tr>
-                                    <td>Provinsi :</td>
-                                    <td>Jawa Barat</td>
-                                </tr>
-                                <tr>
-                                    <td>Kota/Kabupaten :</td>
-                                    <td>Depok</td>
-                                </tr>
-                                <tr>
-                                    <td>Kecamatan :</td>
-                                    <td>Sukmajaya</td>
-                                </tr>
-                                <tr>
-                                    <td>Kode Pos :</td>
-                                    <td>16472</td>
+                                    <td>{{ $order->notes }}</td>
                                 </tr>
                                 <tr>
                                     <td>Alamat :</td>
-                                    <td>Jalan Merdeka No. 55</td>
+                                    <td>{{ $order->ordered_address }}</td>
                                 </tr>
                             </tbody>
                         </table>
