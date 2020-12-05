@@ -60,7 +60,7 @@
                   <th ><center>Nama</center></th>
                   <th ><center>Umur</center></th>
                   <th ><center>Alamat</center></th>
-                  <th ><center>Jumlah Produk</center></th>
+                  <!-- <th ><center>Jumlah Produk</center></th> -->
                   <th ><center>Deskripsi</center></th>
                   <th ><center>Aksi</center></th>
                 </tr>
@@ -74,7 +74,7 @@
                   <td><a href="/admintailor/{{ $tailors->id }}">{{ $tailors->tailor_name }}</a></td>
                   <td>{{ $tailors->tailor_age }}</td>
                   <td>{{ $tailors->tailor_address }}</td>                 
-                  <td>  </td>
+                  <!-- <td>counter</td> -->
                   <td>{{ $tailors->tailor_desc }}</td>
                   <td><a href="/admintailor/{{ $tailors->id }}/edit" type="button" class="btn btn-block btn-primary btn-sm">Edit</a>
                   <a type="button" class="btn btn-block btn-danger btn-sm delete" data-id="#deletetailor" data-toggle="modal" data-target="#deletetailor" >Delete</a></td>

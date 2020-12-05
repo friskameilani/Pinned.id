@@ -22,7 +22,11 @@
                         <div class="card-body">
                             <div class="row">
                                 <div class="col-md-6">
-                                    <img src="/images/contoh.png" class="rounded mx-auto d-block" width="100%" alt=""> 
+                                    @if($tailor->tailor_photo == null)
+                                    <img src="/uploads/tailors/Person-Icon.png" class="rounded mx-auto d-block" width="100%" alt=""> 
+                                    @else
+                                    <img src="/uploads/tailors/{{$tailor->tailor_photo}}" class="rounded mx-auto d-block" width="100%" alt=""> 
+                                    @endif
                                 </div>
                                 <div class="col-md-6 mt-2">
                                     <div class="row mt-2">
@@ -71,18 +75,20 @@
 <br></br>
 
 <div class="row" style="margin: 20px">
+@foreach($products as $product)
     <div class="col-6 col-md-4 col-lg-3 col-xl-2">
         <div class="card">
-            <img src= "/images/contohbaju.png" class="card-img-top" alt="...">
+            <img src= "/uploads/product/{{$product->product_image}}" class="card-img-top" alt="...">
             <div class="card-body">
-                <h5 class="card-title">Tie Dye Clothes</h5>
+                <h5 class="card-title">{{ $product->product_name }}</h5>
                 <p class="card-text">
-                    <strong>  Rp40.000  </strong><br>
+                    <strong>  Rp {{ $product->product_price }} </strong><br>
                 </p>
-                <a href="/adminviewcatalog" class="btn btn-primary btn-block"> Lihat</a>
+                <a href="/adminviewcatalog/{{ $product->id }}" class="btn btn-primary btn-block"> Lihat</a>
             </div>
         </div> 
     </div>
+@endforeach
 </div>
 
 

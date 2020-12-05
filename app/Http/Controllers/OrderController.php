@@ -51,7 +51,7 @@ class OrderController extends Controller
 			$order->size = $request->size;
 			$order->notes = $request->notes;
 	    	$order->date = $date;
-	    	$order->status = 0;
+			$order->status = 0;
 			$order->total_price = $product->product_price * $order->qty;
 			$order->save();
 
@@ -83,7 +83,7 @@ class OrderController extends Controller
 			$order->qty = $request->qty;
 			$order->size = $request->size;
 			$order->notes = $request->notes;
-	    	$order->status = 0;
+			$order->status = 0;
 			$order->design = $filename->getClientOriginalName();
 			$order->total_price = 0;
 			$order->date = $date;

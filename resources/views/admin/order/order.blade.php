@@ -33,10 +33,9 @@
                 <tr>
                   <th ><center>#</center></th>
                   <th ><center>Order ID</center></th>
-                  <th ><center>Status Pembayaran</center></th>
+                  <th ><center>Status</center></th>
                   <th ><center>Nama</center></th>
                   <th ><center>Tanggal</center></th>
-                  <th ><center>Status Pemesanan</center></th>
                   <th ><center>Aksi</center></th>
                 </tr>
                 </thead>
@@ -75,9 +74,6 @@
                   <td>{{ $orders->date }}</td>                  
                   <!-- -->
 
-                  <!-- DISINI KONDISI PAID/UNPAID -->
-                  <td></td>
-                  <!-- -->
 
                   <td><a href="/adminorder/{{ $orders->id }}" type="button" class="btn btn-block btn-secondary btn-sm">Detail</a></td>
                 </tr>

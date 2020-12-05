@@ -28,8 +28,7 @@ class CreateOrdersTable extends Migration
             $table->string('design')->nullable();
             $table->string('notes')->nullable();
             $table->date('date');
-            $table->string('status'); //buat terkirim, dlam proses atau ngganya
-         //   $table->integer('code');
+            $table->string('status'); 
             $table->timestamps();
         });
     }

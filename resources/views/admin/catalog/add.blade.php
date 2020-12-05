@@ -62,7 +62,7 @@
                                 <select class="custom-select border border-dark" name="tailor_name" style="width: 492px;">
                                     <option selected>Choose Tailor..</option>
                                     @foreach($tailors as $tailor)
-                                    <option value="{{$tailor->id}}">{{$tailor->tailor_name}}</option>
+                                    <option value="{{$tailor->id}}">{{$tailor->tailor_name}} -- ID: {{$tailor->id}}</option>
                                     @endforeach
                                 </select>
                         </div>

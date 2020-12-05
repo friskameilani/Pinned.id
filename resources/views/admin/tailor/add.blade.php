@@ -39,7 +39,7 @@
                 <div class="col-md-6">
                     <h2>Tambah Penjahit Baru</h2>
 
-                    <form method="POST" action="/adminaddtailor">
+                    <form method="POST" action="/adminaddtailor" enctype="multipart/form-data">
                         @csrf
 
                         <!-- NAMA -->
@@ -52,6 +52,12 @@
                         <div class="form-group">
                             <label for="category" class="col-form-label text-md-left">{{ __('Age') }}</label>
                             <input type="number" id="replyNumber" min="18" max="50" class="form-control @error('age') is-invalid @enderror border border-dark" name="tailor_age" required="" style="width: 492px;" ></textarea>
+                        </div>
+                        
+                        <!-- POHOTO -->
+                        <div class="form-group">
+                            <label for="image" class="col-form-label text-md-left">{{ __('Foto Penjahit') }}</label>
+                            <input id="image" type="file" class="form-control @error('image') is-invalid @enderror border border-dark" name="image" value=" " required autocomplete="image" autofocus style="width: 492px;">
                         </div>
 
                         <!-- LOCATION -->

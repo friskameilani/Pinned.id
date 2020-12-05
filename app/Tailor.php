@@ -17,6 +17,6 @@ class Tailor extends Model
     }
 
     protected $fillable = [
-        'tailor_name', 'tailor_age', 'tailor_contact', 'tailor_desc', 'tailor_address'
+        'tailor_name', 'tailor_age', 'tailor_contact', 'tailor_desc', 'tailor_photo', 'tailor_address'
     ];
 }

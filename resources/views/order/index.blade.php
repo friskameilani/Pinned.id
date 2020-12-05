@@ -13,7 +13,7 @@
                         <div class="card-body">
                             <div class="row">
                                 <div class="col-md-4">
-                                    <img src="{{ url('uploads') }}/{{ $product->product_image }}" class="rounded mx-auto d-block" width="100%" alt=""> 
+                                    <img src="{{ url('uploads') }}/product/{{ $product->product_image }}" class="rounded mx-auto d-block" width="100%" alt=""> 
                                     <div class="m-3" style="text-align:center">
                                         <h3>{{ $product->product_name }}</h3>
                                         <div style="color: #A06357; "> 

@@ -51,7 +51,7 @@
                                 @foreach($products as $product)
                                 <div class="col-6 col-lg-4 col-xl-3">
                                     <div class="card mb-3">
-                                    <img src= "{{url('uploads')}}/{{$product->product_image}}" class="card-img-top" alt="...">
+                                    <img src= "{{url('uploads')}}/product/{{$product->product_image}}" class="card-img-top" alt="...">
                                     <div class="card-body">
                                         <h5 class="card-title">{{$product->product_name}}</h5>
                                         <p class="card-text">

@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Tailor;
+use App\Product;
 
 class TailorController extends Controller
 {
@@ -15,7 +16,9 @@ class TailorController extends Controller
 
     public function index()
     {
+
         $tailors = Tailor::all();
+        // $products = Product::where('tailor_id', $tailors->id)->get();
         return view('admin/tailor/tailor', compact('tailors'));
     }
 
@@ -26,20 +29,35 @@ class TailorController extends Controller
 
     public function posttailor(Request $request)
     {
-        if($request->hasFile('tailor_photo'))
+        $this->validate($request, [
+			'image' => 'mimes:jpg,jpeg,png,bmp,tiff |max:4096',
+        ]);
+        
+        if($request->hasFile('image'))
         {
             $dest = "uploads/tailors";
-            $filename = $request->file('tailor_photo');
-            $filename-> move($dest, $filename->getClientOriginalName());
+            $filename = $request->file('image');
+            $realname = $filename->getClientOriginalName();
+            $filename-> move($dest, $realname);
         }
 
-        Tailor::create($request->all());
+            $tailor = new Tailor;
+            $tailor->tailor_name = $request->tailor_name;
+            $tailor->tailor_age = $request->tailor_age ;
+            $tailor->tailor_photo = $realname;
+            $tailor->tailor_address = $request->tailor_address;
+            $tailor->tailor_contact = $request->tailor_contact;
+            $tailor->tailor_desc = $request->tailor_desc;
+
+            $tailor->save();
+
         return redirect('/admintailor');
     }
 
     public function showtailor(Tailor $tailor)
     {
-        return view('admin.tailor.view', compact('tailor'));
+        $products = Product::where('tailor_id', $tailor->id)->get();
+        return view('admin.tailor.view', compact(['tailor', 'products']));
     }
     
     public function edit($id)
