@@ -2,7 +2,7 @@
 @extends ('layouts.adminapp')
 
 @section('content')
-<title class="text-center">Tailor</title>
+<title class="text-center">Penjahit</title>
 
     <!-- Content Wrapper. Contains page content -->
     
@@ -38,7 +38,7 @@
                 <!-- BUTTON ADD -->
                 <a href="{{ url('adminaddtailor') }}">
                     <button type="button" class="btn btn-success float-right">
-                        +Add New Tailor
+                        +Tambah Penjahit Baru
                     </button>
                 </a>
             </div>

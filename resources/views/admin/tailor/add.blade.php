@@ -13,8 +13,8 @@
             <div class="col-md-12 mt-2">
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="{{ url('admintailor') }}">Tailor</a></li>
-                        <li class="breadcrumb-item active" aria-current="adminaddtailor">New Tailor</li>
+                        <li class="breadcrumb-item"><a href="{{ url('admintailor') }}">Penjahit</a></li>
+                        <li class="breadcrumb-item active" aria-current="adminaddtailor">Penjahit Baru</li>
                     </ol>
                 </nav>
             </div>
@@ -44,13 +44,13 @@
 
                         <!-- NAMA -->
                         <div class="form-group">
-                            <label for="name" class="col-form-label text-md-left">{{ __('Name') }}</label>
+                            <label for="name" class="col-form-label text-md-left">{{ __('Nama') }}</label>
                             <input id="name" type="text" class="form-control @error('name') is-invalid @enderror border border-dark" name="tailor_name" value=" " required autocomplete="name" autofocus style="width: 492px;">
                         </div>
 
                         <!-- AGE -->
                         <div class="form-group">
-                            <label for="category" class="col-form-label text-md-left">{{ __('Age') }}</label>
+                            <label for="category" class="col-form-label text-md-left">{{ __('Umur') }}</label>
                             <input type="number" id="replyNumber" min="18" max="50" class="form-control @error('age') is-invalid @enderror border border-dark" name="tailor_age" required="" style="width: 492px;" ></textarea>
                         </div>
                         
@@ -62,19 +62,19 @@
 
                         <!-- LOCATION -->
                         <div class="form-group">
-                            <label for="type" class="col-form-label text-md-left">{{ __('Location') }}</label>
+                            <label for="type" class="col-form-label text-md-left">{{ __('Lokasi') }}</label>
                             <input id="location" class="form-control @error('type') is-invalid @enderror border border-dark" name="tailor_address" required="" style="width: 492px;"></textarea>
                         </div>
 
                         <!-- PHONE NUMBER -->
                         <div class="form-group">
-                            <label for="material" class="col-form-label text-md-left">{{ __('Phone Number') }}</label>
+                            <label for="material" class="col-form-label text-md-left">{{ __('Nomor Telepon') }}</label>
                             <input type="number" id="replyNumber" class="form-control @error('material') is-invalid @enderror border border-dark" name="tailor_contact" required="" style="width: 492px;" ></textarea>
                         </div>
 
                         <!-- DESCRIPTION -->
                         <div class="form-group">
-                            <label for="description" class="col-form-label text-md-left">{{ __('Description') }}</label>
+                            <label for="description" class="col-form-label text-md-left">{{ __('Deskripsi') }}</label>
                             <textarea class="form-control @error('address') is-invalid @enderror border border-dark" name="tailor_desc" required="" style="width: 492px;"></textarea>
                         </div>
 
@@ -83,7 +83,7 @@
                             <div class="col-md-6 offset-md-5">
                                 <a href="/adminaddtailorsuccess">
                                     <button type="submit" class="btn btn-primary float-right">
-                                    Save
+                                    Simpan
                                     </button>
                                 </a>
                             </div>

@@ -2,7 +2,7 @@
 @extends ('layouts.adminapp')
 
 @section('content')
-<title class="text-center">Payment</title>
+<title class="text-center">Pembayaran</title>
 
     <!-- Content Wrapper. Contains page content -->
     
@@ -13,7 +13,7 @@
             <div class="col-md-6">
                 <!-- JUDUL PAYMENT -->
                 <h1 class="text-left">
-                    Payment
+                  Pembayaran
                 </h1>
             </div>
         </div>

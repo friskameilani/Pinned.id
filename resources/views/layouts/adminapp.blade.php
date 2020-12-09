@@ -25,7 +25,7 @@
     <div id="app">
         <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #3E3434;"> 
             <a class="navbar-brand" href="{{ url('/') }}">
-                Pinned.id
+                <img src="{{ url('images/Pinned.id.png') }}" class="rounded mx-auto d-block" width="200" alt="" style="padding-left: 20px">
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -48,39 +48,25 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
                 <li class="nav-item active">
-                    <a class="nav-link" href="{{ url('/admin') }}">Home</a>
+                    <a class="nav-link" href="{{ url('/admin') }}">Beranda</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ url('/admincatalog') }}">Catalog</a>
+                    <a class="nav-link" href="{{ url('/admincatalog') }}">Katalog</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ url('/admintailor') }}">Tailor</a>
-                </li>
-
-                <li class="nav-item">
-                    <a class="nav-link" href="{{ url('/adminorder') }}">Order</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{{ url('/adminpayment') }}">Payment</a>
-                </li>
-
-                <!-- NUMPANG -->
-                <li class="nav-item">
-                    <a class="nav-link" href="{{ url('/adminorderdetail') }}">Order Detail</a>
+                    <a class="nav-link" href="{{ url('/admintailor') }}">Penjahit</a>
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ url('/adminpaymentdetail') }}">Payment Detail</a>
+                    <a class="nav-link" href="{{ url('/adminorder') }}">Pemesanan</a>
                 </li>
-
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ url('/adminviewtailor') }}">View Tailor</a>
+                    <a class="nav-link" href="{{ url('/adminpayment') }}">Pembayaran</a>
                 </li>
 
                 <li class="nav-item">
                     <a class="nav-link" href="{{ url('/adminfaq') }}">FAQ</a>
                 </li>
-                <!-- -->
 
                 <li class="nav-item">
                     <a class="nav-link" href="{{ url('admin/logout') }}">Logout</a>

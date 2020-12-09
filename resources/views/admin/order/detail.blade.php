@@ -13,7 +13,7 @@
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="{{ url('adminorder') }}">Order</a></li>
-                <li class="breadcrumb-item active" aria-current="admindetailorder">Order Detail</li>
+                <li class="breadcrumb-item active" aria-current="admindetailorder">Detail Order</li>
             </ol>
         </nav>
     </div>
@@ -39,7 +39,7 @@
                                     <td>{{ $order->ordered_name }}</td>
                                 </tr>
                                 <tr>
-                                    <td>No. HP :</td>
+                                    <td>Nomor telepon :</td>
                                     <td>{{ $order->ordered_phone }}</td>
                                 </tr>
                                 <tr>

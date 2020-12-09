@@ -13,9 +13,9 @@
             <div class="col-md-12 mt-2">
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="{{ url('admincatalog') }}">Catalog</a></li>
+                        <li class="breadcrumb-item"><a href="{{ url('admincatalog') }}">Katalog</a></li>
                         <li class="breadcrumb-item "><a href="/adminviewcatalog/{{$product->id}}">{{ $product->product_name }}</a></li>
-                        <li class="breadcrumb-item active" aria-current="admineditcatalog">Edit Catalog</li>
+                        <li class="breadcrumb-item active" aria-current="admineditcatalog">Ubah Katalog</li>
                     </ol>
                 </nav>
             </div>
@@ -47,7 +47,7 @@
                                 <p class="text-height-half">{{ $product->tailor->tailor_name }}</p>
                                 <p class="text-height-half">{{ $product->tailor->tailor_address }}</p>
                                 <p class="text-height-half">{{ $product->tailor->tailor_age}} tahun</p>
-                                <p class="text-height-3">Phone Number:</p>
+                                <p class="text-height-3">Nomor telepon: </p>
                                 <p class="text-height-1" style="font-size: 20px;">{{ $product->tailor->tailor_contact }}</p>
                             </div>
                         </div>
@@ -56,14 +56,14 @@
 
                 <!-- SISI KANAN FORM -->
                 <div class="col-md-6">
-                    <h2>Edit Katalog</h2>
+                    <h2>Ubah Katalog</h2>
 
                     <form method="POST" action="/admincatalog/{{$product->id}}/edit">
                         @csrf
                         @method('patch')
                         <!-- NAMA -->
                         <div class="form-group">
-                            <label for="name" class="col-form-label text-md-left">{{ __('Name') }}</label>
+                            <label for="name" class="col-form-label text-md-left">{{ __('Nama') }}</label>
                             <input id="name" type="text" class="form-control @error('name') is-invalid @enderror border border-dark" name="name" value="{{ $product->product_name }}" required autocomplete="name" autofocus style="width: 492px;">
                         </div>
 
@@ -71,13 +71,13 @@
 
                         <!-- DESCRIPTION -->
                         <div class="form-group">
-                            <label for="description" class="col-form-label text-md-left">{{ __('Description') }}</label>
+                            <label for="description" class="col-form-label text-md-left">{{ __('Deskripsi') }}</label>
                             <textarea name="description" class="form-control @error('description') is-invalid @enderror border border-dark" value="{{ $product->product_desc }}" required="" style="width: 492px;"></textarea>
                         </div>
 
                         <!-- CATEGORY -->
                         <div class="form-group">
-                            <label for="category" class="col-form-label text-md-left">{{ __('Category') }}</label>
+                            <label for="category" class="col-form-label text-md-left">{{ __('Kategori') }}</label>
                                 <select class="custom-select border border-dark" name="category" style="width: 492px;">
                                     <option selected>{{ $product->product_category }}</option>
                                     <option value="Batik">Batik</option>
@@ -90,7 +90,7 @@
 
                         <!-- TYPE -->
                         <div class="form-group">
-                            <label for="type" class="col-form-label text-md-left">{{ __('Type') }}</label>
+                            <label for="type" class="col-form-label text-md-left">{{ __('Tipe') }}</label>
                             <br>
                                 <select class="custom-select border border-dark" name="type" style="width: 492px;">
                                     <option selected>{{ $product->product_type }}</option>
@@ -108,7 +108,7 @@
 
                         <!-- Price -->
                         <div class="form-group">
-                            <label for="price" class="col-form-label text-md-left">{{ __('Color') }}</label>
+                            <label for="price" class="col-form-label text-md-left">{{ __('Warna') }}</label>
                             <input id="price" name="price" value="{{ $product->product_price }}" class="form-control @error('price') is-invalid @enderror border border-dark" required="" style="width: 492px;"></textarea>
                         </div>
 
@@ -117,7 +117,7 @@
                         <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-5">
                                 <button type="submit" class="btn btn-primary float-right">
-                                    Save
+                                    Simpan
                                 </button>
                             </div>
                         </div>

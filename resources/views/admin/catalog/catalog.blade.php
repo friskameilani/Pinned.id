@@ -31,7 +31,7 @@
                 <!-- BUTTON ADD -->
                 <a href="{{ url('adminaddcatalog') }}">
                     <button type="button" class="btn btn-success float-right">
-                        +Add New Product
+                        +Tambah Produk Baru
                     </button>
                 </a>
             </div>
@@ -56,8 +56,8 @@
                     <div class="dropdown">
                         <a data-toggle="dropdown"><i class="fa fa-ellipsis-v fa-2x waves-effect"></i></a>
                         <div class="dropdown-menu">
-                        <a class="dropdown-item" href="/admincatalog/{{$products->id}}/edit">Edit</a>
-                        <a class="dropdown-item delete" data-id="#deletecatalog" data-toggle="modal" data-target="#deletecatalog" href="#">Delete</a>
+                        <a class="dropdown-item" href="/admincatalog/{{$products->id}}/edit">Ubah</a>
+                        <a class="dropdown-item delete" data-id="#deletecatalog" data-toggle="modal" data-target="#deletecatalog" href="#">Hapus</a>
                         </div>
                     </div>
                 </div>
