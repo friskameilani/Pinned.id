@@ -76,13 +76,15 @@ Route::get('/tailor/{tailor}', 'TailorController@showtailor')->name('tailor.show
     Route::get('/admintailor/{tailor}', 'Admin\TailorController@showtailor'); 
     Route::get('/admintailor/{tailor}/edit', 'Admin\TailorController@edit');
     Route::patch('/admintailor/{tailor}', 'Admin\TailorController@postedit');
-    Route::delete('/admintailor/{tailor}', 'Admin\TailorController@delete');
+    Route::delete('/admintailor/{tailor}', 'Admin\TailorController@destroy')->name('admintailor.destroy');
     Route::get('/adminaddtailor', 'Admin\TailorController@createtailor');
     Route::post('/adminaddtailor', 'Admin\TailorController@posttailor');
 
     /* ---------- Order --------------  */
+    // Route::resource('adminorder','Admin\OrderController');
     Route::get('/adminorder', 'Admin\OrderController@allorder');
     Route::get('/adminorder/{order}', 'Admin\OrderController@order_detail');
+    Route::patch('/adminorder/{order}', 'Admin\OrderController@update')->name('adminorder.update');
     
 
     /* ---------- Payment --------------  */

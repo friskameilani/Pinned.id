@@ -80,9 +80,11 @@ class TailorController extends Controller
         return redirect('/admintailor');
     }
 
-    public function delete(Tailor $tailor)
+    public function destroy(Request $request)
     {
-        $tailor = Tailor::where('id', $tailor->id)->delete();
-	    return redirect('/admintailor');
+        $tailor = Tailor::findOrFail($request->tailor_id);
+        $tailor->delete();
+
+	    return back();
     }
 }

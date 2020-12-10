@@ -37,6 +37,7 @@
                                     <!-- INI STATUSNYA PAID/UNPAID BELUM DITENTUIN -->
 
                                     <!-- STATUS: BELUM DIBAYAR -->
+                                    
                                     @if($order->status == 0)
                                     <a href="#" class="btn btn-unpaid disabled">Belum dibayar</a>
                                     <!-- STATUS: SUDAH DIBAYAR BELUM DIKONFIRMASI-->
@@ -44,13 +45,13 @@
                                     <a href="#" class="btn btn-wait disabled">Menunggu konfirmasi</a>
                                     <!-- STATUS: SUDAH DIBAYAR BELUM DIPROSES-->
                                     @elseif($order->status == 2)
-                                    <a href="#" class="btn btn-paid disabled">Sudah dibayar</a>
+                                    <a href="#" class="btn btn-paid disabled">Dalam Proses Pengerjaan</a>
                                     <!-- STATUS: SEDANG DIPROSES-->
                                     @elseif($order->status == 3)
-                                    <a href="#" class="btn btn-process disabled">Sedang diproses</a>
+                                    <a href="#" class="btn btn-process disabled">Dalam Proses Pengiriman</a>
                                     <!-- STATUS: SELESAI-->
                                     @elseif($order->status == 4)
-                                    <a href="#" class="btn btn-completed disabled">Selesai</a>
+                                    <a href="#" class="btn btn-completed disabled">Telah Diterima</a>
                                     @endif
                                 </td>
                                 @if($order->product_id == 0 & $order->status == 0)

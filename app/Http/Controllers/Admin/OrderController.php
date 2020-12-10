@@ -34,10 +34,9 @@ class OrderController extends Controller
 
     public function update(Request $request) //Hanya buat update status ordernya 
     {
-    	$order = Order::where('id', $id);
-    	$order->status = $request->status;
-        $order->update();
+    	$order = Order::findOrFail($request->order_id);
+        $order->update($request->all());
         
-        return redirect('/adminorder');
+        return back();
     }
 }

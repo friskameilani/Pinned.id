@@ -68,16 +68,16 @@
 
 
                 <tbody>
-                @foreach($tailors as $tailors)
+                @foreach($tailors as $tailor)
                 <tr>
-                  <td>{{ $tailors->id }}</td>
-                  <td><a href="/admintailor/{{ $tailors->id }}">{{ $tailors->tailor_name }}</a></td>
-                  <td>{{ $tailors->tailor_age }}</td>
-                  <td>{{ $tailors->tailor_address }}</td>                 
+                  <td>{{ $tailor->id }}</td>
+                  <td><a href="/admintailor/{{ $tailor->id }}">{{ $tailor->tailor_name }}</a></td>
+                  <td>{{ $tailor->tailor_age }}</td>
+                  <td>{{ $tailor->tailor_address }}</td>                 
                   <!-- <td>counter</td> -->
-                  <td>{{ $tailors->tailor_desc }}</td>
-                  <td><a href="/admintailor/{{ $tailors->id }}/edit" type="button" class="btn btn-block btn-primary btn-sm">Edit</a>
-                  <a type="button" class="btn btn-block btn-danger btn-sm delete" data-id="#deletetailor" data-toggle="modal" data-target="#deletetailor" >Delete</a></td>
+                  <td>{{ $tailor->tailor_desc }}</td>
+                  <td><a href="/admintailor/{{ $tailor->id }}/edit" type="button" class="btn btn-block btn-primary btn-sm">Edit</a>
+                  <a type="button" class="btn btn-block btn-danger btn-sm delete" data-tailorid="{{$tailor->id}}" data-toggle="modal" data-target="#deletetailor" >Delete</a></td>
                 </tr>
                 @endforeach
                 </tbody>
@@ -109,7 +109,7 @@
           <h3 class="modal-title">Konfirmasi Penghapusan</h3>
           <button type="button" data-dismiss="modal" class="close">&times;</button>
         </div>
-        <form action="/admintailor/{{ $tailors->id }}" method="POST" id="deleteForm">
+        <form action="{{route('admintailor.destroy',  'delete')}}" method="POST" id="deleteForm">
           @csrf
           @method('delete')
 
@@ -117,7 +117,6 @@
             <h5> Setelah dihapus data akan benar-benar hilang. </h5>
             <h5> Apakah tetap ingin melanjutkan? </h5>
 
-            <!-- <input type="hidden" name="_method" value="DELETE"> -->
             <input type="hidden" name="tailor_id" id="tailor_id" value="">
           </div>
           <div class="modal-footer" style="background-color: #EEE;">
@@ -130,4 +129,3 @@
   </div>
 
 @endsection
-

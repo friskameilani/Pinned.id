@@ -10,7 +10,11 @@
     <title>{{ config('app.name', 'Pinned.id') }}</title>
 
     <!-- Scripts -->
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="{{ asset('js/app.js') }}" defer></script>
+
+    
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -94,5 +98,32 @@
         @yield('content')
     </main>
     </div>
+
+    <script>
+    $(document).ready(function () {
+        $('#editorder').on('show.bs.modal', function (event) {
+        var button = $(event.relatedTarget);  
+        var order_id = button.data('orderid');
+        var name = button.data('myname');
+        
+        var modal = $(this);
+        modal.find('.modal-body #order_id').val(order_id);
+        modal.find('.modal-body #name').val(name);
+        });
+    });
+    </script>
+
+    <script>
+     $(document).ready(function () {
+        $('#deletetailor').on('show.bs.modal', function (event) {
+        var button = $(event.relatedTarget);
+        var tailor_id = button.data('tailorid'); 
+        
+        var modal = $(this);
+        modal.find('.modal-body #tailor_id').val(tailor_id);
+        });
+    });
+    </script>
+    
 </body>
 </html>
