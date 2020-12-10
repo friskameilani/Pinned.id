@@ -90,11 +90,13 @@
         $('#editorder').on('show.bs.modal', function (event) {
         var button = $(event.relatedTarget);  
         var order_id = button.data('orderid');
-        var name = button.data('myname');
+        var stat = button.data('status');
         
         var modal = $(this);
+        
+         $('input[value^='+stat+']').prop('checked',true);
         modal.find('.modal-body #order_id').val(order_id);
-        modal.find('.modal-body #name').val(name);
+        // modal.find('.modal-body #name').val(name);
         });
     });
     </script>

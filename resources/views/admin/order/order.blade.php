@@ -75,7 +75,7 @@
                   <td>{{ $order->date }}</td>                  
                   <!-- -->
                   <td>
-                  <button class="btn btn-info" data-myname="{{$order->ordered_name}}" data-orderid="{{$order->id}}" data-toggle="modal" data-target="#editorder">Edit Status</button>
+                  <button class="btn btn-info" data-status="{{$order->status}}" data-orderid="{{$order->id}}" data-toggle="modal" data-target="#editorder">Edit Status</button>
                   <a href="/adminorder/{{ $order->id }}" type="button" class="btn btn-block btn-secondary btn-sm">Detail</a>
                   </td>
                 </tr>
@@ -119,17 +119,27 @@
         @csrf
  
         <div class="modal-body">
-          <h5> Pilih salah satu proses </h5>
+          <h5> Proses Pemesanan </h5>
  
           <input type="hidden" name="order_id" id="order_id" value="">
  
           <!-- <input type="text" class="form-control" name="name" id="name"> -->
-          <select name="status" id="status">
-            <option value='1'>Menunggu konfirmasi</option>
+          <!-- <select name="status" id="status"> -->
+            <input type="radio" id="0" class="modal_check_box" name="status" value="0">
+            <label for="1">Belum Dibayar</label><br>
+            <input type="radio" id="1" class="modal_check_box" name="status" value="1">
+            <label for="1">Menunggu Konfirmasi</label><br>
+            <input type="radio" id="2" class="modal_check_box" name="status" value="2">
+            <label for="2">Dalam Proses Pengerjaan</label><br>
+            <input type="radio" id="3" class="modal_check_box" name="status" value="3">
+            <label for="3">Pengiriman</label><br>
+            <input type="radio" id="4" class="modal_check_box" name="status" value="4">
+            <label for="4">Selesai</label>
+            <!-- <option value='1'>Menunggu konfirmasi</option>
             <option value='2'>Dalam proses Pengerjaan</option>
             <option value='3'>Pengiriman</option>
-            <option value='4'>Selesai</option>
-          </select> 
+            <option value='4'>Selesai</option> -->
+          <!-- </select>  -->
         </div>
         <div class="modal-footer" style="background-color: #EEE;">
           <button type="submit" class="btn btn-primary"> Edit </button>
