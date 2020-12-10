@@ -91,11 +91,14 @@
         var button = $(event.relatedTarget);  
         var order_id = button.data('orderid');
         var stat = button.data('status');
+        var random_id = button.data('code');
         
         var modal = $(this);
         
          $('input[value^='+stat+']').prop('checked',true);
         modal.find('.modal-body #order_id').val(order_id);
+        
+        $('#random_id').html(random_id);
         // modal.find('.modal-body #name').val(name);
         });
     });

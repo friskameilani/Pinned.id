@@ -52,19 +52,19 @@
                   <td>
                     <!-- STATUS: BELUM DIBAYAR -->
                     @if($order->status == 0)
-                    <a href="#" class="btn btn-unpaid disabled">Belum dibayar</a>
+                    <a href="#" class="btn btn-block btn-unpaid disabled">Belum dibayar</a>
                     <!-- STATUS: SUDAH DIBAYAR BELUM DIKONFIRMASI-->
                     @elseif($order->status == 1)
-                    <a href="#" class="btn btn-wait disabled">Menunggu konfirmasi</a>
+                    <a href="#" class="btn btn-block btn-wait disabled">Menunggu konfirmasi</a>
                     <!-- STATUS: SUDAH DIBAYAR BELUM DIPROSES-->
                     @elseif($order->status == 2)
-                    <a href="#" class="btn btn-paid disabled">Dalam proses Pengerjaan</a>
+                    <a href="#" class="btn btn-block btn-paid disabled">Dalam proses Pengerjaan</a>
                     <!-- STATUS: SEDANG DIPROSES-->
                     @elseif($order->status == 3)
-                    <a href="#" class="btn btn-process disabled">Pengiriman</a>
+                    <a href="#" class="btn btn-block btn-process disabled">Pengiriman</a>
                     <!-- STATUS: SELESAI-->
                     @elseif($order->status == 4)
-                    <a href="#" class="btn btn-completed disabled">Selesai</a>
+                    <a href="#" class="btn btn-block btn-completed disabled">Selesai</a>
                     @endif
                   </td>
                   <!-- -->
@@ -75,7 +75,7 @@
                   <td>{{ $order->date }}</td>                  
                   <!-- -->
                   <td>
-                  <button class="btn btn-info" data-status="{{$order->status}}" data-orderid="{{$order->id}}" data-toggle="modal" data-target="#editorder">Edit Status</button>
+                  <a type="button" class="btn btn-block btn-info btn-sm" data-code="{{$order->random_code}}" data-status="{{$order->status}}" data-orderid="{{$order->id}}" data-toggle="modal" data-target="#editorder">Edit Status</a>
                   <a href="/adminorder/{{ $order->id }}" type="button" class="btn btn-block btn-secondary btn-sm">Detail</a>
                   </td>
                 </tr>
@@ -108,7 +108,10 @@
     <!-- Modal Content -->
     <div class="modal-content">
       <div class="modal-header">
-        <h3 class="modal-title">Edit Status Pemesanan</h3>
+        <h3 class="modal-title">Edit Status Pemesanan</h3><br>
+        
+        <!-- <h3 id="random_id" name="random_id" class="modal-title"> </h3> -->
+
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -119,7 +122,7 @@
         @csrf
  
         <div class="modal-body">
-          <h5> Proses Pemesanan </h5>
+        <label>Order ID : <span id="random_id"></span></label><br>
  
           <input type="hidden" name="order_id" id="order_id" value="">
  
