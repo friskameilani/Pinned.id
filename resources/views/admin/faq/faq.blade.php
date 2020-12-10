@@ -21,7 +21,7 @@
                 <!-- BUTTON ADD -->
                 <a href="/adminnewfaq">
                     <button type="button" class="btn btn-success float-right">
-                        +Add New FAQ
+                        +Tambah FAQ baru
                     </button>
                 </a>
             </div>
@@ -54,7 +54,7 @@
                   <td >{{ $no++ }}</td>
                   <td >{{$faq->ask}}</td>
                   <td >{{$faq->answer}}</td>
-                  <td ><a href=" {{ url('adminfaq/edit') }}/{{ $faq->id }} " type="button" class="btn btn-block btn-primary btn-sm">Perbarui</a>
+                  <td ><a href=" {{ url('adminfaq/edit') }}/{{ $faq->id }} " type="button" class="btn btn-block btn-primary btn-sm">Ubah</a>
                   <a type="button" class="btn btn-block btn-danger btn-sm delete" data-id="#deletefaq" data-toggle="modal" data-target="#deletefaq" >Hapus</a></td>
                 </tr>
                 @endforeach

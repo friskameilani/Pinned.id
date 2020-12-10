@@ -13,8 +13,8 @@
             <div class="col-md-12 mt-2">
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="{{ url('admintailor') }}">Tailor</a></li>
-                        <li class="breadcrumb-item active" aria-current="adminaddtailor">New Tailor</li>
+                        <li class="breadcrumb-item"><a href="{{ url('admintailor') }}">Penjahit</a></li>
+                        <li class="breadcrumb-item active" aria-current="adminaddtailor">Edit Profil Penjahit: Nama</li>
                     </ol>
                 </nav>
             </div>
@@ -48,31 +48,31 @@
                         @csrf
                         <!-- NAMA -->
                         <div class="form-group">
-                            <label for="tailor_name" class="col-form-label text-md-left">{{ __('Name') }}</label>
+                            <label for="tailor_name" class="col-form-label text-md-left">{{ __('Nama') }}</label>
                             <input id="tailor_name" type="text" class="form-control @error('tailor_name') is-invalid @enderror border border-dark" name="tailor_name" value="{{ $tailor->tailor_name }}" required autocomplete="tailor_name" autofocus style="width: 492px;">
                         </div>
 
                         <!-- AGE -->
                         <div class="form-group">
-                            <label for="category" class="col-form-label text-md-left">{{ __('Age') }}</label>
+                            <label for="category" class="col-form-label text-md-left">{{ __('Umur') }}</label>
                             <input type="number" id="replyNumber" min="18" max="50" class="form-control @error('tailor_age') is-invalid @enderror border border-dark" name="tailor_age" value="{{ $tailor->tailor_age }}" required="" style="width: 492px;" ></textarea>
                         </div>
 
                         <!-- LOCATION -->
                         <div class="form-group">
-                            <label for="type" class="col-form-label text-md-left">{{ __('Location') }}</label>
+                            <label for="type" class="col-form-label text-md-left">{{ __('Lokasi') }}</label>
                             <input id="location" class="form-control @error('tailor_address') is-invalid @enderror border border-dark" name="tailor_address" value="{{ $tailor->tailor_address }}" required="" style="width: 492px;"></textarea>
                         </div>
 
                         <!-- PHONE NUMBER -->
                         <div class="form-group">
-                            <label for="material" class="col-form-label text-md-left">{{ __('Phone Number') }}</label>
+                            <label for="material" class="col-form-label text-md-left">{{ __('Nomor Telepon') }}</label>
                             <input type="number" id="replyNumber" class="form-control @error('tailor_contact') is-invalid @enderror border border-dark" name="tailor_contact" value="{{ $tailor->tailor_contact }}" required="" style="width: 492px;" ></textarea>
                         </div>
 
                         <!-- DESCRIPTION -->
                         <div class="form-group">
-                            <label for="description" class="col-form-label text-md-left">{{ __('Description') }}</label>
+                            <label for="description" class="col-form-label text-md-left">{{ __('Deskripsi') }}</label>
                             <textarea class="form-control @error('tailor_desc') is-invalid @enderror border border-dark" name="tailor_desc" style="width: 492px;">{{ $tailor->tailor_desc }}</textarea>
                         </div>
 
@@ -80,7 +80,7 @@
                         <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-5">
                                 <button type="submit" class="btn btn-primary float-right">
-                                    Save
+                                    Simpan
                                 </button>
                             </div>
                         </div>

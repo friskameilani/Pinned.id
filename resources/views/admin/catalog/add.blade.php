@@ -1,4 +1,4 @@
-<?php $thisPage="Edit Tailor"; ?>
+<?php $thisPage="Add Tailor"; ?>
 @extends ('layouts.adminapp')
 
 @section('content')   
@@ -13,8 +13,8 @@
             <div class="col-md-12 mt-2">
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="{{ url('admincatalog') }}">Catalog</a></li>
-                        <li class="breadcrumb-item active" aria-current="adminaddcatalog">New Catalog</li>
+                        <li class="breadcrumb-item"><a href="{{ url('admincatalog') }}">Katalog</a></li>
+                        <li class="breadcrumb-item active" aria-current="adminaddcatalog">Katalog Baru</li>
                     </ol>
                 </nav>
             </div>
@@ -60,7 +60,7 @@
                         <div class="form-group">
                             <label for="category" class="col-form-label text-md-left">{{ __('Penjahit') }}</label>
                                 <select class="custom-select border border-dark" name="tailor_name" style="width: 492px;">
-                                    <option selected>Choose Tailor..</option>
+                                    <option selected>Pilih Penjahit..</option>
                                     @foreach($tailors as $tailor)
                                     <option value="{{$tailor->id}}">{{$tailor->tailor_name}} -- ID: {{$tailor->id}}</option>
                                     @endforeach
@@ -69,7 +69,7 @@
 
                         <!-- DESCRIPTION -->
                         <div class="form-group">
-                            <label for="description" class="col-form-label text-md-left">{{ __('Description') }}</label>
+                            <label for="description" class="col-form-label text-md-left">{{ __('Deskripsi') }}</label>
                             <textarea name="desc" class="form-control @error('desc') is-invalid @enderror border border-dark" required="" style="width: 492px;"></textarea>
                         </div>
 
@@ -81,9 +81,9 @@
 
                         <!-- CATEGORY -->
                         <div class="form-group">
-                            <label for="category" class="col-form-label text-md-left">{{ __('Category') }}</label>
+                            <label for="category" class="col-form-label text-md-left">{{ __('Kategori') }}</label>
                                 <select class="custom-select border border-dark" name="category" style="width: 492px;">
-                                    <option selected>Choose Category..</option>
+                                    <option selected>Pilih kategori..</option>
                                     <option value="Batik">Batik</option>
                                     <option value="Olahraga">Olahraga</option>
                                     <option value="Formal">Formal</option>
@@ -94,7 +94,7 @@
                         
                         <!-- TYPE -->
                         <div class="form-group">
-                            <label for="type" class="col-form-label text-md-left">{{ __('Type') }}</label>
+                            <label for="type" class="col-form-label text-md-left">{{ __('Tipe') }}</label>
                             <br>
                                 <select class="custom-select border border-dark" name="type" style="width: 492px;">
                                     <option selected>Choose Type..</option>
@@ -106,13 +106,13 @@
 
                         <!-- MATERIAL -->
                         <div class="form-group">
-                            <label for="material" class="col-form-label text-md-left">{{ __('Material') }}</label>
+                            <label for="material" class="col-form-label text-md-left">{{ __('Bahan') }}</label>
                             <input id="material" name="material" class="form-control @error('material') is-invalid @enderror border border-dark" required="" style="width: 492px;"></textarea>
                         </div>
 
                         <!-- Price -->
                         <div class="form-group">
-                            <label for="Price" class="col-form-label text-md-left">{{ __('Price') }}</label>
+                            <label for="Price" class="col-form-label text-md-left">{{ __('Harga') }}</label>
                             <input id="price" name="price" class="form-control @error('price') is-invalid @enderror border border-dark" required="" style="width: 492px;"></textarea>
                         </div>
 
@@ -121,7 +121,7 @@
                         <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-5">
                                 <button type="submit" class="btn btn-primary float-right">
-                                    Save
+                                    Simpan
                                 </button>
                             </div>
                         </div>
