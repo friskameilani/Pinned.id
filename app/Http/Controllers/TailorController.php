@@ -7,12 +7,7 @@ use Illuminate\Http\Request;
 
 class TailorController extends Controller
 {
-    // public function __construct()
-    // {
-    //     $this->middleware('auth:admin');
-    // }
-
-    public function showtailor(Tailor $tailor)
+    public function show(Tailor $tailor)
     {
         // $orders = Order::where('user_id', Auth::user()->id)->get();
         $products = Product::where('tailor_id', $tailor->id)->get();

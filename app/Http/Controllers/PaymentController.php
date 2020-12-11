@@ -17,7 +17,7 @@ class PaymentController extends Controller
         $this->middleware('auth');
     }
    
-    public function index($random_code) //Ini view buat nampilin page ny
+    public function show($random_code) //Ini view buat nampilin page ny
     {
         $order = Order::where('random_code', $random_code)->first();
         if ((!$order) || ($order->user_id != Auth::user()->id))  {

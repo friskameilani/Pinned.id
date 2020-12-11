@@ -22,14 +22,7 @@ class HistoryController extends Controller
     	return view('history.index', compact('orders'));
     }
 
-    public function destroy($id)
-    {
-        $order = Order::where('id', $id)->delete();
-
-	    return redirect('/history')-> with('success', 'Data berhasil dihapus');
-    }
-
-    public function detail($id)
+    public function show($id)
     {
         $order = Order::where('id', $id)->first();
         if (!$order) {
@@ -40,4 +33,13 @@ class HistoryController extends Controller
         }
      	
     }
+
+    public function destroy($id)
+    {
+        $order = Order::where('id', $id)->delete();
+
+	    return redirect('/history')-> with('success', 'Data berhasil dihapus');
+    }
+
+    
 }

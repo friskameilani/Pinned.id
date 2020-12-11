@@ -17,19 +17,19 @@ class OrderController extends Controller
         $this->middleware('auth');
     }
 
-    public function index($id) //User
+    public function show($id) //User
     {
         $product = Product::where('id', $id)->first();
 
         return view('order.index', compact('product'));
 	}
 
-	public function self_order() //User
+	public function show_spec() //Self Order / Spescific order
     {
         return view('order.self_order');
     }
 
-    public function ordering(Request $request, $id) //User
+    public function create(Request $request, $id) //Create normal order
     {	
 		$this->validate($request, [
 			'qty' => 'required|numeric',
@@ -58,7 +58,7 @@ class OrderController extends Controller
 			return redirect()->route('detailorder', [$order->random_code]);
 	}
 	
-	public function self_ordering(Request $request) //User
+	public function create_spec(Request $request) //User
     {	
 		$this->validate($request, [
 			'design' => 'mimes:jpeg,png,bmp,tiff |max:4096',
@@ -93,7 +93,7 @@ class OrderController extends Controller
 		return redirect()->route('detailorder', [$order->random_code]);
 	}
 
-	public function showdetailorder($random_code)
+	public function showdetail($random_code)
     {
 		$order = Order::where('random_code', $random_code)->first();
 		if ((!$order) || ($order->user_id != Auth::user()->id))  {

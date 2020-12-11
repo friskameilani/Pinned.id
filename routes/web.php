@@ -16,38 +16,44 @@ use App\Http\Controllers\TailorController;
 Route::get('/', function () {
     return view('welcome');
 });
-
+// Routes google
 Auth::routes();
 Route::get('auth/google', 'Auth\GoogleController@redirectToGoogle');
 Route::get('auth/google/callback', 'Auth\GoogleController@handleGoogleCallback');
 
+// Route home
 Route::get('/', 'HomeController@index')->name('home');
 
-Route::get('order', 'OrderController@self_order');
-Route::post('order', 'OrderController@self_ordering');
+// Routes Order
+Route::get('order', 'OrderController@show_spec');
+Route::post('order', 'OrderController@create_spec');
+Route::get('order/{id}', 'OrderController@show');
+Route::post('order/{id}', 'OrderController@create');
+Route::get('detailorder/{random_code}', 'OrderController@showdetail')->name('detailorder');
 
-Route::get('order/{id}', 'OrderController@index');
-Route::post('order/{id}', 'OrderController@ordering');
+// Routes Product/Catalog
+Route::get('catalog', 'ProductController@index');
+Route::get('product/{id}', 'ProductController@show');
 
-Route::get('detailorder/{random_code}', 'OrderController@showdetailorder')->name('detailorder');
-
-Route::get('product/{id}', 'ProductController@index');
-Route::get('catalog', 'ProductController@catalog');
-
+// Routes Profile User
 Route::get('profile', 'ProfileController@index');
 Route::get('profile/edit', 'ProfileController@edit');
 Route::post('profile/edit', 'ProfileController@update');
 
-Route::get('/history/payments_{id}', 'PaymentController@index');
+// Routes Payments (dalam history)
+Route::get('/history/payments_{id}', 'PaymentController@show');
 Route::post('/history/payments_{id}', 'PaymentController@create');
 
-Route::get('/faq', 'FAQController@index')->name('faq');
-
+// Routes History
 Route::get('history', 'HistoryController@index');
-Route::get('history/{id} ', 'HistoryController@detail');
+Route::get('history/{id} ', 'HistoryController@show');
 Route::post('history/{id} ', 'HistoryController@destroy')->name('history.destroy');
 
-Route::get('/tailor/{tailor}', 'TailorController@showtailor')->name('tailor.show');
+// Route FAQ
+Route::get('/faq', 'FAQController@index')->name('faq');
+
+// Route Tailor
+Route::get('/tailor/{tailor}', 'TailorController@show')->name('tailor.show');
 
 /* ---------- Admin --------------  */
     /* ---------- Login/Logout --------------  */
@@ -61,35 +67,34 @@ Route::get('/tailor/{tailor}', 'TailorController@showtailor')->name('tailor.show
 
 
     /* ---------- Catalog --------------  */ 
-    Route::get('/admincatalog', 'Admin\ProductController@catalog');
-    Route::get('/adminviewcatalog/{product}', 'Admin\ProductController@catalogview'); 
-    Route::get('/admincatalog/{product}/edit', 'Admin\ProductController@catalogedit');
-    Route::patch('/admincatalog/{product}/edit', 'Admin\ProductController@editpost'); 
-    Route::get('/adminaddcatalog', 'Admin\ProductController@catalogadd');
-    Route::post('/admincatalog', 'Admin\ProductController@addpost');
-    Route::delete('/admincatalog/{product}', 'Admin\ProductController@delete');
+    Route::get('/admincatalog', 'Admin\ProductController@index');
+    Route::get('/adminviewcatalog/{product}', 'Admin\ProductController@show');  
+    Route::get('/adminaddcatalog', 'Admin\ProductController@create');
+    Route::post('/admincatalog', 'Admin\ProductController@post');
+    Route::get('/admincatalog/edit/{product}', 'Admin\ProductController@edit');
+    Route::patch('/admincatalog/edit/{product}', 'Admin\ProductController@update')->name('admincatalog.update');
+    Route::delete('/admincatalog/{product}', 'Admin\ProductController@destroy')->name('admincatalog.destroy');
     //Route::get('/adminaddcatalogsuccess', 'Admin\ProductController@catalogaddsuccess'); //Ini file catalognya juga belum ada
 
 
     /* ---------- Tailor --------------  */
     Route::get('/admintailor', 'Admin\TailorController@index');
-    Route::get('/admintailor/{tailor}', 'Admin\TailorController@showtailor'); 
-    Route::get('/admintailor/{tailor}/edit', 'Admin\TailorController@edit');
-    Route::patch('/admintailor/{tailor}', 'Admin\TailorController@postedit');
+    Route::get('/admintailor/{tailor}', 'Admin\TailorController@show'); 
+    Route::get('/adminaddtailor', 'Admin\TailorController@create');
+    Route::post('/adminaddtailor', 'Admin\TailorController@post');
+    Route::get('/admintailor/edit/{tailor}', 'Admin\TailorController@edit');
+    Route::patch('/admintailor/{tailor}', 'Admin\TailorController@update')->name('admintailor.update');
     Route::delete('/admintailor/{tailor}', 'Admin\TailorController@destroy')->name('admintailor.destroy');
-    Route::get('/adminaddtailor', 'Admin\TailorController@createtailor');
-    Route::post('/adminaddtailor', 'Admin\TailorController@posttailor');
 
     /* ---------- Order --------------  */
-    // Route::resource('adminorder','Admin\OrderController');
-    Route::get('/adminorder', 'Admin\OrderController@allorder');
-    Route::get('/adminorder/{order}', 'Admin\OrderController@order_detail');
+    Route::get('/adminorder', 'Admin\OrderController@index');
+    Route::get('/adminorder/{order}', 'Admin\OrderController@show');
     Route::patch('/adminorder/{order}', 'Admin\OrderController@update')->name('adminorder.update');
     
 
     /* ---------- Payment --------------  */
-    Route::get('/adminpayment', 'Admin\PaymentController@allpayments');
-    Route::get('/adminpayment/{payment}', 'Admin\PaymentController@payment_detail');
+    Route::get('/adminpayment', 'Admin\PaymentController@index');
+    Route::get('/adminpayment/{payment}', 'Admin\PaymentController@show');
 
     /* ---------- FAQ --------------  */
     Route::get('/adminfaq', 'Admin\FAQController@index');
@@ -97,26 +102,4 @@ Route::get('/tailor/{tailor}', 'TailorController@showtailor')->name('tailor.show
     Route::post('/adminfaq/new', 'Admin\FAQController@post');
     Route::get('/adminfaq/edit/{id}', 'Admin\FAQController@edit');
     Route::post('/adminfaq/edit/{id}', 'Admin\FAQController@update');
-    Route::get('/adminfaq/delete/{id} ', 'Admin\FAQController@destroy');
-
-    // Route::get('/admincatalog', function () {
-    //     return view('/admin/catalog/catalog');
-    // });
-
-
-    Route::get('/adminviewtailor', function () {
-        return view('/admin/tailor/view');
-    });
-
-    // Route::get('/adminfaq', function () {
-    //     return view('/admin/faq/faq');
-    // });
-
-    Route::get('/admineditfaq', function () {
-        return view('/admin/faq/edit');
-    });
-    
-    Route::get('/adminnewfaq', function () {
-        return view('/admin/faq/new');
-    });
-
+    Route::delete('/adminfaq/delete/{id} ', 'Admin\FAQController@destroy')->name('adminfaq.destroy');
