@@ -22,30 +22,40 @@
 
 
         <br></br>
-        <section class="fotoprofil" id="fotoprofil">
-            <div class="row">
-                <!-- SISI FOTO SAMA INFO KONTAK -->
-                <div class="col-md-6">
-                    <!-- FOTO -->
-                    <div class="row">
-                        <div class="container" style="position: relative; width: 100%; max-width: 400px;">
-                            <img src="/images/contoh.png" alt="Avatar" class="image rounded-circle" style="width: 400px; height: 400px;">
-                            <div class="overlay rounded-circle" style=" position: absolute; transform: translate(4%, 0%); top: 0; bottom: 0; left: 0; right: 0; height: 400px; width: 400px; opacity: 0.3; background-color: #111;">
-                                <a href="#" class="icon" title="User Profile">
-                                <i class="fa fa-camera text-center" style="color: white; opacity: 1; padding-top: 165px; padding-left: 165px; font-size: 80px;"></i>
-                                </a>
-                            </div>
+        <form method="POST" action="{{route('admintailor.update', $tailor->id)}}" enctype="multipart/form-data">
+            @method('patch')
+            @csrf
+            <section class="fotoprofil" id="fotoprofil">
+                <div class="row">
+                    <!-- SISI FOTO SAMA INFO KONTAK -->
+                    <div class="col-md-6">
+                        <!-- FOTO -->
+                        <div class="row">
+                            <div class="container" style="position: relative; ">
+                                    <img src="{{ url('uploads/tailors') }}/{{ $tailor->tailor_photo}}" id="output" class="image rounded-circle" 
+                                    style="width: 400px; height: 400px; display: block; margin-left: auto; margin-right: auto; ">
+                                    
+                                </div>
+
+                                <div class="container" style="position: relative; margin-top: 30px;">
+                                    <div class="form-group">
+                                        <label for="image" style="display: block; text-align: center;">
+                                            <a type="button"  class="btn btn-primary" >Upload Foto</a>
+                                            <input type="file" id="image" name="image"  class="form-control @error('image') is-invalid @enderror border border-dark" 
+                                            style="display:none" value="" accept="image/*" onchange="loadFile(event)" title="User Profile">
+
+                                        </label>
+                                    </div>
+                                <!-- <input     autofocus style="width: 492px;"> -->
+                            </div>   
                         </div>
                     </div>
-                </div>
 
-                <!-- SISI KANAN FORM -->
-                <div class="col-md-6">
-                    <h2>Edit Profil Penjahit</h2>
+                    <!-- SISI KANAN FORM -->
+                    <div class="col-md-6">
+                        <h2>Edit Profil Penjahit</h2>
 
-                    <form method="POST" action="/admintailor/{{ $tailor->id }}">
-                        @method('patch')
-                        @csrf
+                        
                         <!-- NAMA -->
                         <div class="form-group">
                             <label for="tailor_name" class="col-form-label text-md-left">{{ __('Nama') }}</label>
@@ -84,10 +94,10 @@
                                 </button>
                             </div>
                         </div>
-                    </form>
+                    </div>
                 </div>
-            </div>
-        </section>
+            </section>
+        </form>
     </main>
 
 @endsection

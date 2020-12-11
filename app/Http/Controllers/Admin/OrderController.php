@@ -14,13 +14,13 @@ class OrderController extends Controller
         $this->middleware('auth:admin');
     }
 
-    public function allorder() //Menampilkan semua order yang ada di page
+    public function index() //Menampilkan semua order yang ada di page
     {
         $orders = Order::all();
         return view('admin/order/order', compact('orders')); //Nanti diganti menyesuaikan nama file bladeny
 	}
 	
-	public function order_detail(Order $order) //Menampilkan detail order persatuan
+	public function show(Order $order) //Menampilkan detail order persatuan
     {
         return view('admin.order.detail', compact('order')); //Nanti diganti menyesuaikan nama file bladeny
     }

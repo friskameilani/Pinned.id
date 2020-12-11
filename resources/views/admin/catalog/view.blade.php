@@ -29,7 +29,7 @@
                                             <h3>{{ $product->product_name }}</h3>
                                         </div>
                                         <div class="col-6">
-                                            <a class ="btn btn-secondary float-right" href ="/admincatalog/{{ $product->id }}/edit" style="padding: 5px 30px; width: 120px; height: 35px;"> Perbarui</a>
+                                            <a class ="btn btn-secondary float-right" href ="/admincatalog/edit/{{ $product->id }}" style="padding: 5px 30px; width: 120px; height: 35px;"> Perbarui</a>
                                         </div>
                                     </div>
                                     <div class="row mt-2">

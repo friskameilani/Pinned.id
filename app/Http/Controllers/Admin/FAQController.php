@@ -21,7 +21,7 @@ class FAQController extends Controller
 
     public function create(Request $request) //admin can create
     {
-        return view('admin.tailor.new');
+        return view('admin.faq.new');
     }
 
     public function post(Request $request) //admin can create
@@ -51,9 +51,10 @@ class FAQController extends Controller
         return redirect('/adminfaq');
     }
 
-    public function destroy($id) 
+    public function destroy(Request $request) 
     {
-        $faq = FAQ::where('id', $id)->delete();
+        $faq = FAQ::findOrFail($request->faq_id);
+        $faq->delete();
 
 	    return redirect('/adminfaq');
     }

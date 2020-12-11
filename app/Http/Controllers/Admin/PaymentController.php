@@ -13,13 +13,13 @@ class PaymentController extends Controller
         $this->middleware('auth:admin');
     }
 
-    public function allpayments() //Menampilkan semua order yang ada di page
+    public function index() //Menampilkan semua order yang ada di page
     {
         $payments = Payment::all();
         return view('admin.payment.payment', compact('payments')); //Nanti diganti menyesuaikan nama file bladeny
 	}
 	
-	public function payment_detail(Payment $payment) //Menampilkan detail order persatuan
+	public function show(Payment $payment) //Menampilkan detail order persatuan
     {
         return view('admin.payment.detail', compact('payment')); //Nanti diganti menyesuaikan nama file bladeny
     }

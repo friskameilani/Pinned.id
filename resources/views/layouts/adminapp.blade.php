@@ -102,18 +102,29 @@
         // modal.find('.modal-body #name').val(name);
         });
     });
-    </script>
+    </script> 
 
     <script>
      $(document).ready(function () {
-        $('#deletetailor').on('show.bs.modal', function (event) {
+        $('#delete').on('show.bs.modal', function (event) {
         var button = $(event.relatedTarget);
-        var tailor_id = button.data('tailorid'); 
+        var no_id = button.data('id'); 
         
         var modal = $(this);
-        modal.find('.modal-body #tailor_id').val(tailor_id);
+        modal.find('.modal-body #no_id').val(no_id);
         });
     });
+    </script>
+
+    <script>
+    var loadFile = function(event) {
+        var reader = new FileReader();
+        reader.onload = function(){
+        var output = document.getElementById('output');
+        output.src = reader.result;
+        };
+        reader.readAsDataURL(event.target.files[0]);
+    };
     </script>
     
 </body>

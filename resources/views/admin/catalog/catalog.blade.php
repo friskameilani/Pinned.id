@@ -56,8 +56,8 @@
                     <div class="dropdown">
                         <a data-toggle="dropdown"><i class="fa fa-ellipsis-v fa-2x waves-effect"></i></a>
                         <div class="dropdown-menu">
-                        <a class="dropdown-item" href="/admincatalog/{{$products->id}}/edit">Ubah</a>
-                        <a class="dropdown-item delete" data-id="#deletecatalog" data-toggle="modal" data-target="#deletecatalog" href="#">Hapus</a>
+                        <a class="dropdown-item" href="/admincatalog/edit/{{$products->id}}">Ubah</a>
+                        <a class="dropdown-item delete" data-id="{{$products->id}}" data-toggle="modal" data-target="#delete" href="#">Hapus</a>
                         </div>
                     </div>
                 </div>
@@ -76,7 +76,7 @@
     <!-- Pop Up for Delete Confirmation -->
     <!-- Modal popup -->
 
-    <div class="modal fade" id="deletecatalog">
+    <div class="modal fade" id="delete">
         <div class="modal-dialog">
         <!-- Modal Content -->
         <div class="modal-content">
@@ -84,7 +84,7 @@
                 <h3 class="modal-title">Konfirmasi Penghapusan</h3>
                 <button type="button" data-dismiss="modal" class="close">&times;</button>
             </div>
-            <form action="/admincatalog/{{$products->id}}" method="POST" id="deleteForm">
+            <form action="{{route('admincatalog.destroy', 'delete')}}" method="POST" id="deleteForm">
             @csrf
             @method('delete')
                 <div class="modal-body">
@@ -93,7 +93,7 @@
                     <h5> Apakah tetap ingin melanjutkan? </h5>
 
                     <!-- <input type="hidden" name="_method" value="DELETE"> -->
-                    <input type="hidden" name="catalog_id" id="catalog_id" value="">
+                    <input type="hidden" name="product_id" id="no_id" value="">
 
                 </div>
 

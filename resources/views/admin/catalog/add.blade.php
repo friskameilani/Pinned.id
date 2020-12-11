@@ -22,33 +22,36 @@
 
 
         <br></br>
-        <section class="fotoprofil" id="fotoprofil">
-            <div class="row">
-                <!-- SISI FOTO SAMA INFO KONTAK -->
-                <div class="col-md-6">
-                    <!-- FOTO -->
-                    <div class="row">
-                        <div class="container" style="position: relative; width: 100%; max-width: 400px;">
-                            <div class="card" style="width: 400px; height: 400px; background-color: #eee">
-                                <i class="fa fa-user text-center" style="font-size: 80px; color: #222; padding-top: 130px;"></i>
-                                <div class="overlay" style=" position: absolute; transform: translate(0%, 700%); top: 0; bottom: 0; left: 0; right: 0; height: 50px; width: 400px; opacity: 0.5; background-color: #111;">
-                                    <a  class="icon" title="User Profile">
-                                    <i class="fa fa-camera" style="color: white; opacity: 1; padding-top: 10px; padding-left: 185px; font-size: 30px;"></i>
-                                    </a>
-                                </div>
+        <form method="POST" action="{{ url('admincatalog') }}" enctype="multipart/form-data">
+            @csrf
+            <section class="fotoprofil" id="fotoprofil">
+                <div class="row">
+                    <!-- SISI FOTO SAMA INFO KONTAK -->
+                    <div class="col-md-6">
+                        <!-- FOTO -->
+                        <div class="row">
+                            <div class="container" style="position: relative; width: 100%; max-width: 400px;">
+                                <img id="output" class="image rounded" style="width: 400px; height: 400px; background-color: #eee  ">
+                                    <label for="image" style="display: block; text-align: center;">
+                                        <div type="button" class="overlay" style=" position: absolute; height: 50px; width: 400px; opacity: 0.5; background-color: #111;">
+                                            <i class="fa fa-camera" style="color: white; opacity: 1; padding-top: 10px; font-size: 30px;"></i>
+                                        </div>  
+                                        <input id="image" type="file" class="form-control @error('image') is-invalid @enderror border border-dark" 
+                                        name="image" value=" " accept="image/*" onchange="loadFile(event)" required autocomplete="image" autofocus style=" display:none;">
+                                    </label>
+                                </img>
+                                    
                             </div>
                         </div>
+                        <br></br>
+
                     </div>
-                    <br></br>
 
-                </div>
+                    <!-- SISI KANAN FORM -->
+                    <div class="col-md-6">
+                        <h2>Buat Katalog Baru</h2>
 
-                <!-- SISI KANAN FORM -->
-                <div class="col-md-6">
-                    <h2>Buat Katalog Baru</h2>
-
-                    <form method="POST" action="{{ url('admincatalog') }}" enctype="multipart/form-data">
-                        @csrf
+                        
 
                         <!-- NAMA -->
                         <div class="form-group">
@@ -71,12 +74,6 @@
                         <div class="form-group">
                             <label for="description" class="col-form-label text-md-left">{{ __('Deskripsi') }}</label>
                             <textarea name="desc" class="form-control @error('desc') is-invalid @enderror border border-dark" required="" style="width: 492px;"></textarea>
-                        </div>
-
-                        <!-- Gambar Produk -->
-                        <div class="form-group">
-                            <label for="image" class="col-form-label text-md-left">{{ __('Gambar Produk') }}</label>
-                            <input id="image" type="file" class="form-control @error('image') is-invalid @enderror border border-dark" name="image" value=" " required autocomplete="image" autofocus style="width: 492px;">
                         </div>
 
                         <!-- CATEGORY -->
@@ -125,10 +122,10 @@
                                 </button>
                             </div>
                         </div>
-                    </form>
+                    </div>
                 </div>
-            </div>
-        </section>
+            </section>
+        </form>
     </main>
 
 @endsection

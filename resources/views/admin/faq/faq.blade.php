@@ -19,7 +19,7 @@
 
             <div class="col-md-6 clearfix" style="padding-right: 55px;">
                 <!-- BUTTON ADD -->
-                <a href="/adminnewfaq">
+                <a href="/adminfaq/new">
                     <button type="button" class="btn btn-success float-right">
                         +Tambah FAQ baru
                     </button>
@@ -55,7 +55,7 @@
                   <td >{{$faq->ask}}</td>
                   <td >{{$faq->answer}}</td>
                   <td ><a href=" {{ url('adminfaq/edit') }}/{{ $faq->id }} " type="button" class="btn btn-block btn-primary btn-sm">Ubah</a>
-                  <a type="button" class="btn btn-block btn-danger btn-sm delete" data-id="#deletefaq" data-toggle="modal" data-target="#deletefaq" >Hapus</a></td>
+                  <a type="button" class="btn btn-block btn-danger btn-sm delete" data-id="{{$faq->id}}" data-toggle="modal" data-target="#delete" >Hapus</a></td>
                 </tr>
                 @endforeach
                 </tbody>
@@ -79,7 +79,7 @@
   <!-- Pop Up for Delete Confirmation -->
   <!-- Modal popup -->
 
-  <div class="modal fade" id="deletefaq">
+  <div class="modal fade" id="delete">
     <div class="modal-dialog">
       <!-- Modal Content -->
       <div class="modal-content">
@@ -87,16 +87,18 @@
           <h3 class="modal-title">Konfirmasi Penghapusan</h3>
           <button type="button" data-dismiss="modal" class="close">&times;</button>
         </div>
+        <form action="{{route('adminfaq.destroy', 'delete')}}" method="POST" id="deleteForm">
+          @csrf
+          @method('delete')
           <div class="modal-body">
             <h5> Setelah dihapus data akan benar-benar hilang. </h5>
             <h5> Apakah tetap ingin melanjutkan? </h5>
 
             <!-- <input type="hidden" name="_method" value="DELETE"> -->
-            <input type="hidden" name="faq_id" id="faq_id" value="">
+            <input type="hidden" name="faq_id" id="no_id" value="">
           </div>
           <div class="modal-footer" style="background-color: #EEE;">
-            
-            <a href="{{ url('adminfaq/delete') }}/{{ $faq->id }}" class="btn btn-primary"> Hapus </a>
+            <button type="submit" class="btn btn-primary"> Hapus </button>
             <button type="button" class="btn btn-default"  data-dismiss="modal">Batal</button>
           </div>
         </form>

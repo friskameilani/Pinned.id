@@ -19,6 +19,7 @@ class TailorSeeder extends Seeder
                 'tailor_desc' => 'Saya adalah tukang jahit',
                 'tailor_contact' => '0852631728255',
                 'tailor_address' => 'Jalan Pemuda',
+                'tailor_photo' => 'default-avatar.png',
             ],
             [
                 'tailor_name' => 'Bambang',
@@ -26,6 +27,7 @@ class TailorSeeder extends Seeder
                 'tailor_desc' => 'Saya Penjahit',
                 'tailor_contact' => '08888888888',
                 'tailor_address' => 'Jalan Petua',
+                'tailor_photo' => 'default-avatar.png',
             ]
         ]);
     }

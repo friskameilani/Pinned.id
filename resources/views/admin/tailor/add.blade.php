@@ -21,27 +21,36 @@
         </div>
 
         <br></br>
-        <section class="fotoprofil" id="fotoprofil">
-            <div class="row">
-                <!-- SISI FOTO SAMA INFO KONTAK -->
-                <div class="col-md-6">
-                    <!-- FOTO -->
-                    <div class="row">
-                        <div class="container" style="position: relative; width: 100%; max-width: 400px;">
-                            <div class="card rounded-circle" style="width: 400px; height: 400px; background-color: #eee">
-                                <i class="fa fa-camera text-center" style="font-size: 80px; padding-top: 150px;"></i>
+        <form method="POST" action="/adminaddtailor" enctype="multipart/form-data">
+            @csrf
+            <section class="fotoprofil" id="fotoprofil">
+                <div class="row">
+                    <!-- SISI FOTO SAMA INFO KONTAK -->
+                    <div class="col-md-6">
+                        <!-- FOTO -->
+                        <div class="row">
+                            <div class="container" style="position: relative; ">
+                                <img src="/uploads/tailors/default-avatar.png" alt="Avatar" id="output" class="image rounded-circle" 
+                                style="width: 400px; height: 400px; display: block; margin-left: auto; margin-right: auto; ">
+                                
                             </div>
-                        </div>
+
+                            <div class="container" style="position: relative; margin-top: 30px;">
+                                <div class="form-group">
+                                    <label for="image" style="display: block; text-align: center;">
+                                        <a type="button"  class="btn btn-primary" >Upload Foto</a>
+                                            <!-- <h3>Choose a file</h3> -->
+                                        <input type="file" id="image" style="display:none"
+                                        name="image" value=" " accept="image/*" onchange="loadFile(event)" title="User Profile">
+                                    </label>
+                                </div>
+                            </div>
+                        </div>                         
                     </div>
-                </div>
-
-                <!-- SISI KANAN FORM -->
-                <div class="col-md-6">
-                    <h2>Tambah Penjahit Baru</h2>
-
-                    <form method="POST" action="/adminaddtailor" enctype="multipart/form-data">
-                        @csrf
-
+                    
+                    <!-- SISI KANAN FORM -->
+                    <div class="col-md-6">
+                        <h2>Tambah Penjahit Baru</h2>
                         <!-- NAMA -->
                         <div class="form-group">
                             <label for="name" class="col-form-label text-md-left">{{ __('Nama') }}</label>
@@ -53,13 +62,6 @@
                             <label for="category" class="col-form-label text-md-left">{{ __('Umur') }}</label>
                             <input type="number" id="replyNumber" min="18" max="50" class="form-control @error('age') is-invalid @enderror border border-dark" name="tailor_age" required="" style="width: 492px;" ></textarea>
                         </div>
-                        
-                        <!-- POHOTO -->
-                        <div class="form-group">
-                            <label for="image" class="col-form-label text-md-left">{{ __('Foto Penjahit') }}</label>
-                            <input id="image" type="file" class="form-control @error('image') is-invalid @enderror border border-dark" name="image" value=" " required autocomplete="image" autofocus style="width: 492px;">
-                        </div>
-
                         <!-- LOCATION -->
                         <div class="form-group">
                             <label for="type" class="col-form-label text-md-left">{{ __('Lokasi') }}</label>
@@ -88,10 +90,11 @@
                                 </a>
                             </div>
                         </div>
-                    </form>
+                        
+                    </div>
                 </div>
-            </div>
-        </section>
+            </section>
+        </form>
     </main>
 
 @endsection

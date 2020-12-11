@@ -16,45 +16,30 @@ class ProductController extends Controller
         $this->middleware('auth:admin');
     }
     
-    public function catalog()
+    public function index() //catalog
     {
         $products = Product::all();
         return view('admin.catalog.catalog', compact('products'));
     }
 
-    public function catalogview(Product $product)
+    public function show(Product $product) //catalog view satuan
     {
         return view('admin.catalog.view', compact('product'));
     }
 
-    public function catalogedit(Product $product)
+    public function edit(Product $product)
     {
         return view('admin.catalog.edit', compact('product'));
     }
 
-    public function editpost(Request $request, Product $product)
-    {
-        Product::where('id', $product->id)
-            ->update([
-                'product_name' => $request->name,
-                'product_price' => $request->price,
-                'product_desc' => $request->description,
-                'product_category' => $request->category,
-                'product_type' => $request->type,
-                'product_material' => $request->material,
-                ]);
-        return redirect('/admincatalog');
-        //return dd($request->all());
-    }
-
-    public function catalogadd(Tailor $tailors)
+    public function create(Product $tailors)
     {
         $tailors = Tailor::all();
         return view('admin.catalog.add', compact('tailors'));
     }
 
-    public function addpost(Request $request)
-    {
+    public function post(Request $request)
+    {   
         $this->validate($request, [
 			'image' => 'mimes:jpg,jpeg,png,bmp,tiff |max:4096',
 		]);
@@ -66,10 +51,6 @@ class ProductController extends Controller
             $realname = $filename->getClientOriginalName();
             $filename-> move($dest, $realname);
         }
-
-        //$path = $request->file('image')->store('public/uploads');
-        //$path = Storage::putFile('public/uploads', $request->file('image'));
-
             $product = new Product;
             $product->tailor_id = $request->tailor_name;
             $product->product_name = $request->name;
@@ -85,10 +66,55 @@ class ProductController extends Controller
         return redirect('/admincatalog');
     }
 
-    public function delete(Product $product)
+    public function update(Request $request,Product $product)
     {
-        $product = Product::where('id', $product->id)->delete();
-	    return redirect('/admincatalog');
+        $path = public_path()."/uploads/tailors/";
+        //code for remove old file
+
+        if($request->hasFile('image'))
+        {
+            if($product->product_image != 'NULL'  && $product->product_image != '')
+            {
+            $old_photo = $path.$product->product_image;
+            unlink($old_photo);
+            }
+            $dest = "uploads/product";
+            $filename = $request->file('image');
+            $realname = $filename->getClientOriginalName();
+            $filename-> move($dest, $realname);
+
+            Product::where('id', $product->id)
+            ->update([
+                'product_name' => $request->name,
+                'product_price' => $request->price,
+                'product_desc' => $request->desc,
+                'product_category' => $request->category,
+                'product_type' => $request->type,
+                'product_material' => $request->material,
+                'product_image' => $realname
+                ]);
+        }
+        else
+        {
+            Product::where('id', $product->id)
+            ->update([
+                'product_name' => $request->name,
+                    'product_price' => $request->price,
+                    'product_desc' => $request->desc,
+                    'product_category' => $request->category,
+                    'product_type' => $request->type,
+                    'product_material' => $request->material,
+                ]);
+        }
+
+        return redirect('/admincatalog');
+    }
+    
+    public function destroy(Request $request)
+    {
+        $product = Product::findOrFail($request->product_id);
+        $product->delete();
+        return back();
     }
 
 }
