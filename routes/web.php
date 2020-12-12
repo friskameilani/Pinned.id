@@ -72,7 +72,7 @@ Route::get('/tailor/{tailor}', 'TailorController@show')->name('tailor.show');
     Route::get('/adminaddcatalog', 'Admin\ProductController@create');
     Route::post('/admincatalog', 'Admin\ProductController@post');
     Route::get('/admincatalog/edit/{product}', 'Admin\ProductController@edit');
-    Route::patch('/admincatalog/edit/{product}', 'Admin\ProductController@update')->name('admincatalog.update');
+    Route::patch('/admincatalog/{product}', 'Admin\ProductController@update')->name('admincatalog.update');
     Route::delete('/admincatalog/{product}', 'Admin\ProductController@destroy')->name('admincatalog.destroy');
     //Route::get('/adminaddcatalogsuccess', 'Admin\ProductController@catalogaddsuccess'); //Ini file catalognya juga belum ada
 

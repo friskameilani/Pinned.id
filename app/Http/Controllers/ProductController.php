@@ -6,7 +6,13 @@ use Illuminate\Http\Request;
 
 class ProductController extends Controller
 {
-    public function index($id)
+    public function index()
+    {
+        $products = Product::all();
+        return view('product.catalog', compact('products'));
+    }
+
+    public function show($id)
     {
         $product = Product::where('id', $id)->first();
         if(!$product){
@@ -18,9 +24,5 @@ class ProductController extends Controller
         
     }
 
-    public function catalog()
-    {
-        $products = Product::all();
-        return view('product.catalog', compact('products'));
-    }
+    
 }

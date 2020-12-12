@@ -68,7 +68,7 @@ class ProductController extends Controller
 
     public function update(Request $request,Product $product)
     {
-        $path = public_path()."/uploads/tailors/";
+        $path = public_path()."/uploads/product/";
         //code for remove old file
 
         if($request->hasFile('image'))

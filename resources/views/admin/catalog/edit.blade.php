@@ -19,13 +19,13 @@
                     </ol>
                 </nav>
             </div>
-        </div>
-
-
+        </div>        
+        
+        
         <br></br>
         <form method="POST" action="{{route('admincatalog.update', $product->id)}}" enctype="multipart/form-data">
             @csrf
-            @method('patch')
+            @method('patch')    
             <section class="fotoprofil" id="fotoprofil">
                 <div class="row">
                     <!-- SISI FOTO SAMA INFO KONTAK -->
@@ -34,14 +34,13 @@
                         <div class="row">
                             <div class="container" style="position: relative; width: 100%; max-width: 400px;">
                                 <img src="/uploads/product/{{ $product->product_image }}" id="output" alt="Avatar" class="image rounded" style="width: 400px; height: 400px;">
-                                
                                 <label for="image" style="display: block; text-align: center;">
                                     <div type="button" class="overlay" style=" position: absolute; transform: translate(3.7%, 700%); top: 0; bottom: 0; left: 0; right: 0; height: 50px; width: 400px; opacity: 0.5; background-color: #111;">
                                         <i class="fa fa-camera" style="color: white; opacity: 1; padding-top: 10px; font-size: 30px;"></i>
                                     </div>  
                                     <input id="image" type="file" class="form-control @error('image') is-invalid @enderror border border-dark" 
-                                    name="image" value=" " accept="image/*" onchange="loadFile(event)" required autocomplete="image" autofocus style=" display:none;">
-                                </label>                                
+                                    name="image" value=" " accept="image/*" onchange="loadFile(event)" style=" display:none;">
+                                </label>
                             </div>
                         </div>
 
@@ -76,7 +75,7 @@
                         <!-- DESCRIPTION -->
                         <div class="form-group">
                             <label for="description" class="col-form-label text-md-left">{{ __('Deskripsi') }}</label>
-                            <textarea name="description" class="form-control @error('description') is-invalid @enderror border border-dark" value="{{ $product->product_desc }}" required="" style="width: 492px;">{{$product->product_desc}}</textarea>
+                            <textarea name="desc" class="form-control @error('desc') is-invalid @enderror border border-dark" value="{{ $product->product_desc }}" required="" style="width: 492px;">{{$product->product_desc}}</textarea>
                         </div>
 
                         <!-- CATEGORY -->
@@ -112,7 +111,7 @@
 
                         <!-- Price -->
                         <div class="form-group">
-                            <label for="price" class="col-form-label text-md-left">{{ __('Warna') }}</label>
+                            <label for="price" class="col-form-label text-md-left">{{ __('Harga') }}</label>
                             <input id="price" name="price" value="{{ $product->product_price }}" class="form-control @error('price') is-invalid @enderror border border-dark" required="" style="width: 492px;"></textarea>
                         </div>
 

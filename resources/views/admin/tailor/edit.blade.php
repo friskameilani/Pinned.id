@@ -28,7 +28,7 @@
             <section class="fotoprofil" id="fotoprofil">
                 <div class="row">
                     <!-- SISI FOTO SAMA INFO KONTAK -->
-                    <div class="col-md-6">
+                    <div class="col-md-6"> 
                         <!-- FOTO -->
                         <div class="row">
                             <div class="container" style="position: relative; ">
