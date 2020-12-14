@@ -21,13 +21,13 @@
           <!-- CARD 1 -->
           <div class="card offset-md-1" style="width: 250px; max-height: 100px;">
             <div class="row no-gutters">
-              <div class="col-md-4 bg-secondary" style="padding-left: 19px; padding-top:20px; max-height: 100px; font-size: 40px;">
+              <div class="col-md-4 bg-secondary" style="padding-left: 23px; padding-top:20px; max-height: 100px; font-size: 40px;">
                 <i class="text-center fa fa-eye"></i>
               </div>
               <div class="col-md-8">
                 <div class="card-body">
-                  <h3 class="card-title text-height-2">5</h3>
-                  <p class="card-text text-height-15">Jumlah Pengunjung</p>
+                  <h3 class="card-title text-height-2">{{$total_user}}</h3>
+                  <p class="card-text text-height-15">Jumlah Akun Terdaftar</p>
                 </div>
               </div>
             </div>
@@ -66,14 +66,14 @@
 
         <div class="row offset-md-1" style="padding-top:20px; padding-bottom: 20px">
           <!-- CARD 4 -->
-          <div class="card offset-md-1" style="min-width: 250px; max-height: 100px;">
+          <div class="card offset-md-1" style="max-width: 250px; max-height: 100px;">
             <div class="row no-gutters">
               <div class="col-md-4 bg-warning" style="padding-left: 23px; padding-top:20px; max-height: 100px; font-size: 40px;">
                 <i class="text-center fa fa-check"></i>
               </div>
               <div class="col-md-8">
                 <div class="card-body">
-                  <h3 class="card-title text-height-2">5</h3>
+                  <h3 class="card-title text-height-2">{{$confirmed_order}}</h3>
                   <p class="card-text text-height-15">Pesanan Terkonfirmasi</p>
                 </div>
               </div>
@@ -88,12 +88,13 @@
               </div>
               <div class="col-md-8">
                 <div class="card-body">
-                  <h3 class="card-title text-height-2">11</h3>
+                  <h3 class="card-title text-height-2">{{$total_order}}</h3>
                   <p class="card-text">Total Pesanan</p>
                 </div>
               </div>
             </div>
           </div>
+        <div> 
       </div>
       </section>                       
 
