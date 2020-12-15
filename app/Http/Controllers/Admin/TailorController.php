@@ -117,11 +117,19 @@ class TailorController extends Controller
         return redirect('/admintailor');
     }
 
+    //delete pada page tailor
     public function destroy(Request $request)
     {
         $tailor = Tailor::findOrFail($request->tailor_id);
         $tailor->delete();
 
 	    return back();
+    }
+
+    //delete pada page view tailor
+    public function destroyview(Tailor $tailor)
+    {
+        Tailor::destroy($tailor->id);
+	    return redirect('admintailor');
     }
 }

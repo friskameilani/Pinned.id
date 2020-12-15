@@ -65,6 +65,10 @@
                                     </td>
                                 </tr>
                                 <tr>
+                                    <td>Total Harga :</td>
+                                    <td>Rp. {{ $order->total_price }}</td>
+                                </tr>
+                                <tr>
                                     <td>Keterangan :</td>
                                     <td>{{ $order->notes }}</td>
                                 </tr>

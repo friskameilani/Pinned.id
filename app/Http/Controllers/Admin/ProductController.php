@@ -68,7 +68,7 @@ class ProductController extends Controller
 
     public function update(Request $request,Product $product)
     {
-        $path = public_path()."/uploads/tailors/";
+        $path = public_path()."/uploads/product/";
         //code for remove old file
 
         if($request->hasFile('image'))
@@ -110,11 +110,19 @@ class ProductController extends Controller
         return redirect('/admincatalog');
     }
     
+    //delete saat di catalog
     public function destroy(Request $request)
     {
         $product = Product::findOrFail($request->product_id);
         $product->delete();
         return back();
+    }
+
+    //delete saat di view
+    public function destroyview(Product $product)
+    {
+        Product::destroy($product->id);
+        return redirect('/admincatalog');
     }
 
 }

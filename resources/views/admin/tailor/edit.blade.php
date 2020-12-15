@@ -14,7 +14,7 @@
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb">
                         <li class="breadcrumb-item"><a href="{{ url('admintailor') }}">Penjahit</a></li>
-                        <li class="breadcrumb-item active" aria-current="adminaddtailor">Edit Profil Penjahit: Nama</li>
+                        <li class="breadcrumb-item active" aria-current="adminaddtailor">Edit Profil Penjahit: {{$tailor->tailor_name}}</li>
                     </ol>
                 </nav>
             </div>
@@ -28,7 +28,7 @@
             <section class="fotoprofil" id="fotoprofil">
                 <div class="row">
                     <!-- SISI FOTO SAMA INFO KONTAK -->
-                    <div class="col-md-6">
+                    <div class="col-md-6"> 
                         <!-- FOTO -->
                         <div class="row">
                             <div class="container" style="position: relative; ">

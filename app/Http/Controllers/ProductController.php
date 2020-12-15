@@ -31,4 +31,5 @@ class ProductController extends Controller
 
         return view('product.result', compact('result'));
     }
+    
 }

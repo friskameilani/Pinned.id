@@ -129,7 +129,7 @@
           <!-- <input type="text" class="form-control" name="name" id="name"> -->
           <!-- <select name="status" id="status"> -->
             <input type="radio" id="0" class="modal_check_box" name="status" value="0">
-            <label for="1">Belum Dibayar</label><br>
+            <label for="0">Belum Dibayar</label><br>
             <input type="radio" id="1" class="modal_check_box" name="status" value="1">
             <label for="1">Menunggu Konfirmasi</label><br>
             <input type="radio" id="2" class="modal_check_box" name="status" value="2">

@@ -34,7 +34,7 @@
                                             <h3>{{ $tailor->tailor_name }}</h3>
                                         </div>
                                         <div class="col-6">
-                                            <a class ="btn btn-secondary float-right" href ="/admintailor/{{ $tailor->id }}/edit" style="padding: 5px 30px; width: 120px; height: 35px;"> Perbarui</a>
+                                            <a class ="btn btn-secondary float-right" href ="/admintailor/edit/{{ $tailor->id }}" style="padding: 5px 30px; width: 120px; height: 35px;"> Perbarui</a>
                                         </div>
                                     </div>
                                     <div class="row mt-2">
@@ -114,7 +114,7 @@
             <h3 class="modal-title">Konfirmasi Penghapusan</h3>
             <button type="button" data-dismiss="modal" class="close">&times;</button>
         </div>
-        <form action="/admintailor/{{ $tailor->id }}" method="POST" id="deleteForm">
+        <form action="/admintailor/{{ $tailor->id }}/delete" method="POST" id="deleteForm">
         @csrf
         @method('delete')
             <div class="modal-body">
