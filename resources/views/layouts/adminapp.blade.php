@@ -13,7 +13,6 @@
     
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="{{ asset('js/app.js') }}" defer></script>
-
     
 
     <!-- Fonts -->
@@ -26,6 +25,7 @@
     <link href="{{ asset('css/style.css') }}" rel="stylesheet">
 </head>
 <body>
+
     <div id="app">
         <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #3E3434;"> 
             <a class="navbar-brand" href="{{ url('/') }}">
@@ -34,20 +34,6 @@
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-
-            <div class="pos-f-t">
-                <div class="collapse" id="navbarToggleExternalContent">
-                    <div class="bg-dark p-4">
-                    <h4 class="text-white">Collapsed content</h4>
-                    <span class="text-muted">Toggleable via the navbar brand.</span>
-                    </div>
-                </div>
-                <nav class="navbar navbar-dark bg-dark">
-                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                    </button>
-                </nav>
-            </div>
 
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
@@ -75,8 +61,9 @@
                 <li class="nav-item">
                     <a class="nav-link" href="{{ url('admin/logout') }}">Logout</a>
                 </li>
-                </ul>
             </div>
+
+            
             
         </nav>
 
@@ -84,13 +71,19 @@
         @yield('content')
     </main>
     </div>
-    <div class="modal-footer" style="background-color:#3E3434">
-        <div style="text-align:center;">
-            <div class="col-12" >
-                <p style="color:#FFF">&copy; Pinned.id. All rights reserved.</p>
+
+    <br></br>
+    <br></br>
+    
+    <footer>
+        <div class="modal-footer-fixed" style="background-color:#3E3434">
+            <div style="text-align:center;">
+                <div class="col-12" >
+                    <p style="color:#FFF">&copy; Pinned.id. All rights reserved.</p>
+                </div>
             </div>
         </div>
-    </div>
+    </footer>
 
     <script>
     $(document).ready(function () {
@@ -134,5 +127,6 @@
     };
     </script>
     
+
 </body>
 </html>
