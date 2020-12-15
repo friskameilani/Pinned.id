@@ -34,6 +34,7 @@ Route::get('detailorder/{random_code}', 'OrderController@showdetail')->name('det
 // Routes Product/Catalog
 Route::get('catalog', 'ProductController@index');
 Route::get('product/{id}', 'ProductController@show');
+Route::get('/search','ProductController@search');
 
 // Routes Profile User
 Route::get('profile', 'ProfileController@index');
@@ -72,7 +73,8 @@ Route::get('/tailor/{tailor}', 'TailorController@show')->name('tailor.show');
     Route::get('/adminaddcatalog', 'Admin\ProductController@create');
     Route::post('/admincatalog', 'Admin\ProductController@post');
     Route::get('/admincatalog/edit/{product}', 'Admin\ProductController@edit');
-    Route::patch('/admincatalog/edit/{product}', 'Admin\ProductController@update')->name('admincatalog.update');
+    Route::patch('/admincatalog/{product}', 'Admin\ProductController@update')->name('admincatalog.update');
+    Route::delete('/admincatalog/{product}/delete', 'Admin\ProductController@destroyview');
     Route::delete('/admincatalog/{product}', 'Admin\ProductController@destroy')->name('admincatalog.destroy');
     //Route::get('/adminaddcatalogsuccess', 'Admin\ProductController@catalogaddsuccess'); //Ini file catalognya juga belum ada
 
@@ -84,6 +86,7 @@ Route::get('/tailor/{tailor}', 'TailorController@show')->name('tailor.show');
     Route::post('/adminaddtailor', 'Admin\TailorController@post');
     Route::get('/admintailor/edit/{tailor}', 'Admin\TailorController@edit');
     Route::patch('/admintailor/{tailor}', 'Admin\TailorController@update')->name('admintailor.update');
+    Route::delete('/admintailor/{tailor}/delete', 'Admin\TailorController@destroyview');
     Route::delete('/admintailor/{tailor}', 'Admin\TailorController@destroy')->name('admintailor.destroy');
 
     /* ---------- Order --------------  */

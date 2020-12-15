@@ -38,13 +38,19 @@
                                     <tr>
                                         <td>ID Penjahit</td>
                                         <td>
-                                            <input id="tailor_id" type="text" name="tailor_id" class="form-control" placeholder="ID penjahit dapat dilihat pada profil penjahit" required="">
+                                            <select id="tailor_id" name="tailor_id" class="form-control" required="">
+                                            <option value=""> --Silahkan Pilih-- </option>
+                                                @foreach($tailors as $tailor)
+                                                <option value="{{ $tailor->id }}">[ID:{{ $tailor->id }} ] {{ $tailor->tailor_name }}</option>
+                                                @endforeach
+                                            </select>
                                         </td>
                                     </tr>
                                     <tr>
                                         <td>Ukuran</td>
                                         <td>
                                             <select id="size" name="size" class="form-control" required="">
+                                            <option value=""> --Silahkan Pilih-- </option>
                                                 <option value="size-s">S</option>
                                                 <option value="size-m">M</option>
                                                 <option value="size-l">L</option>
