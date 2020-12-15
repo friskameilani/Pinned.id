@@ -62,13 +62,21 @@ Aplikasi ini hanya menyediakan gambar beserta deskripsi pakaian dari orderan seb
 - Perangkat lunak harus mampu menyimpan data para penjahit.
 - Waktu tanggap perpindahan setiap halaman web maksimal 1 menit.
 
+## Project Method
+Pada Sistem ini kami menggunakan metode projek yaitu Agile
+![Project Method](https://github.com/friskameilani/Pinned.id/blob/master/Diagrams/agile.PNG)
+Sumber gambar : slideteam.net
+
 ## Diagram 
 
 ### Use Case 
+![Use Case](https://github.com/friskameilani/Pinned.id/blob/master/Diagrams/Use%20Case%20Pinned.id.png)
 
 ### Activity Diagram 
+![Activity Diagram](https://github.com/friskameilani/Pinned.id/blob/master/Diagrams/Activity%20Diagram%20Pinned.id.png)
 
 ### Class Diagram
+![Class Diagram](https://github.com/friskameilani/Pinned.id/blob/master/Diagrams/Class%20Diagram%20Pinned.id.png)
 
 ## Developer dan Jobdesk
 
