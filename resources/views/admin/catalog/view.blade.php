@@ -104,7 +104,7 @@
                 <h3 class="modal-title">Konfirmasi Penghapusan</h3>
                 <button type="button" data-dismiss="modal" class="close">&times;</button>
             </div>
-            <form action="/admincatalog/{{$product->id}}" method="POST" id="deleteForm">
+            <form action="/admincatalog/{{$product->id}}/delete" method="POST" id="deleteForm">
             @csrf
             @method('delete')
                 <div class="modal-body">
