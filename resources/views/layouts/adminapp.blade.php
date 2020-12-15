@@ -84,6 +84,13 @@
         @yield('content')
     </main>
     </div>
+    <div class="modal-footer" style="background-color:#3E3434">
+        <div style="text-align:center;">
+            <div class="col-12" >
+                <p style="color:#FFF">&copy; Pinned.id. All rights reserved.</p>
+            </div>
+        </div>
+    </div>
 
     <script>
     $(document).ready(function () {

@@ -84,13 +84,7 @@
             </div>
         </div>
     </div>
-    <div class="modal-footer">
-        <div style="text-align:center;">
-            <div class="col-12">
-                <p>&copy; Pinned.id. All rights reserved.</p>
-            </div>
-        </div>
-    </div>
+    
 </div>
 
     <!-- Pop Up for Delete Confirmation -->
