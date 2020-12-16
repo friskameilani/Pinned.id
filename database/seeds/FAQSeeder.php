@@ -15,7 +15,12 @@ class FAQSeeder extends Seeder
             
             [
                 'ask' => 'Bagaimana cara pengukurannya?',
-                'answer' => "Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS. ",
+                'answer' => "Berikut adalah size chart yang dapat digunakan sebagai acuan dalam pembuatan kaos dan kemeja: KAOS PRIA: S = 43 x 63; M = 52 x 70; L = 55 x 73; XL = 57 x 75; XXL = 60 x 79; XXXL = 63 x 82;
+                KAOS WANITA: S = 39 x 55; M = 42 x 58; L = 45 x 61; XL = 48 x 64; XXL = 51 x 67; XXXL = 64 x 70;
+                KEMEJA PRIA: S = 48 x 66; M = 51 x 69; L = 54 x 72; XL = 57 x 75; XXL = 60 x 78; XXXL = 63 x 81;
+                KEMEJA WANITA: S = 45 x 63; M = 48 x 66; L = 51 x 69; XL = 54 x 72; XXL = 57 x 75; XXXL = 60 x 78;
+                
+                Pengukuran dapat dilakukan secara custom, yakni dengan menginput besar detail ukuran pakaian yang diinginkan seperti: Lebar Dada, Lebar Pinggang, Lebar Pinggul, Panjang Lengan dan Tinggi Badan (untuk pembuatan kemeja/kaos) dan Tinggi Kaki, Lebar Pinggang, Lebar Pinggul, Lingkar Betis, dan Lingkar Paha (untuk pembuatan rok/celana)",
             ],
 
             [
