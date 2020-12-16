@@ -54,7 +54,7 @@
                                     <a href="#" class="btn btn-completed disabled">Telah Diterima</a>
                                     @endif
                                 </td>
-                                @if($order->product_id == 0 & $order->status == 0)
+                                <!-- @if($order->product_id == 0 & $order->status == 0)
                                 <td style="text-align:left">Mohon tunggu perhitungan dari penjahit kami.</td>
                                 @elseif($order->product_id == 0 & $order->status == 1)
                                 <td style="text-align:left">Sesuai kesepakatan</td>
@@ -62,7 +62,14 @@
                                 <td style="text-align:left">Sesuai kesepakatan.</td>
                                 @else
                                 <td style="text-align:left">Rp. {{ number_format($order->total_price) }}</td>
+                                @endif -->
+                                
+                                @if($order->total_price == 0 & $order->product_id == null)
+                                <td style="text-align:left">Mohon tunggu perhitungan dari penjahit kami.</td>
+                                @else
+                                <td style="text-align:left">Rp. {{ number_format($order->total_price) }}</td>
                                 @endif
+
                                 <td>
                                     <a href="{{ url('history') }}/{{ $order->id }}" class="btn btn-primary">Detail</a>
                                 </td>

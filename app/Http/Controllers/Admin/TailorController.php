@@ -122,14 +122,18 @@ class TailorController extends Controller
     {
         $tailor = Tailor::findOrFail($request->tailor_id);
         $tailor->delete();
-
-	    return back();
+        Product::where('tailor_id', $request->tailor_id)->delete();
+        
+        
+        return back();
     }
 
     //delete pada page view tailor
     public function destroyview(Tailor $tailor)
     {
         Tailor::destroy($tailor->id);
+        Product::where('tailor_id', $tailor->id)->delete();
+
 	    return redirect('admintailor');
     }
 }
