@@ -88,12 +88,6 @@
                                 </select>
                         </div>
 
-                        <!-- SIZE -->
-                        <div class="form-group">
-                            <label for="description" class="col-form-label text-md-left">{{ __('Ukuran') }}</label>
-                            <textarea name="desc" class="form-control @error('desc') is-invalid @enderror border border-dark" value="" required="" style="width: 492px;"></textarea>
-                        </div>
-
                         <!-- MATERIAL -->
                         <div class="form-group">
                             <label for="material" class="col-form-label text-md-left">{{ __('Material') }}</label>

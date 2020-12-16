@@ -51,10 +51,6 @@
                                                 <td>{{ $product->product_category }}</td>
                                             </tr>
                                             <tr>
-                                                <td>Ukuran :</td>
-                                                <td></td>
-                                            </tr>
-                                            <tr>
                                                 <td>Bahan :</td>
                                                 <td>{{ $product->product_material }}</td>
                                             </tr>

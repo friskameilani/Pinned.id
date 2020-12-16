@@ -79,12 +79,6 @@
                             <input id="product_size" type="text" class="form-control @error('product_size') is-invalid @enderror border border-dark" name="product_size" value=" " required autocomplete="product_size" autofocus style="width: 492px;">
                         </div>
 
-                        <!-- PRICE -->
-                        <div class="form-group">
-                            <label for="price" class="col-form-label text-md-left">{{ __('Harga Produk') }}</label>
-                            <input id="price" type="text" class="form-control @error('price') is-invalid @enderror border border-dark" name="price" value=" " required autocomplete="price" autofocus style="width: 492px;">
-                        </div>
-
                         <!-- CATEGORY -->
                         <div class="form-group">
                             <label for="category" class="col-form-label text-md-left">{{ __('Kategori') }}</label>
@@ -98,11 +92,6 @@
                                 </select>
                         </div>
 
-                        <!-- SIZE -->
-                        <div class="form-group">
-                            <label for="description" class="col-form-label text-md-left">{{ __('Ukuran') }}</label>
-                            <textarea name="desc" class="form-control @error('desc') is-invalid @enderror border border-dark" value="" required="" style="width: 492px;"></textarea>
-                        </div>
 
                         <!-- MATERIAL -->
                         <div class="form-group">
