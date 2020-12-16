@@ -12,7 +12,7 @@
       <div class="row">
           <div class="col-md-4">
               <!-- SEARCH BUTTON -->
-              <form action="/admintailor/search" method="get">
+              <form action="/admintailor-search" method="get">
               <div class="input-group">
                   <input type="text" class="form-control" name="search" placeholder="Cari penjahit..">
                   <div class="input-group-append">
