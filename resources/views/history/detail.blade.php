@@ -84,10 +84,10 @@
                                         <td>Total Harga</td>
                                         <td>:</td>
                                         <td>
-                                        @if($order->product_id != NULL)
-                                        Rp. {{ number_format($order->total_price) }}
-                                        @else
+                                        @if($order->total_price == 0 & $order->product_id == null)
                                         Mohon tunggu perhitungan dari penjahit kami.
+                                        @else
+                                        Rp. {{ number_format($order->total_price) }}
                                         @endif
                                         </td> 
                                     </tr>

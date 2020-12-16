@@ -43,8 +43,13 @@
                                     <td>{{ $order->ordered_phone }}</td>
                                 </tr>
                                 <tr>
-                                    <td>Kode Produk :</td>
+                                    @if( $order->product_id == null)
+                                    <td>Kode Produk (ID):</td>
+                                    <td>Pesanan Khusus</td>
+                                    @else
+                                    <td>Kode Produk (ID):</td>
                                     <td>{{ $order->product_id }}</td>
+                                    @endif
                                 </tr>
                                 <tr>
                                     <td>Jumlah :</td>
@@ -65,8 +70,13 @@
                                     </td>
                                 </tr>
                                 <tr>
+                                    @if( $order->total_price == 0)
+                                    <td>Total Harga :</td>
+                                    <td>Belum ditentukan</td>
+                                    @else
                                     <td>Total Harga :</td>
                                     <td>Rp. {{ $order->total_price }}</td>
+                                    @endif
                                 </tr>
                                 <tr>
                                     <td>Keterangan :</td>
@@ -78,6 +88,22 @@
                                 </tr>
                             </tbody>
                         </table>
+
+                        @if ($order->product_id == null & $order->status == 0)
+                        <form action="/adminorder/{{$order->id}}/harga" method="POST">
+                        @method('patch')
+                        @csrf
+                            
+                            <label for="total_price" class="col-form-label text-md-left">{{ __('Tentukan Harga Order') }}</label>
+                            <input id="total_price" name="total_price" class="form-control @error('total_price') is-invalid @enderror border border-dark" required="" value="{{$order->total_price}}" style="width: 200px;"></textarea>
+                            <br>
+                            <div class="form-group row mb-0" >
+                                <div class="container">
+                                <button type="submit" class="btn btn-primary">Submit Harga</button>
+                            </div>
+                        
+                        </form>
+                        @endif
                     </div>
                 </div>
             </div>

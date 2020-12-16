@@ -39,4 +39,14 @@ class OrderController extends Controller
         
         return back();
     }
+
+    public function updateharga(Request $request, Order $order) //Hanya buat update harga
+    {
+    	Order::where('id', $order->id)
+        ->update([
+            'total_price' => $request->total_price
+            ]);
+        
+        return redirect('/adminorder');
+    }
 }

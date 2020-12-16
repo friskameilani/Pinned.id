@@ -93,6 +93,7 @@ Route::get('/tailor/{tailor}', 'TailorController@show')->name('tailor.show');
     /* ---------- Order --------------  */
     Route::get('/adminorder', 'Admin\OrderController@index');
     Route::get('/adminorder/{order}', 'Admin\OrderController@show');
+    Route::patch('adminorder/{order}/harga', 'Admin\OrderController@updateharga');
     Route::patch('/adminorder/{order}', 'Admin\OrderController@update')->name('adminorder.update');
     
 

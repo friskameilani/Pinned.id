@@ -36,6 +36,7 @@
                   <th ><center>Order ID</center></th>
                   <th ><center>Status</center></th>
                   <th ><center>Nama</center></th>
+                  <th ><center>Total Harga</center></th>
                   <th ><center>Tanggal</center></th>
                   <th ><center>Aksi</center></th>
                 </tr>
@@ -71,11 +72,16 @@
 
                   <td>{{ $order->ordered_name }}</td>
 
+                  @if( $order->total_price == 0)
+                    <td>Harga Belum Ditentukan</td>
+                  @else
+                    <td>Rp {{ $order->total_price }}</td>
+                  @endif
                   <!-- DISINI FORMATNYA DD-MM-YYYY - jam:menit -->
                   <td>{{ $order->date }}</td>                  
                   <!-- -->
                   <td>
-                  <a type="button" class="btn btn-block btn-info btn-sm" data-code="{{$order->random_code}}" data-status="{{$order->status}}" data-orderid="{{$order->id}}" data-toggle="modal" data-target="#editorder">Edit Status</a>
+                  <a type="button" class="btn btn-block btn-info btn-sm" data-code="{{$order->random_code}}" data-status="{{$order->status}}" data-price="{{$order->total_price}}" data-orderid="{{$order->id}}" data-toggle="modal" data-target="#editorder">Edit Status</a>
                   <a href="/adminorder/{{ $order->id }}" type="button" class="btn btn-block btn-secondary btn-sm">Detail</a>
                   </td>
                 </tr>
@@ -138,12 +144,16 @@
             <label for="3">Pengiriman</label><br>
             <input type="radio" id="4" class="modal_check_box" name="status" value="4">
             <label for="4">Selesai</label>
+
+            
             <!-- <option value='1'>Menunggu konfirmasi</option>
             <option value='2'>Dalam proses Pengerjaan</option>
             <option value='3'>Pengiriman</option>
             <option value='4'>Selesai</option> -->
           <!-- </select>  -->
         </div>
+        
+
         <div class="modal-footer" style="background-color: #EEE;">
           <button type="submit" class="btn btn-primary"> Edit </button>
           <button type="button" class="btn btn-default"  data-dismiss="modal">Batal</button>
