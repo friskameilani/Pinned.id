@@ -23,7 +23,7 @@
                             </h5>
                         </div>
                         <div id="collapse{{$faq->id}}" class="collapse" aria-labelledby="heading{{$faq->id}}" data-parent="#accordion">
-                            <div class="card-body">
+                            <div class="card-body" style="font-size:18px">
                             {{$faq->answer}}
                             </div>
                         </div>

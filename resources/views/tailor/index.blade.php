@@ -55,7 +55,7 @@
                                     <div class="card-body">
                                         <h5 class="card-title">{{$product->product_name}}</h5>
                                         <p class="card-text">
-                                            <strong> {{ number_format($product->product_price) }} </strong><br>
+                                            <strong>Rp {{ number_format($product->product_price) }} </strong><br>
                                         </p>
                                         <a href="{{ url('product') }}/{{ $product->id }}" class="btn btn-primary btn-block"> Lihat</a>
                                     </div>

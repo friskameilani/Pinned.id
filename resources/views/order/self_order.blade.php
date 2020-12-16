@@ -47,18 +47,6 @@
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td>Ukuran</td>
-                                        <td>
-                                            <select id="size" name="size" class="form-control" required="">
-                                            <option value=""> --Silahkan Pilih-- </option>
-                                                <option value="size-s">S</option>
-                                                <option value="size-m">M</option>
-                                                <option value="size-l">L</option>
-                                                <option value="size-xl">XL</option>
-                                            </select>
-                                        </td>
-                                    </tr>
-                                    <tr>
                                         <td>Jumlah Produk</td>
                                         <td>
                                             <input id="qty" type="number" name="qty" class="form-control" required="">
@@ -67,7 +55,7 @@
                                     <tr>
                                         <td>Keterangan</td>
                                         <td>
-                                            <textarea id="notes" type="text" name="notes" class="form-control" rows="4"  placeholder="Tuliskan detail ukuran lingkar dada, lingkar bahu, dsb." required=""></textarea>
+                                            <textarea id="notes" type="text" name="notes" class="form-control" rows="4"  placeholder="Tuliskan ukuran pakaian yang diinginkan seperti S, M, L, XL, atau XXL. Anda dapat juga menuliskan detail ukuran seperti lingkar dada, lingkar bahu, dsb." required=""></textarea>
                                         </td>
                                     </tr>
                                     <div class="row">

@@ -14,8 +14,8 @@
                                     <img src="{{ url('uploads') }}/product/{{ $product->product_image }}" class="rounded mx-auto d-block" width="100%" alt=""> 
                                     <div class="m-3" style="text-align:center">
                                         <h3>{{ $product->product_name }}</h3>
-                                        <div style="color: #A06357; "> 
-                                            <h4>Rp {{ number_format($product->product_price) }}</h4>
+                                        <div> 
+                                            <h4 style="color: #A06357; font-weight:bold">Rp {{ number_format($product->product_price) }}</h4>
                                         </div>
                                     </div>
                                 </div>

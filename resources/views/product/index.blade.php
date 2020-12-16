@@ -26,19 +26,15 @@
                                     <table class="table">
                                         <tbody>
                                             <tr>
-                                                <td>Deskripsi :</td>
+                                                <td>DESKRIPSI</td>
                                                 <td>{{ $product->product_desc }}</td>
                                             </tr>
                                             <tr>
-                                                <td>Kategori :</td>
+                                                <td>KATEGORI</td>
                                                 <td>{{ $product->product_category }}</td>
                                             </tr>
                                             <tr>
-                                                <td>Tipe :</td>
-                                                <td>{{ $product->product_type }}</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Bahan :</td>
+                                                <td>BAHAN</td>
                                                 <td>{{ $product->product_material }}</td>
                                             </tr>
                                         </tbody>
@@ -47,7 +43,7 @@
                                         <div class="card">
                                             <div class="row">
                                                 <div class="col-6 m-3">
-                                                    <a href="{{route('tailor.show', ['tailor' => $product->tailor_id])}}"><h4>{{ $product->tailor->tailor_name }}</h4></a>
+                                                    <a href="{{route('tailor.show', ['tailor' => $product->tailor_id])}}"><h4 style="font-weight:bold;">{{ $product->tailor->tailor_name }}</h4></a>
                                                     <p>{{ $product->tailor->tailor_address }}</p>
                                                 </div>
                                                 <div class="col-2">
