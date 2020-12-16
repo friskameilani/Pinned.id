@@ -2,8 +2,6 @@
 
 @section('content')
 
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-
 <div class="body-inner">
     <div class="container-fluid">
         <div class="min-vh-100">
@@ -45,17 +43,6 @@
                                                     </td>
                                                 </tr>
                                                 <tr>
-                                                    <td>Ukuran</td>
-                                                    <td>
-                                                        <select id="size" name="size" class="form-control" required="">
-                                                            <option value="size-s">S</option>
-                                                            <option value="size-m">M</option>
-                                                            <option value="size-l">L</option>
-                                                            <option value="size-xl">XL</option>
-                                                        </select>
-                                                    </td>
-                                                </tr>
-                                                <tr>
                                                     <td>Jumlah Pesan</td>
                                                     <td>
                                                         <input id="qty" type="number" name="qty" class="form-control" required="">
@@ -64,7 +51,7 @@
                                                 <tr>
                                                     <td>Keterangan</td>
                                                     <td>
-                                                        <textarea id="notes" type="text" name="notes" class="form-control" rows="4" placeholder="Tuliskan catatan untuk penjahit"></textarea>
+                                                        <textarea id="notes" type="text" name="notes" class="form-control" rows="4" placeholder="Tuliskan catatan untuk penjahit seperti ukuran, warna atau detail lainnya"></textarea>
                                                     </td>   
                                                 </tr>
 
@@ -74,7 +61,7 @@
                                                     </div>
                                                     <div class="col-6">
                                                     <input name="_method" type="hidden" value="POST">
-                                                    <button type="button" class="btn btn-primary mb-3 mr-2 float-right" data-toggle="modal" data-target="#self-order-product-modal" style="padding: 5px 30px">Beli</button>
+                                                    <button type="button" class="btn btn-primary mb-3 mr-2 float-right" data-toggle="modal" data-target="#self-order-product-modal" style="padding: 5px 30px"> Pesan </button>
                                                     </div>
                                                 </div>
                                             </tbody>
@@ -90,7 +77,7 @@
                                                         </button>
                                                     </div>
                                                     <div class="modal-body">
-                                                        <p> Pesanan yang sudah dibayar akan langsung diproses dan tidak dapat dibatalkan. </p>
+                                                        <p> Pesanan akan segera diproses setelah melakukan konfirmasi pembayaran. </p>
                                                         <p> Apakah tetap ingin melanjutkan pemesanan? </p>
 
                                                         <!-- <input type="hidden" name="_method" value="DELETE"> -->

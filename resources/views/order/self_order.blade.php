@@ -36,7 +36,7 @@
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td>ID Penjahit</td>
+                                        <td>Penjahit</td>
                                         <td>
                                             <select id="tailor_id" name="tailor_id" class="form-control" required="">
                                             <option value=""> --Silahkan Pilih-- </option>
@@ -59,7 +59,7 @@
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td>Jumlah Pesan</td>
+                                        <td>Jumlah Produk</td>
                                         <td>
                                             <input id="qty" type="number" name="qty" class="form-control" required="">
                                         </td>
@@ -76,7 +76,7 @@
                                         </div>
                                         <div class="col-6">
                                             <input name="_method" type="hidden" value="POST">
-                                            <button type="button" class="btn btn-primary mb-3 mr-2 float-right" data-toggle="modal" data-target="#order-product-modal" style="padding: 5px 30px">Beli</button>
+                                            <button type="button" class="btn btn-primary mb-3 mr-2 float-right" data-toggle="modal" data-target="#order-product-modal" style="padding: 5px 30px"> Pesan </button>
                                         </div>
                                     </div>
                                 </tbody>

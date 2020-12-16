@@ -27,7 +27,9 @@ class ProductController extends Controller
     public function search(Request $request)
     {
         $search = $request->search;
-        $result = Product::where('product_name','like',"%".$search."%")->paginate();
+        $result = Product::where('product_name','like',"%".$search."%")
+        ->orWhereHas('tailor',function($query) use($search){$query->where('tailor_name','like',"%".$search."%");})
+        ->paginate();
 
         return view('product.result', compact('result'));
     }
