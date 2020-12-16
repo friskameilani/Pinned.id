@@ -143,3 +143,11 @@
     background: #4285F4;
   }
   
+  .card-title-max {
+    margin-bottom: 0.75rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+  }

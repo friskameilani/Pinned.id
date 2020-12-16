@@ -125,4 +125,13 @@ class ProductController extends Controller
         return redirect('/admincatalog');
     }
 
+    public function search(Request $request)
+    {
+        $search = $request->search;
+        $result = Product::where('product_name','like',"%".$search."%")
+        ->paginate();
+
+        return view('admin.catalog.result', compact('result'));
+    }
+
 }

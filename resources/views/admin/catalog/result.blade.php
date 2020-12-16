@@ -41,8 +41,12 @@
     </section>
     <br></br>
 
+<div class="col-6 ml-3">
+    <h4>{{ $result->total() }} hasil untuk pencarian '{{ request()->input('search') }}'</h4>
+</div>
+
 <div class="row" style="margin: 20px">
-@foreach( $products as $products )
+@foreach( $result as $products )
   <div class="col-6 col-md-4 col-lg-3 col-xl-2">
     <div class="card">
       <img src= "{{ url('uploads') }}/product/{{ $products->product_image }}" class="card-img-top" alt="..." style="height: 15rem">
