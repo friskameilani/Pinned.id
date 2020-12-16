@@ -23,9 +23,9 @@
                             </h5>
                         </div>
                         <div id="collapse{{$faq->id}}" class="collapse" aria-labelledby="heading{{$faq->id}}" data-parent="#accordion">
-                            <div class="card-body" style="font-size:18px">
+                            <pre class="card-body" style="font-size:18px; white-space: pre-line ">
                             {{$faq->answer}}
-                            </div>
+                            </pre>
                         </div>
                     </div>
                     @endforeach                

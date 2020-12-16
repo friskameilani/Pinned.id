@@ -41,7 +41,7 @@
                             <!-- Jawaban -->
                             <div class="form-group">
                                 <label for="description" class="col-form-label text-md-left">{{ __('Jawaban') }}</label>
-                                <textarea class="form-control @error('answer') is-invalid @enderror border border-dark" name="answer"></textarea>
+                                <textarea rows="10" class="form-control @error('answer') is-invalid @enderror border border-dark" name="answer"></textarea>
                             </div>
 
                             <!-- Save Button -->
