@@ -58,16 +58,19 @@
                                                 <td>Bahan :</td>
                                                 <td>{{ $product->product_material }}</td>
                                             </tr>
+                                            <tr>
+                                                <td>Alamat :</td>
+                                                <td>{{ $product->tailor->tailor_address }}</td>
+                                            </tr>
                                         </tbody>
                                     </table>
                                     <div class="col-9">
                                         <div class="card">
                                             <div class="row">
-                                                <div class="col-5 m-3">
+                                                <div class="col-5 m-3 d-flex justify-content-center" style="padding-top: 15px">
                                                     <a href="/admintailor/{{$product->tailor->id}}"><h4>{{ $product->tailor->tailor_name }}</h4></a>
-                                                    <p>{{ $product->tailor->tailor_address }}</p>
                                                 </div>
-                                                <div class="col-2">
+                                                <div class="col-4">
                                                     <a class="btn btn-lg btn-success m-3" href="https://api.whatsapp.com/send?phone={{$product->tailor->tailor_contact}}&text=Hi,%20I%20would%20like%20to%20get%20more%20information..">
                                                         <i class="fab fa-whatsapp fa-2x"></i>
                                                     </a>

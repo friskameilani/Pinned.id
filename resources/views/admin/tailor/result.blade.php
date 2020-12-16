@@ -1,5 +1,5 @@
 <?php $thisPage="Tailor"; ?>
-@extends ('layouts.adminapp')
+@extends('layouts.adminapp')
 
 @section('content')
 <title class="text-center">Penjahit</title>
@@ -26,13 +26,13 @@
       </div>
     </section>
 
-    <!-- JUDUL SAMA BUTTON -->
-    <section class="title" id="title">
+   <!-- JUDUL SAMA BUTTON -->
+   <section class="title" id="title">
         <div class="row">
             <div class="col-md-6">
                 <!-- JUDUL TAILOR -->
                 <h1 class="text-left" style="color: #111;">
-                    Tailor
+                    Penjahit Tersedia
                 </h1>
             </div>
 
@@ -47,6 +47,10 @@
         </div>
     </section>
     <br></br>
+
+    <div class="col-6 ml-3">
+        <h4>{{ $result->total() }} hasil untuk pencarian '{{ request()->input('search') }}'</h4>
+    </div>
 
     <!-- Main content -->
     <section class="content">
@@ -70,7 +74,7 @@
 
 
                 <tbody>
-                @foreach($tailors as $tailor)
+                @foreach($result as $tailor)
                 <tr>
                   <td>{{ $tailor->id }}</td>
                   <td><a href="/admintailor/{{ $tailor->id }}">{{ $tailor->tailor_name }}</a></td>
@@ -129,5 +133,21 @@
       </div>
     </div>
   </div>
+
+
+<script>
+    $('a[data-toggle="dropdown"]').click(function() {
+        dropDownFixPosition($(this), $('.dropdown-menu'));
+    });
+
+    function dropDownFixPosition(a, dropdown) {
+        var dropDownTop = a.offset().top + a.outerHeight();
+        dropdown.css('top', dropDownTop + "px");
+        //Delete - dropdown.width() if you want menu to be bottom right of link
+        dropdown.css('left', a.offset().left - dropdown.width() + "px");
+    }
+
+</script>
+
 
 @endsection

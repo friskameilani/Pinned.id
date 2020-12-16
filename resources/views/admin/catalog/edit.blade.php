@@ -7,9 +7,6 @@
         <!-- BREADCRUMB -->
         <div class="container">
             <div class="row">
-            <div class="col-md-12">
-                <a href="/adminviewcatalog/{{$product->id}}" class="btn btn-primary"><i class="fa fa-arrow-left"></i> Kembali</a>
-            </div>
             <div class="col-md-12 mt-2">
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb">

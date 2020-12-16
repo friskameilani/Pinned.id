@@ -89,6 +89,7 @@ Route::get('/tailor/{tailor}', 'TailorController@show')->name('tailor.show');
     Route::patch('/admintailor/{tailor}', 'Admin\TailorController@update')->name('admintailor.update');
     Route::delete('/admintailor/{tailor}/delete', 'Admin\TailorController@destroyview');
     Route::delete('/admintailor/{tailor}', 'Admin\TailorController@destroy')->name('admintailor.destroy');
+    Route::get('/admintailor/search','Admin\TailorController@search');
 
     /* ---------- Order --------------  */
     Route::get('/adminorder', 'Admin\OrderController@index');
