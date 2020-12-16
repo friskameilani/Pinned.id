@@ -57,8 +57,9 @@ class ProductController extends Controller
             $product->product_price = $request->price;
             $product->product_desc = $request->desc;
             $product->product_image = $realname;
+            $product->product_size = $request->product_size;
             $product->product_category = $request->category;
-            $product->product_type = $request->type;
+            // $product->product_type = $request->type;
             $product->product_material = $request->material;
 
             $product->save();
@@ -89,7 +90,7 @@ class ProductController extends Controller
                 'product_price' => $request->price,
                 'product_desc' => $request->desc,
                 'product_category' => $request->category,
-                'product_type' => $request->type,
+                'product_size' => $request->product_size,
                 'product_material' => $request->material,
                 'product_image' => $realname
                 ]);

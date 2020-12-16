@@ -43,7 +43,7 @@
                                     <table class="table">
                                         <tbody>
                                             <tr>
-                                                <td>Ukuran :</td>
+                                                <td>Deskripsi Produk :</td>
                                                 <td>{{ $product->product_desc }}</td>
                                             </tr>
                                             <tr>
@@ -55,7 +55,11 @@
                                                 <td>{{ $product->product_material }}</td>
                                             </tr>
                                             <tr>
-                                                <td>Alamat :</td>
+                                                <td>Ukuran :</td>
+                                                <td>{{ $product->product_size }}</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Alamat Penjahit :</td>
                                                 <td>{{ $product->tailor->tailor_address }}</td>
                                             </tr>
                                         </tbody>

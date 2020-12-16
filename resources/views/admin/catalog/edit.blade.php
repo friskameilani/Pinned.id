@@ -71,7 +71,7 @@
 
                         <!-- DESCRIPTION -->
                         <div class="form-group">
-                            <label for="description" class="col-form-label text-md-left">{{ __('Ukuran') }}</label>
+                            <label for="description" class="col-form-label text-md-left">{{ __('Deskripsi Produk') }}</label>
                             <textarea name="desc" class="form-control @error('desc') is-invalid @enderror border border-dark" value="{{ $product->product_desc }}" required="" style="width: 492px;">{{$product->product_desc}}</textarea>
                         </div>
 
@@ -93,6 +93,13 @@
                             <label for="material" class="col-form-label text-md-left">{{ __('Material') }}</label>
                             <input id="material" name="material" value="{{ $product->product_material }}" class="form-control @error('material') is-invalid @enderror border border-dark" required="" style="width: 492px;"></textarea>
                         </div>
+
+                        <!-- SIZE -->
+                        <div class="form-group">
+                            <label for="product_size" class="col-form-label text-md-left">{{ __('Ukuran Produk') }}</label>
+                            <input id="product_size" type="text" class="form-control @error('product_size') is-invalid @enderror border border-dark" name="product_size" value="{{$product->product_size}}" required autocomplete="product_size" autofocus style="width: 492px;">
+                        </div>
+
 
                         <!-- Price -->
                         <div class="form-group">
