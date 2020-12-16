@@ -12,7 +12,7 @@
         <div class="row">
             <div class="col-md-6">
                 <!-- JUDUL PAYMENT -->
-                <h1 class="text-left">
+                <h1 class="text-left" style="color: #111;">
                   Pembayaran
                 </h1>
             </div>

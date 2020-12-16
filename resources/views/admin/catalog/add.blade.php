@@ -69,7 +69,7 @@
 
                         <!-- DESCRIPTION -->
                         <div class="form-group">
-                            <label for="description" class="col-form-label text-md-left">{{ __('Deskripsi') }}</label>
+                            <label for="description" class="col-form-label text-md-left">{{ __('Harga') }}</label>
                             <textarea name="desc" class="form-control @error('desc') is-invalid @enderror border border-dark" required="" style="width: 492px;"></textarea>
                         </div>
 
@@ -85,29 +85,11 @@
                                     <option value="Casual">Casual</option>
                                 </select>
                         </div>
-                        
-                        <!-- TYPE -->
-                        <div class="form-group">
-                            <label for="type" class="col-form-label text-md-left">{{ __('Tipe') }}</label>
-                            <br>
-                                <select class="custom-select border border-dark" name="type" style="width: 492px;">
-                                    <option selected>Choose Type..</option>
-                                    <option value="Tipe 1">Tipe 1</option>
-                                    <option value="Tipe 2">Tipe 2</option>
-                                    <option value="Tipe 3">Tipe 3</option>
-                                </select>
-                        </div>
 
                         <!-- MATERIAL -->
                         <div class="form-group">
                             <label for="material" class="col-form-label text-md-left">{{ __('Bahan') }}</label>
                             <input id="material" name="material" class="form-control @error('material') is-invalid @enderror border border-dark" required="" style="width: 492px;"></textarea>
-                        </div>
-
-                        <!-- Price -->
-                        <div class="form-group">
-                            <label for="Price" class="col-form-label text-md-left">{{ __('Harga') }}</label>
-                            <input id="price" name="price" class="form-control @error('price') is-invalid @enderror border border-dark" required="" style="width: 492px;"></textarea>
                         </div>
 
                         <!-- Save Button -->

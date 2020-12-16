@@ -14,7 +14,7 @@
       <div class="row">
           <div class="col-md-6">
               <!-- JUDUL TAILOR -->
-              <h1 class="text-left">
+              <h1 class="text-left" style="color: #111;">
                   Order
               </h1>
           </div>

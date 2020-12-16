@@ -71,7 +71,7 @@
 
                         <!-- DESCRIPTION -->
                         <div class="form-group">
-                            <label for="description" class="col-form-label text-md-left">{{ __('Deskripsi') }}</label>
+                            <label for="description" class="col-form-label text-md-left">{{ __('Ukuran') }}</label>
                             <textarea name="desc" class="form-control @error('desc') is-invalid @enderror border border-dark" value="{{ $product->product_desc }}" required="" style="width: 492px;">{{$product->product_desc}}</textarea>
                         </div>
 
@@ -85,18 +85,6 @@
                                     <option value="Formal">Formal</option>
                                     <option value="Sekolah">Sekolah</option>
                                     <option value="Casual">Casual</option>
-                                </select>
-                        </div>
-
-                        <!-- TYPE -->
-                        <div class="form-group">
-                            <label for="type" class="col-form-label text-md-left">{{ __('Tipe') }}</label>
-                            <br>
-                                <select class="custom-select border border-dark" name="type" style="width: 492px;">
-                                    <option selected>{{ $product->product_type }}</option>
-                                    <option value="Tipe 1">Tipe 1</option>
-                                    <option value="Tipe 2">Tipe 2</option>
-                                    <option value="Tipe 3">Tipe 3</option>
                                 </select>
                         </div>
 
