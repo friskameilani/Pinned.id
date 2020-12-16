@@ -1,13 +1,14 @@
 @extends('layouts.app')
 
 @section('content')
+<button onclick="topFunction()" id="myBtn" title="Go to top"><i class="fa fa-arrow-up"></i></button>
 <section class="searchbarr" id="searchbarr" style="margin:30px">
   <div class="row">
       <div class="col-md-4">
           <!-- SEARCH BUTTON -->
           <form action="/search" method="get">
             <div class="input-group">
-                <input type="text" class="form-control" name="search" placeholder="Cari produk atau penjahit..">
+                <input type="text" class="form-control" name="search" placeholder="Cari produk berdasarkan nama atau penjahit">
                 <div class="input-group-append">
                 <button class="btn btn-secondary" type="submit">
                     <i class="fa fa-search"></i>
@@ -35,5 +36,27 @@
   </div>
   @endforeach
 </div>
+
+<script>
+//Get the button
+var mybutton = document.getElementById("myBtn");
+
+// When the user scrolls down 20px from the top of the document, show the button
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    mybutton.style.display = "block";
+  } else {
+    mybutton.style.display = "none";
+  }
+}
+
+// When the user clicks on the button, scroll to the top of the document
+function topFunction() {
+  document.body.scrollTop = 0;
+  document.documentElement.scrollTop = 0;
+}
+</script>
 
 @endsection

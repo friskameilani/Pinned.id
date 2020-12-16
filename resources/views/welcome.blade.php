@@ -22,7 +22,7 @@
 </div>
 <div style="display:flex">
     <div class="col-6" style="text-align: right; min-height: 200px; padding-top: 30px; padding-bottom:30px; background-color: #fff;">
-        <p style="color:#3E3434">Ini semua tentang kualitas, bukan kuantitas.</p>
+        <p style="color:#3E3434; text-align:right">Ini semua tentang kualitas, bukan kuantitas.</p>
         <hr size="10px" width="25%" color="#3E3434" align="right">
         <p style="color:#3E3434">Kepuasan pelanggan adalah tujuan kami.</p>
         <hr size="10px" width="25%" color="#3E3434" align="right">

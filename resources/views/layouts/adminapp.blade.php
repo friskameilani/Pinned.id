@@ -27,16 +27,17 @@
 <body>
 
     <div id="app">
-        <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #3E3434;"> 
-            <a class="navbar-brand" href="{{ url('/') }}">
+        <nav class="navbar navbar-expand-lg navbar-dark shadow-sm" style="background-color: #3E3434;"> 
+            <a class="navbar-brand" href="{{ url('/admin') }}">
                 <img src="{{ url('images/Pinned.id.png') }}" class="rounded mx-auto d-block" width="200" alt="" style="padding-left: 20px">
             </a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
 
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav">
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            @auth
+                <ul class="nav navbar mr-auto" style="letter-spacing:1px">
                 <li class="nav-item active">
                     <a class="nav-link" href="{{ url('/admin') }}">Beranda</a>
                 </li>
@@ -57,14 +58,11 @@
                 <li class="nav-item">
                     <a class="nav-link" href="{{ url('/adminfaq') }}">FAQ</a>
                 </li>
-
                 <li class="nav-item">
                     <a class="nav-link" href="{{ url('admin/logout') }}">Logout</a>
                 </li>
-            </div>
-
-            
-            
+            </div>      
+            @endauth   
         </nav>
 
     <main class="py-4">
@@ -76,7 +74,7 @@
     <br></br>
     
     <footer>
-        <div class="modal-footer-fixed" style="background-color:#3E3434">
+        <div class="modal-footer-fixed" style="background-color:#3E3434; height:50px">
             <div style="text-align:center;">
                 <div class="col-12" >
                     <p style="color:#FFF">&copy; Pinned.id. All rights reserved.</p>
