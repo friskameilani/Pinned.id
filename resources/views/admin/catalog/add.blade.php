@@ -69,7 +69,7 @@
 
                         <!-- DESCRIPTION -->
                         <div class="form-group">
-                            <label for="description" class="col-form-label text-md-left">{{ __('Harga') }}</label>
+                            <label for="description" class="col-form-label text-md-left">{{ __('Deskripsi') }}</label>
                             <textarea name="desc" class="form-control @error('desc') is-invalid @enderror border border-dark" required="" style="width: 492px;"></textarea>
                         </div>
 
@@ -86,10 +86,22 @@
                                 </select>
                         </div>
 
+                        <!-- SIZE -->
+                        <div class="form-group">
+                            <label for="description" class="col-form-label text-md-left">{{ __('Ukuran') }}</label>
+                            <textarea name="desc" class="form-control @error('desc') is-invalid @enderror border border-dark" value="" required="" style="width: 492px;"></textarea>
+                        </div>
+
                         <!-- MATERIAL -->
                         <div class="form-group">
                             <label for="material" class="col-form-label text-md-left">{{ __('Bahan') }}</label>
                             <input id="material" name="material" class="form-control @error('material') is-invalid @enderror border border-dark" required="" style="width: 492px;"></textarea>
+                        </div>
+
+                        <!-- Price -->
+                        <div class="form-group">
+                            <label for="price" class="col-form-label text-md-left">{{ __('Harga') }}</label>
+                            <input type="number" id="replyNumber" min="1000" max="100000000" name="price" value="" class="form-control @error('price') is-invalid @enderror border border-dark" required="" style="width: 492px;"></textarea>
                         </div>
 
                         <!-- Save Button -->

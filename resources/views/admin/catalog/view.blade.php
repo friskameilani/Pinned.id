@@ -43,12 +43,16 @@
                                     <table class="table">
                                         <tbody>
                                             <tr>
-                                                <td>Ukuran :</td>
+                                                <td>Deskripsi :</td>
                                                 <td>{{ $product->product_desc }}</td>
                                             </tr>
                                             <tr>
                                                 <td>Kategori :</td>
                                                 <td>{{ $product->product_category }}</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Ukuran :</td>
+                                                <td></td>
                                             </tr>
                                             <tr>
                                                 <td>Bahan :</td>
