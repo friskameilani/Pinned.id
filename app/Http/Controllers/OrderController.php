@@ -26,7 +26,9 @@ class OrderController extends Controller
 
 	public function show_spec() //Self Order / Spescific order
     {
-        return view('order.self_order');
+		$tailors = Tailor::all();
+		
+        return view('order.self_order', compact('tailors'));
     }
 
     public function create(Request $request, $id) //Create normal order
@@ -72,6 +74,7 @@ class OrderController extends Controller
             $filename-> move($dest, $filename->getClientOriginalName());
 		}
 		$date = Carbon::now();
+		$tailors = Tailor::all();
     	
     		$order = new Order;
 			$order->user_id = Auth::user()->id;

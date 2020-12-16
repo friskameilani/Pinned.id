@@ -34,6 +34,7 @@ Route::get('detailorder/{random_code}', 'OrderController@showdetail')->name('det
 // Routes Product/Catalog
 Route::get('catalog', 'ProductController@index');
 Route::get('product/{id}', 'ProductController@show');
+Route::get('/search','ProductController@search');
 
 // Routes Profile User
 Route::get('profile', 'ProfileController@index');
@@ -75,6 +76,7 @@ Route::get('/tailor/{tailor}', 'TailorController@show')->name('tailor.show');
     Route::patch('/admincatalog/{product}', 'Admin\ProductController@update')->name('admincatalog.update');
     Route::delete('/admincatalog/{product}/delete', 'Admin\ProductController@destroyview');
     Route::delete('/admincatalog/{product}', 'Admin\ProductController@destroy')->name('admincatalog.destroy');
+    Route::get('/admincatalog/search','Admin\ProductController@search');
     //Route::get('/adminaddcatalogsuccess', 'Admin\ProductController@catalogaddsuccess'); //Ini file catalognya juga belum ada
 
 

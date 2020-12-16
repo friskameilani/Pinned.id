@@ -6,10 +6,10 @@
         <div class="min-vh-100">
         <div class="row justify-content-center" >
             <div class="col-10">
-                <div class="col-12 title" style="text-align: center; min-height: 200px; padding-top: 30px;">
+                <div class="col-12 title" style="text-align: center; min-height: 150px; padding-top: 30px;">
                     <h1 style="font-size:28px;">FAQ</h1>
                     <hr size="10px" width="15%" color="#fff">
-                    <p style="color:#fff">Here you can find the questions most commonly asked by our customers.</p>
+                    <p style="color:#fff">Berikut adalah pertanyaan yang paling sering diajukan oleh pelanggan kami.</p>
                 </div>
                 <div id="accordion">
                     <?php $no = 1; ?>

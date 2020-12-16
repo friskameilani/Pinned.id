@@ -62,7 +62,7 @@
                                             </button>
                                         </div>
                                         <div class="modal-body">
-                                            <p> Pastikan data konfirmasi yang Anda masukkan adalah benar. </p>
+                                            <p> Pastikan data konfirmasi yang Anda masukkan adalah benar. Pesanan yang sudah terkonfirmasi dibayar akan segera diproses dan tidak dapat dibatalkan. </p>
                                             <p> Kirimkan konfirmasi pembayaran sekarang? </p>
 
                                             <!-- <input type="hidden" name="_method" value="DELETE"> -->

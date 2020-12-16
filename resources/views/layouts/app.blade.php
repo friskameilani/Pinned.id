@@ -45,11 +45,6 @@
                     <li class="{{ Request::is('/faq') ? 'active' : '' }}">
                         <a class="nav-link" href="{{ url('/faq') }}">Tanya Jawab</a>
                     </li>
-
-                    <!-- NUMPANG BENTAR TAMBAH MENU ADMIN SOALNYA BELOM ADA USER ADMIN -->
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ url('/admin') }}">Admin</a>
-                    </li>
                  </ul>
 
                 <!-- Right Side Of Navbar -->
@@ -96,7 +91,7 @@
                 </ul>
             </div>
         </nav>
-
+        <main>
     @yield('content')
         </main>
     </div>
