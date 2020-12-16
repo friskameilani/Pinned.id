@@ -13,15 +13,4 @@ class TailorController extends Controller
         $products = Product::where('tailor_id', $tailor->id)->get();
         return view('tailor.index', compact(['tailor', 'products']));
     }
-
-    public function search(Request $request)
-    {
-        $search = $request->search;
-        $result = Tailor::where('tailor_name','like',"%".$search."%")
-        ->orWhereHas('tailor',function($query) use($search){$query->where('tailor_name','like',"%".$search."%");})
-        ->paginate();
-
-        return view('tailor.result', compact('result'));
-    }
-    
 }

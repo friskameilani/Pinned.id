@@ -136,4 +136,13 @@ class TailorController extends Controller
 
 	    return redirect('admintailor');
     }
+
+    public function search(Request $request)
+    {
+        $search = $request->search;
+        $result = Tailor::where('tailor_name','like',"%".$search."%")
+        ->paginate();
+
+        return view('admin.tailor.result', compact('result'));
+    }
 }
