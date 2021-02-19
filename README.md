@@ -97,3 +97,6 @@ Role : UI, Frontend - Customer
 * Read Profile Tailor
 * Profile Customer
 * FAQ
+
+##Project Website
+pinned-id.herokuapp.com
